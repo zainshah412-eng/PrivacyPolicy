@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy of PDF Reader Pro">
+    <title>Privacy Policy - PDF Reader Pro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2 {
+            color: #222;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        p {
+            margin: 12px 0;
+        }
+
+        ul {
+            margin: 10px 0 10px 20px;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <p>Effective Date: February 26, 2026</p>
+
+        <p>PDF Reader Pro (“we”, “our”, or “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+        <ul>
+            <li><strong>Personal Information:</strong> Such as name and email address when you voluntarily provide it.</li>
+            <li><strong>Usage Data:</strong> Information about how you use the app, including features accessed and documents opened.</li>
+            <li><strong>Device Information:</strong> Such as device type, operating system, and app version.</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We use the collected information to:</p>
+        <ul>
+            <li>Provide and improve the features of PDF Reader Pro.</li>
+            <li>Personalize your experience within the app.</li>
+            <li>Send important notifications, updates, and support messages.</li>
+            <li>Analyze usage trends and app performance.</li>
+        </ul>
+
+        <h2>3. Sharing Your Information</h2>
+        <p>We do not sell your personal information. We may share information with third parties only in the following cases:</p>
+        <ul>
+            <li>With service providers who help us operate the app.</li>
+            <li>When required by law or to protect our rights.</li>
+            <li>In connection with a business transfer, merger, or acquisition.</li>
+        </ul>
+
+        <h2>4. Security</h2>
+        <p>We implement reasonable security measures to protect your data. However, no method of transmission over the Internet or electronic storage is completely secure. We cannot guarantee absolute security.</p>
+
+        <h2>5. Your Choices</h2>
+        <p>You can choose not to provide certain information, but this may limit the functionality of the app. You can also:</p>
+        <ul>
+            <li>Opt out of marketing communications.</li>
+            <li>Clear app cache or delete app data to remove stored usage information.</li>
+        </ul>
+
+        <h2>6. Children's Privacy</h2>
+        <p>PDF Reader Pro is not intended for children under 13. We do not knowingly collect personal information from children.</p>
+
+        <h2>7. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted in the app and will be effective immediately upon posting. Please review periodically.</p>
+
+        <h2>8. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:support@pdfreaderpro.com">support@pdfreaderpro.com</a></p>
+
+        <footer>
+            &copy; 2026 PDF Reader Pro. All Rights Reserved.
+        </footer>
+    </div>
+</body>
+</html>
