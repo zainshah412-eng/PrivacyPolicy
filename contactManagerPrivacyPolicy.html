@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Contact Backup & Manager</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #1c1b1f;
+            line-height: 1.7;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+            color: white;
+            padding: 60px 24px 40px;
+            text-align: center;
+        }
+
+        .header .app-icon {
+            width: 72px;
+            height: 72px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 15px;
+            opacity: 0.85;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        .meta-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            border: 1px solid #e5e7eb;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #6b7280;
+        }
+
+        .meta-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: #1c1b1f;
+        }
+
+        .highlight-box {
+            background: #e8f0fe;
+            border-left: 4px solid #1a73e8;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            font-size: 15px;
+            color: #0d47a1;
+            font-weight: 500;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 16px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .section h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1c1b1f;
+        }
+
+        .section p, .section li {
+            font-size: 14px;
+            color: #374151;
+            margin-bottom: 10px;
+        }
+
+        .section ul, .section ol {
+            padding-left: 20px;
+        }
+
+        .section li { margin-bottom: 6px; }
+
+        .badge {
+            display: inline-block;
+            background: #e6f4ea;
+            color: #1b5e20;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .badge.warning {
+            background: #fff8e1;
+            color: #4a3800;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        th {
+            background: #f1f3f4;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #6b7280;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f1f3f4;
+            color: #374151;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        .contact-box {
+            background: #1a73e8;
+            border-radius: 16px;
+            padding: 28px;
+            text-align: center;
+            color: white;
+            margin-top: 32px;
+        }
+
+        .contact-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            font-size: 14px;
+            opacity: 0.85;
+            margin-bottom: 16px;
+        }
+
+        .contact-box a {
+            background: white;
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 40px 16px 30px; }
+            .header h1 { font-size: 22px; }
+            .container { padding: 24px 16px 60px; }
+            .section { padding: 20px; }
+            .meta-card { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="app-icon">📋</div>
+    <h1>Privacy Policy</h1>
+    <p>Contact Backup & Manager</p>
+</div>
+
+<div class="container">
+
+    <!-- Meta -->
+    <div class="meta-card">
+        <div class="meta-item">
+            <span class="meta-label">Effective Date</span>
+            <span class="meta-value">January 1, 2025</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Last Updated</span>
+            <span class="meta-value">January 1, 2025</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Developer</span>
+            <span class="meta-value">Your Name / Company</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">App Version</span>
+            <span class="meta-value">1.0.0</span>
+        </div>
+    </div>
+
+    <!-- TL;DR -->
+    <div class="highlight-box">
+        🔒 Short version: Your contacts stay on your device. We do not upload, sell, or share your personal data with anyone. Ever.
+    </div>
+
+    <!-- 1. Introduction -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#e8f0fe;">👋</div>
+            <h2>1. Introduction</h2>
+        </div>
+        <p>
+            Welcome to <strong>Contact Backup & Manager</strong> ("the App"). This Privacy Policy explains how we handle
+            information when you use our app. We are committed to protecting your privacy and being transparent about
+            our practices.
+        </p>
+        <p>
+            By using this App, you agree to the practices described in this policy. If you do not agree,
+            please discontinue use of the App.
+        </p>
+    </div>
+
+    <!-- 2. Information We Access -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#e6f4ea;">📱</div>
+            <h2>2. Information We Access</h2>
+        </div>
+        <p>The App requests access to the following data on your device:</p>
+        <table>
+            <tr>
+                <th>Data Type</th>
+                <th>Why We Need It</th>
+                <th>Uploaded?</th>
+            </tr>
+            <tr>
+                <td><strong>Contacts</strong> (names, phones, emails)</td>
+                <td>To backup, organize, and manage your contacts</td>
+                <td>❌ Never</td>
+            </tr>
+            <tr>
+                <td><strong>Storage</strong> (read/write)</td>
+                <td>To save backup files locally on your device</td>
+                <td>❌ Never</td>
+            </tr>
+            <tr>
+                <td><strong>Internet</strong></td>
+                <td>To display ads (Google AdMob only)</td>
+                <td>Ad data only</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 3. How We Use Data -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#fff8e1;">⚙️</div>
+            <h2>3. How We Use Your Data</h2>
+        </div>
+        <ul>
+            <li>Contact data is accessed <strong>only on your device</strong> to provide app functionality.</li>
+            <li>Backup files are saved <strong>locally</strong> in your device's internal storage.</li>
+            <li>We do <strong>not</strong> transmit, upload, sync, or store your contacts on any server.</li>
+            <li>We do <strong>not</strong> analyze, process, or read your contact data for any purpose other than displaying it to you within the app.</li>
+            <li>No account or login is required. We have no user database.</li>
+        </ul>
+    </div>
+
+    <!-- 4. Advertising -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#fce8e6;">📢</div>
+            <h2>4. Advertising (Google AdMob) <span class="badge warning">Third Party</span></h2>
+        </div>
+        <p>
+            The App uses <strong>Google AdMob</strong> to display advertisements. AdMob may collect and use
+            certain data to serve relevant ads. This includes:
+        </p>
+        <ul>
+            <li>Device advertising ID</li>
+            <li>IP address and approximate location</li>
+            <li>Device type, OS version, and app usage data</li>
+            <li>Ad interaction data (clicks, impressions)</li>
+        </ul>
+        <p style="margin-top:12px;">
+            This data is collected by Google, not by us. Google's data practices are governed by the
+            <a href="https://policies.google.com/privacy" style="color:#1a73e8;">Google Privacy Policy</a>.
+        </p>
+        <p>
+            <strong>Your contact data is never shared with AdMob or any advertiser.</strong>
+        </p>
+        <p>
+            You can opt out of personalized ads by visiting
+            <a href="https://adssettings.google.com" style="color:#1a73e8;">Google Ad Settings</a>
+            or through your device's Privacy Settings → Ads → Opt out of Ads Personalization.
+        </p>
+    </div>
+
+    <!-- 5. Data Storage -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#e6f4ea;">💾</div>
+            <h2>5. Data Storage & Security</h2>
+        </div>
+        <ul>
+            <li>All backup files are stored in your device's <strong>private internal storage</strong> — not accessible by other apps.</li>
+            <li>No data is stored on our servers — we have none.</li>
+            <li>If you uninstall the App, all App data including backup files is deleted from your device.</li>
+            <li>We recommend keeping your device secure with a PIN or biometric lock to protect your backup files.</li>
+        </ul>
+    </div>
+
+    <!-- 6. Permissions -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#e8f0fe;">🔑</div>
+            <h2>6. App Permissions Explained</h2>
+        </div>
+        <table>
+            <tr>
+                <th>Permission</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td><code>READ_CONTACTS</code></td>
+                <td>Read contacts to display, backup, and export them</td>
+            </tr>
+            <tr>
+                <td><code>WRITE_CONTACTS</code></td>
+                <td>Restore contacts from backup files</td>
+            </tr>
+            <tr>
+                <td><code>INTERNET</code></td>
+                <td>Display ads via Google AdMob</td>
+            </tr>
+        </table>
+        <p style="margin-top:14px;">
+            You can revoke any permission at any time through <strong>Settings → Apps → Contact Backup & Manager → Permissions</strong>.
+            Revoking contacts permission will disable core app features.
+        </p>
+    </div>
+
+    <!-- 7. Third Parties -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#fff8e1;">🤝</div>
+            <h2>7. Third-Party Services</h2>
+        </div>
+        <p>The App uses only one third-party service:</p>
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Purpose</th>
+                <th>Privacy Policy</th>
+            </tr>
+            <tr>
+                <td><strong>Google AdMob</strong></td>
+                <td>In-app advertising</td>
+                <td><a href="https://policies.google.com/privacy" style="color:#1a73e8;">View</a></td>
+            </tr>
+        </table>
+        <p style="margin-top:12px;">
+            We do not use analytics SDKs, crash reporting tools, or any other third-party data collection services.
+        </p>
+    </div>
+
+    <!-- 8. Children -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#fce8e6;">👶</div>
+            <h2>8. Children's Privacy</h2>
+        </div>
+        <p>
+            This App is not directed at children under the age of 13. We do not knowingly collect
+            personal information from children under 13. If you believe your child has used this App,
+            please contact us and we will take appropriate action.
+        </p>
+    </div>
+
+    <!-- 9. Your Rights -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#e6f4ea;">⚖️</div>
+            <h2>9. Your Rights</h2>
+        </div>
+        <p>Since all your data stays on your device, you have full control:</p>
+        <ul>
+            <li><strong>Access</strong> — All contact data is visible within the App at all times.</li>
+            <li><strong>Delete</strong> — Uninstall the App to remove all backup files. Delete contacts directly from the App.</li>
+            <li><strong>Export</strong> — Export your data as VCF or CSV at any time.</li>
+            <li><strong>Revoke permissions</strong> — Through Android Settings at any time.</li>
+        </ul>
+    </div>
+
+    <!-- 10. Changes -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-icon" style="background:#e8f0fe;">📝</div>
+            <h2>10. Changes to This Policy</h2>
+        </div>
+        <p>
+            We may update this Privacy Policy from time to time. Changes will be posted on this page
+            with an updated "Last Updated" date. For significant changes, we will notify users through
+            the App or Play Store release notes.
+        </p>
+        <p>
+            Continued use of the App after any changes constitutes acceptance of the updated policy.
+        </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-box">
+        <h3>Questions or Concerns?</h3>
+        <p>If you have any questions about this Privacy Policy or our data practices, please contact us.</p>
+        <a href="mailto:your@email.com">your@email.com</a>
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2025 Your Name / Company · Contact Backup & Manager · All rights reserved
+</div>
+
+</body>
+</html>
