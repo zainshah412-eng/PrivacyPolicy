@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Contacts Transfer</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #21262d;
+      --accent:    #3fb950;
+      --accent-dim:#1a4229;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --pill-bg:   #1c2128;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Noise overlay ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: .35;
+    }
+
+    /* ── Header ── */
+    header {
+      position: relative;
+      z-index: 1;
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0 40px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 240px;
+      background: radial-gradient(ellipse at center, rgba(63,185,80,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      animation: fadeUp .6s ease both;
+    }
+
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 22px; height: 22px; fill: var(--accent); }
+
+    .logo-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--text);
+      letter-spacing: .02em;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+      animation: fadeUp .6s .1s ease both;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .9rem;
+      animation: fadeUp .6s .2s ease both;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 4px 14px;
+      background: var(--pill-bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .75rem;
+      color: var(--muted);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      animation: fadeUp .6s .3s ease both;
+    }
+
+    /* ── Layout ── */
+    main {
+      position: relative; z-index: 1;
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* ── TL;DR card ── */
+    .tldr {
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 56px;
+      animation: fadeUp .6s .35s ease both;
+    }
+    .tldr-label {
+      font-size: .7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .tldr ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .tldr ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .9rem;
+      color: #b3f0be;
+    }
+    .tldr ul li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Section ── */
+    section {
+      margin-bottom: 52px;
+      animation: fadeUp .5s ease both;
+    }
+
+    section:nth-child(2) { animation-delay: .1s; }
+    section:nth-child(3) { animation-delay: .15s; }
+    section:nth-child(4) { animation-delay: .2s; }
+    section:nth-child(5) { animation-delay: .25s; }
+    section:nth-child(6) { animation-delay: .3s; }
+    section:nth-child(7) { animation-delay: .35s; }
+    section:nth-child(8) { animation-delay: .4s; }
+
+    .section-number {
+      font-size: .72rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      letter-spacing: -.01em;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    p { color: #c9d1d9; margin-bottom: 14px; font-size: .95rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Permission table ── */
+    .perm-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .perm-row {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .perm-tag {
+      font-family: 'DM Sans', monospace;
+      font-size: .72rem;
+      font-weight: 500;
+      background: var(--pill-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 9px;
+      color: #79c0ff;
+      white-space: nowrap;
+    }
+    .perm-desc { font-size: .875rem; color: var(--muted); }
+    .perm-desc strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 2px; }
+
+    /* ── Transfer flow card ── */
+    .flow {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .flow-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .flow-step:first-child { padding-top: 0; }
+    .step-num {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem;
+      font-weight: 500;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .step-text { font-size: .875rem; color: var(--muted); }
+    .step-text strong { color: var(--text); font-weight: 500; }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 52px;
+    }
+
+    /* ── Contact box ── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+    }
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: .78rem;
+      color: var(--muted);
+    }
+    footer span { color: var(--accent); }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 500px) {
+      .perm-row { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+      </svg>
+    </div>
+    <span class="logo-name">Contacts Transfer</span>
+  </div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="subtitle">Zavi Studio · com.scriptupsolutions.contactstransfer</p>
+  <span class="badge">Effective: May 2026</span>
+</header>
+
+<main>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-label">TL;DR — The short version</div>
+    <ul>
+      <li>All contact transfers happen directly between devices over Wi-Fi Direct — no servers involved.</li>
+      <li>We never collect, upload, or store your contacts on any external server or cloud.</li>
+      <li>No analytics, no advertising SDKs, no third-party data sharing.</li>
+      <li>Transfer history is stored locally on your device only and never leaves it.</li>
+    </ul>
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <div class="section-number">01</div>
+    <h2>Overview</h2>
+    <p>Contacts Transfer ("the App") is a peer-to-peer contact sharing application developed by Zavi Studio. It allows users to transfer contacts directly from one Android device to another using Wi-Fi Direct (P2P), LAN discovery, or QR code connection — without any internet connectivity or server intermediaries.</p>
+    <p>This Privacy Policy explains what information the App accesses, how it is used, and the guarantees we make regarding your data. By using the App, you agree to these terms.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 2 -->
+  <section>
+    <div class="section-number">02</div>
+    <h2>Information We Access</h2>
+    <p>The App requests the following permissions to function. None of this information leaves your device except as part of a contact transfer you explicitly initiate.</p>
+
+    <div class="perm-grid">
+      <div class="perm-row">
+        <span class="perm-tag">READ_CONTACTS</span>
+        <div class="perm-desc">
+          <strong>Read your contacts</strong>
+          Required to display your contact list so you can choose which contacts to send to another device.
+        </div>
+      </div>
+      <div class="perm-row">
+        <span class="perm-tag">WRITE_CONTACTS</span>
+        <div class="perm-desc">
+          <strong>Save received contacts</strong>
+          Required to write contacts to your address book when you accept an incoming transfer.
+        </div>
+      </div>
+      <div class="perm-row">
+        <span class="perm-tag">CAMERA</span>
+        <div class="perm-desc">
+          <strong>Scan QR codes</strong>
+          Used solely to scan the connection QR code displayed on the sender's device. No photos or video are captured or stored.
+        </div>
+      </div>
+      <div class="perm-row">
+        <span class="perm-tag">ACCESS_FINE_LOCATION<br/>ACCESS_COARSE_LOCATION</span>
+        <div class="perm-desc">
+          <strong>Wi-Fi Direct peer discovery</strong>
+          Android requires location permission to scan for nearby Wi-Fi Direct peers (WifiP2pManager). The App does not log, store, or process your GPS position.
+        </div>
+      </div>
+      <div class="perm-row">
+        <span class="perm-tag">NEARBY_WIFI_DEVICES</span>
+        <div class="perm-desc">
+          <strong>Android 13+ peer discovery</strong>
+          Required on Android 13 and above as a companion to Location for Wi-Fi Direct peer scanning.
+        </div>
+      </div>
+      <div class="perm-row">
+        <span class="perm-tag">POST_NOTIFICATIONS</span>
+        <div class="perm-desc">
+          <strong>Incoming contact alerts</strong>
+          Used on Android 13+ to show a local notification when contacts are received in the background.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 3 -->
+  <section>
+    <div class="section-number">03</div>
+    <h2>How a Transfer Works</h2>
+    <p>All data exchange is fully local between two devices. The protocol is as follows:</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Device discovery</strong> — Nearby devices are found via Wi-Fi Direct peer scanning or LAN broadcast. No contact data is shared at this stage.</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Connection handshake</strong> — A direct TCP socket is opened on port 8888 between the two devices over Wi-Fi Direct. No internet connection is used.</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Approval prompt</strong> — The receiver sees the sender's name and contact count and must explicitly tap <strong>Accept</strong> before any contact data is sent.</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Transfer</strong> — Contact data (name, phone numbers, emails, organisation, notes) is serialised as JSON and sent directly to the receiver over the local socket.</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Save & disconnect</strong> — The receiver saves the contacts to their address book. The socket is closed. No copy of the data is retained by the App.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 4 -->
+  <section>
+    <div class="section-number">04</div>
+    <h2>Data We Do Not Collect</h2>
+    <p>The App does <strong>not</strong> collect, transmit, or store any of the following:</p>
+    <p>Contact data on any remote server · Your device's GPS location · Advertising identifiers · Analytics or crash telemetry · Usage statistics · Device fingerprints · Account credentials of any kind</p>
+    <p>The App contains no advertising SDKs, analytics libraries, or third-party tracking frameworks.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 5 -->
+  <section>
+    <div class="section-number">05</div>
+    <h2>Local Transfer History</h2>
+    <p>The App maintains a local transfer history stored in a Room database on your device. This log records the date, direction (sent/received), device name, and number of contacts for each completed transfer.</p>
+    <p>This data never leaves your device. You can clear it at any time via the History screen. Uninstalling the App removes this database entirely.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 6 -->
+  <section>
+    <div class="section-number">06</div>
+    <h2>Third-Party Services</h2>
+    <p>The App uses the following open-source libraries. None of these libraries are configured to collect user data or phone home in this integration:</p>
+    <p><strong>ZXing</strong> — QR code generation and scanning (local processing only) · <strong>Gson</strong> — JSON serialisation (local processing only) · <strong>Hilt / Dagger</strong> — Dependency injection (compile-time, no runtime data) · <strong>Room</strong> — Local SQLite database</p>
+    <p>No data is shared with any of these third parties.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 7 -->
+  <section>
+    <div class="section-number">07</div>
+    <h2>Children's Privacy</h2>
+    <p>The App does not knowingly collect information from children under the age of 13. Because no personal data is collected or transmitted to us under any circumstances, the App poses no special privacy risk to minors.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 8 -->
+  <section>
+    <div class="section-number">08</div>
+    <h2>Changes to This Policy</h2>
+    <p>If this Privacy Policy is updated, the revised version will be published at this URL with an updated effective date. Continued use of the App after changes constitutes acceptance of the revised policy.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 9 -->
+  <section>
+    <div class="section-number">09</div>
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+      <p>If you have any questions or concerns about this Privacy Policy, please reach out:</p>
+      <p>
+        <strong>Developer:</strong> Zavi Studio<br/>
+        <strong>Email:</strong> <a href="mailto:zainshah412.za@gmail.com">zainshah412.za@gmail.com</a><br/>
+        <strong>Package:</strong> com.scriptupsolutions.contactstransfer
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 <span>Zavi Studio</span> · Contacts Transfer · All rights reserved
+</footer>
+
+</body>
+</html>
