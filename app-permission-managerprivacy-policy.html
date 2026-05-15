@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Privacy Permission Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #0c0f14;
+      --surface:     #131720;
+      --surface2:    #1a2030;
+      --border:      rgba(255,255,255,0.07);
+      --primary:     #4f8ef7;
+      --primary-dim: rgba(79,142,247,0.12);
+      --accent:      #34d399;
+      --text:        #e8eaf0;
+      --muted:       #7b8394;
+      --danger:      #f87171;
+      --warn:        #fbbf24;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Noise texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Ambient glow ── */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(79,142,247,0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Layout ── */
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-dim);
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 100px;
+      padding: 5px 14px 5px 8px;
+      margin-bottom: 24px;
+      animation: fadeSlideDown 0.6s ease both;
+    }
+
+    .app-badge .icon {
+      width: 22px;
+      height: 22px;
+      background: var(--primary);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+    }
+
+    .app-badge .icon svg { display: block; }
+
+    .app-badge span {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 6vw, 54px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 16px;
+      animation: fadeSlideDown 0.6s 0.1s ease both;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--primary);
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+      animation: fadeSlideDown 0.6s 0.2s ease both;
+    }
+
+    .header-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    /* ── Table of Contents ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+      animation: fadeSlideDown 0.6s 0.3s ease both;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 32px;
+    }
+
+    @media (max-width: 520px) {
+      .toc ol { grid-template-columns: 1fr; }
+    }
+
+    .toc ol li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .toc ol li .num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+      min-width: 18px;
+    }
+
+    .toc ol li a {
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc ol li a:hover { color: var(--primary); }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 52px;
+      animation: fadeSlideUp 0.5s ease both;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--primary-dim);
+      border: 1px solid rgba(79,142,247,0.2);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    p {
+      color: #b0b8cc;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Info cards ── */
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .info-card.highlight {
+      background: var(--primary-dim);
+      border-color: rgba(79,142,247,0.2);
+    }
+
+    .info-card.safe {
+      background: rgba(52,211,153,0.07);
+      border-color: rgba(52,211,153,0.2);
+    }
+
+    .info-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .info-card.highlight p { color: rgba(232,234,240,0.85); }
+    .info-card.safe p { color: rgba(52,211,153,0.9); }
+
+    /* ── Permission list ── */
+    .perm-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .perm-list li {
+      display: flex;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      align-items: flex-start;
+    }
+
+    .perm-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+    }
+
+    .perm-icon.blue  { background: rgba(79,142,247,0.15); }
+    .perm-icon.green { background: rgba(52,211,153,0.15); }
+    .perm-icon.warn  { background: rgba(251,191,36,0.15); }
+    .perm-icon.red   { background: rgba(248,113,113,0.12); }
+
+    .perm-info { flex: 1; }
+
+    .perm-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .perm-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .perm-badge {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 100px;
+      align-self: center;
+    }
+
+    .perm-badge.read-only {
+      background: rgba(52,211,153,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(52,211,153,0.2);
+    }
+
+    .perm-badge.required {
+      background: rgba(79,142,247,0.12);
+      color: var(--primary);
+      border: 1px solid rgba(79,142,247,0.2);
+    }
+
+    /* ── Bullet list ── */
+    .bullet-list {
+      list-style: none;
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #b0b8cc;
+    }
+
+    .bullet-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-top: 9px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 52px 0;
+    }
+
+    /* ── Contact section ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 200px;
+      background: radial-gradient(ellipse, rgba(79,142,247,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-card h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .contact-email:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Animations ── */
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stagger section animations via nth-child */
+    .section:nth-child(1)  { animation-delay: 0.35s; }
+    .section:nth-child(2)  { animation-delay: 0.42s; }
+    .section:nth-child(3)  { animation-delay: 0.49s; }
+    .section:nth-child(4)  { animation-delay: 0.56s; }
+    .section:nth-child(5)  { animation-delay: 0.63s; }
+    .section:nth-child(6)  { animation-delay: 0.70s; }
+    .section:nth-child(7)  { animation-delay: 0.77s; }
+    .section:nth-child(8)  { animation-delay: 0.84s; }
+    .section:nth-child(9)  { animation-delay: 0.91s; }
+    .section:nth-child(10) { animation-delay: 0.98s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header { padding: 36px 0 32px; }
+      .toc { padding: 20px; }
+      .contact-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- Header -->
+  <header>
+    <div class="app-badge">
+      <div class="icon">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M6.5 1L2 3.2V6.5C2 9.08 4.01 11.49 6.5 12C8.99 11.49 11 9.08 11 6.5V3.2L6.5 1Z" fill="white" fill-opacity="0.9"/>
+        </svg>
+      </div>
+      <span>Privacy Permission Manager</span>
+    </div>
+    <h1>Privacy <em>Policy</em></h1>
+    <div class="header-meta">
+      <span><span class="dot"></span> Effective: January 1, 2025</span>
+      <span><span class="dot"></span> Last updated: May 2025</span>
+      <span><span class="dot"></span> Developer: ScriptUp Solutions</span>
+    </div>
+  </header>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><span class="num">01</span><a href="#overview">Overview</a></li>
+      <li><span class="num">02</span><a href="#data-collected">Data We Collect</a></li>
+      <li><span class="num">03</span><a href="#permissions">App Permissions Used</a></li>
+      <li><span class="num">04</span><a href="#data-usage">How We Use Data</a></li>
+      <li><span class="num">05</span><a href="#data-sharing">Data Sharing</a></li>
+      <li><span class="num">06</span><a href="#data-storage">Data Storage</a></li>
+      <li><span class="num">07</span><a href="#third-party">Third-Party Services</a></li>
+      <li><span class="num">08</span><a href="#children">Children's Privacy</a></li>
+      <li><span class="num">09</span><a href="#changes">Policy Changes</a></li>
+      <li><span class="num">10</span><a href="#contact">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1: Overview -->
+  <div class="section" id="overview">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <h2>Overview</h2>
+    </div>
+    <p>Privacy Permission Manager ("the App") is an Android application developed by ScriptUp Solutions. This app is designed to help you understand and audit the permissions and access levels granted to apps installed on your Android device.</p>
+    <p>We are fully committed to protecting your privacy. This policy explains what data the app accesses, why it accesses it, and how it is handled. Please read it carefully.</p>
+    <div class="info-card safe">
+      <p>🔒 <strong>Core principle:</strong> All analysis happens entirely on your device. No personal data, app data, or scan results are ever transmitted to our servers or any third party.</p>
+    </div>
+  </div>
+
+  <!-- Section 2: Data Collected -->
+  <div class="section" id="data-collected">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <h2>Data We Collect</h2>
+    </div>
+    <p>Privacy Permission Manager does <strong>not</strong> collect, store remotely, or transmit any personally identifiable information. The following data is accessed and processed <strong>locally on your device only</strong>:</p>
+    <ul class="bullet-list">
+      <li>List of installed applications (package names, app labels)</li>
+      <li>Permissions declared and granted to each installed app</li>
+      <li>Special app capabilities (Accessibility, Device Admin, VPN, Notification Listener services)</li>
+      <li>App usage statistics (screen time per app) — only if you grant Usage Access permission</li>
+      <li>App risk scores computed locally from permission analysis</li>
+    </ul>
+    <div class="info-card highlight">
+      <p>📱 This data is stored in a local Room database on your device and never leaves it. Clearing app data or uninstalling the app permanently removes all stored information.</p>
+    </div>
+  </div>
+
+  <!-- Section 3: Permissions Used -->
+  <div class="section" id="permissions">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <h2>App Permissions Used</h2>
+    </div>
+    <p>The app requires the following Android system permissions to function. Each permission is used solely for local analysis — never for data collection.</p>
+    <ul class="perm-list">
+
+      <li>
+        <div class="perm-icon blue">📦</div>
+        <div class="perm-info">
+          <div class="perm-name">QUERY_ALL_PACKAGES</div>
+          <div class="perm-desc">Reads the list of installed apps and their declared permissions for risk analysis. Results are stored locally only.</div>
+        </div>
+        <span class="perm-badge required">Required</span>
+      </li>
+
+      <li>
+        <div class="perm-icon green">🔔</div>
+        <div class="perm-info">
+          <div class="perm-name">POST_NOTIFICATIONS</div>
+          <div class="perm-desc">Sends a local notification when a new app is installed on your device, so you can review its permissions immediately.</div>
+        </div>
+        <span class="perm-badge read-only">Optional</span>
+      </li>
+
+      <li>
+        <div class="perm-icon warn">📊</div>
+        <div class="perm-info">
+          <div class="perm-name">PACKAGE_USAGE_STATS (Usage Access)</div>
+          <div class="perm-desc">Reads foreground screen-time statistics per app. Only used to show the App Usage screen within the app. This is an optional, user-granted special permission.</div>
+        </div>
+        <span class="perm-badge read-only">Optional</span>
+      </li>
+
+      <li>
+        <div class="perm-icon blue">📡</div>
+        <div class="perm-info">
+          <div class="perm-name">RECEIVE_BOOT_COMPLETED</div>
+          <div class="perm-desc">Allows the app to restore its monitoring state after the device restarts, so newly installed app alerts continue to work.</div>
+        </div>
+        <span class="perm-badge required">Required</span>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- Section 4: How We Use Data -->
+  <div class="section" id="data-usage">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <h2>How We Use Data</h2>
+    </div>
+    <p>All data accessed by the app is used exclusively for the following on-device purposes:</p>
+    <ul class="bullet-list">
+      <li><strong>Risk scoring</strong> — Calculating a risk level (Low / Medium / High) for each installed app based on its granted permissions and special capabilities.</li>
+      <li><strong>Permission auditing</strong> — Displaying a detailed breakdown of what each app can access on your device.</li>
+      <li><strong>Snapshot comparison</strong> — Taking periodic snapshots of installed apps to detect newly installed applications since the last scan.</li>
+      <li><strong>Local notifications</strong> — Alerting you when a new app is installed so you can review its permissions.</li>
+      <li><strong>Usage analytics</strong> — Displaying per-app screen time in the App Usage section (only if Usage Access permission is granted).</li>
+    </ul>
+  </div>
+
+  <!-- Section 5: Data Sharing -->
+  <div class="section" id="data-sharing">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <h2>Data Sharing</h2>
+    </div>
+    <p>We do <strong>not</strong> share, sell, rent, or disclose any of your data to third parties under any circumstances. Specifically:</p>
+    <ul class="bullet-list">
+      <li>No data is uploaded to any server, cloud, or backend</li>
+      <li>No analytics SDKs or advertising SDKs are integrated into the app</li>
+      <li>No crash reporting services with remote data collection are used</li>
+      <li>The app functions entirely offline — no internet permission is declared in the manifest</li>
+    </ul>
+    <div class="info-card safe">
+      <p>✅ The app operates 100% offline. It does not request the <code>INTERNET</code> permission, making network data transmission technically impossible.</p>
+    </div>
+  </div>
+
+  <!-- Section 6: Data Storage -->
+  <div class="section" id="data-storage">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <h2>Data Storage &amp; Retention</h2>
+    </div>
+    <p>All data generated by the app is stored in a local SQLite database (via Android Room) on your device's private internal storage. This storage is:</p>
+    <ul class="bullet-list">
+      <li><strong>Private</strong> — accessible only to this app, sandboxed by Android's security model</li>
+      <li><strong>On-device only</strong> — never backed up to cloud services (backup is disabled in the app manifest)</li>
+      <li><strong>User-controlled</strong> — can be cleared at any time via Settings → Apps → Privacy Permission Manager → Clear Data</li>
+      <li><strong>Removed on uninstall</strong> — all app data is permanently deleted when the app is uninstalled</li>
+    </ul>
+    <p>The app stores two snapshots: the current scan result and a previous baseline snapshot used to detect newly installed apps. No historical data beyond these two states is retained.</p>
+  </div>
+
+  <!-- Section 7: Third-Party Services -->
+  <div class="section" id="third-party">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>Privacy Permission Manager does not integrate any third-party SDKs, analytics platforms, advertising networks, or remote services. The app uses only Android platform APIs and the following open-source libraries, all of which operate entirely on-device:</p>
+    <ul class="bullet-list">
+      <li>Android Jetpack (Room, Navigation, Compose) — local UI and database</li>
+      <li>Google Gson — local JSON serialization for share/export features only</li>
+      <li>Kotlin Coroutines — local async processing</li>
+    </ul>
+    <p>The only external service involved is the Google Play Store, which distributes the app. Google's own privacy policy governs Play Store data handling.</p>
+  </div>
+
+  <!-- Section 8: Children's Privacy -->
+  <div class="section" id="children">
+    <div class="section-header">
+      <div class="section-num">08</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>This app is not directed at children under the age of 13. We do not knowingly collect any information from children. Since the app does not collect any personal information from any users, there is no specific risk to children's privacy.</p>
+    <p>If you are a parent or guardian and believe your child has provided personal information through this app, please contact us and we will address the concern promptly.</p>
+  </div>
+
+  <!-- Section 9: Changes -->
+  <div class="section" id="changes">
+    <div class="section-header">
+      <div class="section-num">09</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time to reflect changes in the app's functionality or legal requirements. When we do, the "Last updated" date at the top of this page will be revised.</p>
+    <p>We encourage you to review this policy periodically. Continued use of the app after any changes constitutes your acceptance of the updated policy. For significant changes, we will make reasonable efforts to notify users via the app or Play Store release notes.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Section 10: Contact -->
+  <div class="section" id="contact">
+    <div class="contact-card">
+      <h2>Questions?</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the app's data practices, feel free to reach out.</p>
+      <a href="mailto:zainshah412.za@gmail.com" class="contact-email">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="3" width="14" height="10" rx="2" stroke="white" stroke-width="1.5"/>
+          <path d="M1 5.5L8 10L15 5.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        zainshah412.za@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Zavi Studio. All rights reserved.</p>
+    <a href="#">Privacy Permission Manager</a>
+  </footer>
+
+</div>
+</body>
+</html>
