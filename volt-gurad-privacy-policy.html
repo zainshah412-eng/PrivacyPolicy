@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoltGuard – Privacy Policy</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0F1117;
+    color: #E2E8F0;
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #141824 0%, #1a2235 100%);
+    border-bottom: 1px solid #22334A;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+
+  .logo-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    background: #141824;
+    border: 2px solid #22334A;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .logo-wrap svg { width: 44px; height: 44px; }
+
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #F1F5F9;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .header .subtitle {
+    color: #64748B;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1E2535;
+    border: 1px solid #22334A;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: #94A3B8;
+  }
+
+  .badge .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #22C55E;
+    flex-shrink: 0;
+  }
+
+  /* ── Content ── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .last-updated {
+    display: inline-block;
+    background: #1E2535;
+    border: 1px solid #22334A;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #64748B;
+    margin-bottom: 40px;
+  }
+
+  /* ── Summary cards ── */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .summary-card {
+    background: #141824;
+    border: 1px solid #22334A;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .summary-card .icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .summary-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #F1F5F9;
+    margin-bottom: 4px;
+  }
+
+  .summary-card p {
+    font-size: 12px;
+    color: #64748B;
+    line-height: 1.5;
+  }
+
+  /* ── Sections ── */
+  .section {
+    margin-bottom: 44px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #1E2535;
+  }
+
+  .section-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #1E2535;
+    border: 1px solid #22334A;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #22C55E;
+    flex-shrink: 0;
+  }
+
+  .section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #F1F5F9;
+  }
+
+  .section p {
+    color: #94A3B8;
+    margin-bottom: 12px;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  /* ── Tables ── */
+  .perm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+
+  .perm-table th {
+    background: #1E2535;
+    color: #64748B;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .perm-table th:first-child { border-radius: 8px 0 0 0; }
+  .perm-table th:last-child  { border-radius: 0 8px 0 0; }
+
+  .perm-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #1E2535;
+    color: #94A3B8;
+    vertical-align: top;
+  }
+
+  .perm-table tr:last-child td { border-bottom: none; }
+
+  .perm-table tr:hover td { background: #141824; }
+
+  .perm-name {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    color: #22C55E;
+    background: #0D2218;
+    border: 1px solid #1A3A28;
+    border-radius: 4px;
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+
+  /* ── Highlight box ── */
+  .highlight-box {
+    background: #0D2218;
+    border: 1px solid #1A3A28;
+    border-left: 4px solid #22C55E;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+    color: #86EFAC;
+    font-size: 14px;
+  }
+
+  .warning-box {
+    background: #1A1200;
+    border: 1px solid #3A2A00;
+    border-left: 4px solid #F59E0B;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+    color: #FCD34D;
+    font-size: 14px;
+  }
+
+  /* ── List ── */
+  ul.policy-list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+  }
+
+  ul.policy-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #94A3B8;
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 1px solid #1E2535;
+  }
+
+  ul.policy-list li:last-child { border-bottom: none; }
+
+  ul.policy-list li::before {
+    content: "✓";
+    color: #22C55E;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  ul.policy-list li.no::before {
+    content: "✗";
+    color: #EF4444;
+  }
+
+  /* ── Contact card ── */
+  .contact-card {
+    background: #141824;
+    border: 1px solid #22334A;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .contact-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #F1F5F9;
+    margin-bottom: 8px;
+  }
+
+  .contact-card p {
+    color: #64748B;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .contact-card a {
+    display: inline-block;
+    background: #22C55E;
+    color: #0F1117;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 10px;
+  }
+
+  .contact-card a:hover { background: #16A34A; }
+
+  /* ── Footer ── */
+  footer {
+    background: #141824;
+    border-top: 1px solid #1E2535;
+    padding: 24px;
+    text-align: center;
+    font-size: 13px;
+    color: #475569;
+  }
+
+  footer a { color: #64748B; text-decoration: none; }
+  footer a:hover { color: #94A3B8; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .header h1 { font-size: 22px; }
+    .summary-grid { grid-template-columns: 1fr 1fr; }
+    .perm-table { font-size: 12px; }
+    .perm-name  { font-size: 10px; }
+    .container  { padding: 32px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────── -->
+<div class="header">
+  <div class="logo-wrap">
+    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 3 L38 8 L38 22 Q38 34 22 40 Q6 34 6 22 L6 8 Z" fill="#141824" stroke="#22334A" stroke-width="1.5"/>
+      <path d="M14 30 A10 10 0 1 1 30 30" stroke="#1E2535" stroke-width="4" stroke-linecap="round"/>
+      <path d="M14 30 A10 10 0 0 1 22 12" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+      <path d="M22 12 A10 10 0 0 1 30 30" stroke="#22C55E" stroke-width="4" stroke-linecap="round"/>
+      <polygon points="23,16 18,24 21.5,24 20,32 27,22 23,22 26,16" fill="#FBBF24"/>
+    </svg>
+  </div>
+  <h1>VoltGuard</h1>
+  <div class="subtitle">Privacy Policy</div>
+  <div class="badge-row">
+    <span class="badge"><span class="dot"></span> No data collection</span>
+    <span class="badge"><span class="dot"></span> On-device only</span>
+    <span class="badge"><span class="dot"></span> No account required</span>
+  </div>
+</div>
+
+<!-- ── Content ─────────────────────────────────────────────────── -->
+<div class="container">
+
+  <div class="last-updated">📅 Last updated: May 2025</div>
+
+  <!-- Summary cards -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="icon">🔒</div>
+      <h3>Zero Data Upload</h3>
+      <p>All battery data stays on your device. Nothing is sent to our servers.</p>
+    </div>
+    <div class="summary-card">
+      <div class="icon">👤</div>
+      <h3>No Account</h3>
+      <p>No sign-up, no login, no email required to use VoltGuard.</p>
+    </div>
+    <div class="summary-card">
+      <div class="icon">🚫</div>
+      <h3>No Tracking</h3>
+      <p>We do not track your behavior, location, or usage patterns.</p>
+    </div>
+    <div class="summary-card">
+      <div class="icon">📦</div>
+      <h3>No Third-party Data</h3>
+      <p>Battery data is never shared with advertisers or analytics services.</p>
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Introduction</h2>
+    </div>
+    <p>VoltGuard ("we", "our", or "the app") is a battery health monitoring application developed by ScriptUp Solutions. This Privacy Policy explains what information the app accesses, how it is used, and what rights you have as a user.</p>
+    <p>By installing or using VoltGuard, you agree to the practices described in this policy. If you do not agree, please uninstall the app.</p>
+    <div class="highlight-box">
+      VoltGuard is designed with privacy as a core principle. The app reads battery information from your device solely to display it to you. This information is never transmitted, uploaded, or shared.
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Information the App Reads</h2>
+    </div>
+    <p>VoltGuard reads the following information from your device to provide its features. All of this information is processed locally on your device and is never transmitted externally.</p>
+
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Stored?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Battery level (%)</td>
+          <td>Display current charge, trigger charge alarms</td>
+          <td>Locally in app database</td>
+        </tr>
+        <tr>
+          <td>Battery voltage (mV)</td>
+          <td>Display real-time voltage on dashboard</td>
+          <td>Locally in app database</td>
+        </tr>
+        <tr>
+          <td>Battery temperature (°C)</td>
+          <td>Display temperature, show color-coded alerts</td>
+          <td>Locally in app database</td>
+        </tr>
+        <tr>
+          <td>Charging current (mA)</td>
+          <td>Show charge speed, live current graph</td>
+          <td>Locally in app database</td>
+        </tr>
+        <tr>
+          <td>Battery health status</td>
+          <td>Show health grade (A/B/C/D/F)</td>
+          <td>Locally in app database</td>
+        </tr>
+        <tr>
+          <td>Battery capacity (mAh)</td>
+          <td>Calculate wear level and health percentage</td>
+          <td>Locally in app database</td>
+        </tr>
+        <tr>
+          <td>Charging cycle count</td>
+          <td>Estimate battery aging and cycle history</td>
+          <td>Locally in app database</td>
+        </tr>
+        <tr>
+          <td>App foreground usage time</td>
+          <td>Show per-app battery consumption (Usage screen)</td>
+          <td>Not stored — fetched on demand</td>
+        </tr>
+        <tr>
+          <td>Screen on/off time</td>
+          <td>Calculate deep sleep percentage</td>
+          <td>Not stored — calculated on demand</td>
+        </tr>
+        <tr>
+          <td>Charging session data</td>
+          <td>Session history, habit score, health trend</td>
+          <td>Locally in app database</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>Permissions Explained</h2>
+    </div>
+    <p>VoltGuard requests the following Android permissions. Each is required for a specific feature and is not used beyond that purpose.</p>
+
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Why It's Needed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="perm-name">FOREGROUND_SERVICE</span></td>
+          <td>Keeps battery monitoring active in the background and shows the persistent status notification.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">FOREGROUND_SERVICE_SPECIAL_USE</span></td>
+          <td>Required by Android 14+ to declare battery monitoring as a special use foreground service.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">PACKAGE_USAGE_STATS</span></td>
+          <td>Required to show per-app battery usage on the Usage screen. Must be granted manually by the user in Settings. Optional — all other features work without it.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">SYSTEM_ALERT_WINDOW</span></td>
+          <td>Required for the Gaming Mode floating overlay that shows battery % and temperature over games.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">POST_NOTIFICATIONS</span></td>
+          <td>Required on Android 13+ to show charge alarm notifications and the persistent monitoring notification.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">SCHEDULE_EXACT_ALARM</span></td>
+          <td>Required for the Smart Charge Scheduler to notify you at a precise time when to plug in your charger.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">RECEIVE_BOOT_COMPLETED</span></td>
+          <td>Restarts the battery monitoring service automatically after the device is rebooted.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">WAKE_LOCK</span></td>
+          <td>Prevents the CPU from sleeping during critical battery monitoring tasks.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">VIBRATE</span></td>
+          <td>Vibrates the device when a charge alarm is triggered.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">ACCESS_NETWORK_STATE</span></td>
+          <td>Used by Google AdMob to serve relevant ads. Not used by VoltGuard itself for any data collection.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">INTERNET</span></td>
+          <td>Used by Google AdMob to load advertisements. VoltGuard does not make any network requests itself.</td>
+        </tr>
+        <tr>
+          <td><span class="perm-name">WRITE_EXTERNAL_STORAGE</span></td>
+          <td>Used on Android 9 and below only to export battery history as a CSV file. Only triggered by user action.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Data Storage</h2>
+    </div>
+    <p>VoltGuard stores the following data locally on your device using a private Room (SQLite) database and Android DataStore. This data cannot be accessed by other apps.</p>
+    <ul class="policy-list">
+      <li>Charging session history (start/end time, level, current, energy added)</li>
+      <li>Battery health records (capacity, wear level, cycle count over time)</li>
+      <li>Battery snapshots for trend charts (level, voltage, temperature, timestamp)</li>
+      <li>Gaming session records (per-game battery drain)</li>
+      <li>User preferences (theme, language, alarm settings, notification style)</li>
+    </ul>
+    <div class="highlight-box">
+      All stored data lives in your device's private app storage. It is deleted automatically when you uninstall VoltGuard. You can also clear it manually via Settings → Apps → VoltGuard → Clear Data.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Advertising (Google AdMob)</h2>
+    </div>
+    <p>VoltGuard displays advertisements provided by Google AdMob to support free access to the app. AdMob may use device identifiers to show relevant ads.</p>
+    <ul class="policy-list">
+      <li>AdMob may collect the Android Advertising ID (GAID) for ad personalization</li>
+      <li>AdMob may use device information such as model and OS version</li>
+      <li>Your battery data is never shared with AdMob or any advertiser</li>
+      <li class="no">VoltGuard does not pass any personal or battery data to AdMob</li>
+    </ul>
+    <p>You can opt out of personalized ads at any time via your device settings: <strong>Settings → Google → Ads → Opt out of Ads Personalization</strong>.</p>
+    <p>For more information on how Google uses data in ads, please visit: <a href="https://policies.google.com/technologies/ads" style="color:#22C55E;">policies.google.com/technologies/ads</a></p>
+    <div class="warning-box">
+      VoltGuard Pro (paid upgrade) removes all advertisements entirely.
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>What We Do NOT Do</h2>
+    </div>
+    <ul class="policy-list">
+      <li class="no">We do not collect, upload, or transmit your battery data to any server</li>
+      <li class="no">We do not require you to create an account or provide an email address</li>
+      <li class="no">We do not track your location at any time</li>
+      <li class="no">We do not sell your data to any third party</li>
+      <li class="no">We do not share your data with analytics platforms (Firebase, Mixpanel, etc.)</li>
+      <li class="no">We do not access your contacts, messages, photos, or files</li>
+      <li class="no">We do not access your camera or microphone</li>
+      <li class="no">We do not perform any data collection in the background beyond battery monitoring</li>
+    </ul>
+  </div>
+
+  <!-- 7 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>VoltGuard does not knowingly collect any personal information from children under the age of 13. The app does not collect personal information from any user of any age. If you believe a child has provided personal information through this app, please contact us and we will address the situation promptly.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Data Security</h2>
+    </div>
+    <p>Since VoltGuard does not transmit any data externally, the primary security boundary is your device itself. All locally stored data is protected by Android's application sandbox — other apps cannot access VoltGuard's private database.</p>
+    <p>We recommend keeping your device's operating system up to date to maintain the latest security protections.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Your Rights</h2>
+    </div>
+    <p>You have full control over your data:</p>
+    <ul class="policy-list">
+      <li>Revoke any permission at any time via Settings → Apps → VoltGuard → Permissions</li>
+      <li>Clear all locally stored data via Settings → Apps → VoltGuard → Clear Data</li>
+      <li>Export your battery history as CSV from the Settings screen</li>
+      <li>Uninstall the app to permanently delete all stored data</li>
+    </ul>
+  </div>
+
+  <!-- 10 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically.</p>
+    <p>Continued use of VoltGuard after any changes to this policy constitutes your acceptance of the revised policy.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <h3>Questions or Concerns?</h3>
+    <p>If you have any questions about this Privacy Policy or VoltGuard's data practices, please contact us.</p>
+    <a href="mailto:support@scriptupsolutions.com">support@scriptupsolutions.com</a>
+    <p style="margin-top:16px; font-size:13px; color:#475569;">ScriptUp Solutions · Pakistan 🇵🇰</p>
+  </div>
+
+</div>
+
+<!-- ── Footer ───────────────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 ScriptUp Solutions. All rights reserved.</p>
+  <p style="margin-top:6px;">
+    <a href="mailto:support@scriptupsolutions.com">Contact Us</a>
+    &nbsp;·&nbsp;
+    VoltGuard — Smart Battery Monitor
+  </p>
+</footer>
+
+</body>
+</html>
