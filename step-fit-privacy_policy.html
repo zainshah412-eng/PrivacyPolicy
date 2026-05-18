@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — StepFit</title>
+  <meta name="description" content="StepFit privacy policy. Learn how we handle your data in our step counter and pedometer app for Android." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:       #6C5CE7;
+      --purple-light: #9B84F5;
+      --purple-tint:  #EDE9FF;
+      --green:        #00C48C;
+      --bg:           #F0F3FA;
+      --surface:      #FFFFFF;
+      --text-primary: #1A1D2E;
+      --text-secondary: #6B7280;
+      --border:       #E8EAF2;
+      --radius-card:  20px;
+      --radius-pill:  100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ──────────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+      padding: 0 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 90%, rgba(0,196,140,0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 0 52px;
+      position: relative;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius-pill);
+      padding: 6px 14px 6px 8px;
+      margin-bottom: 24px;
+      text-decoration: none;
+    }
+
+    .app-icon {
+      width: 28px;
+      height: 28px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .app-badge span {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.01em;
+    }
+
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    header h1 em {
+      font-style: italic;
+      color: var(--green);
+    }
+
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-pill);
+      padding: 5px 12px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 400;
+    }
+
+    .badge-pill .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* ── Layout ──────────────────────────────────────────────────── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Quick summary bar ───────────────────────────────────────── */
+    .summary-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 48px;
+      animation: fadeUp 0.5s ease both;
+      animation-delay: 0.1s;
+    }
+
+    .summary-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 18px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .summary-item:hover {
+      box-shadow: 0 8px 24px rgba(108,92,231,0.10);
+      transform: translateY(-2px);
+    }
+
+    .summary-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+
+    .summary-icon.green  { background: #E0F7F1; }
+    .summary-icon.purple { background: var(--purple-tint); }
+    .summary-icon.orange { background: #FFF0E6; }
+    .summary-icon.blue   { background: #E5F3FF; }
+
+    .summary-text strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .summary-text span {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* ── Sections ────────────────────────────────────────────────── */
+    .section {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      animation: fadeUp 0.5s ease both;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .section:hover {
+      box-shadow: 0 4px 20px rgba(108,92,231,0.07);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .section-num {
+      width: 32px;
+      height: 32px;
+      background: var(--purple-tint);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--purple);
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .section p + p {
+      margin-top: 12px;
+    }
+
+    /* ── List items ──────────────────────────────────────────────── */
+    .perm-list, .use-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .perm-list li, .use-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+    }
+
+    .perm-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--purple);
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    .use-list li::before {
+      content: '✓';
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .perm-list strong, .use-list strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* ── Highlight box ───────────────────────────────────────────── */
+    .highlight-box {
+      background: var(--purple-tint);
+      border: 1px solid rgba(108,92,231,0.2);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--purple);
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .highlight-box::before {
+      content: '🔒';
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ── Contact section ─────────────────────────────────────────── */
+    .contact-section {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--purple-light) 100%);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.5s ease both;
+      animation-delay: 0.4s;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .contact-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .contact-section p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: var(--radius-pill);
+      padding: 10px 22px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14.5px;
+      position: relative;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .contact-link:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-1px);
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Animations ──────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section:nth-child(1)  { animation-delay: 0.05s; }
+    .section:nth-child(2)  { animation-delay: 0.10s; }
+    .section:nth-child(3)  { animation-delay: 0.15s; }
+    .section:nth-child(4)  { animation-delay: 0.20s; }
+    .section:nth-child(5)  { animation-delay: 0.25s; }
+    .section:nth-child(6)  { animation-delay: 0.30s; }
+    .section:nth-child(7)  { animation-delay: 0.35s; }
+    .section:nth-child(8)  { animation-delay: 0.38s; }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .section { padding: 22px 20px; }
+      .container { padding: 32px 16px 64px; }
+      .contact-section { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <a class="app-badge" href="#">
+        <span class="app-icon">🚶</span>
+        <span>StepFit – Step Counter &amp; Tracker</span>
+      </a>
+      <h1>Privacy <em>Policy</em></h1>
+      <div class="header-meta">
+        <div class="badge-pill"><span class="dot"></span> Last updated: May 2026</div>
+        <div class="badge-pill"><span class="dot"></span> Effective immediately</div>
+        <div class="badge-pill"><span class="dot"></span> Android App</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Main content ───────────────────────────────────────────── -->
+  <main class="container">
+
+    <!-- Quick summary cards -->
+    <div class="summary-bar">
+      <div class="summary-item">
+        <div class="summary-icon green">🛡</div>
+        <div class="summary-text">
+          <strong>100% Private</strong>
+          <span>All data stays on your device</span>
+        </div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-icon purple">🚫</div>
+        <div class="summary-text">
+          <strong>No Data Selling</strong>
+          <span>We never share or sell your data</span>
+        </div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-icon orange">🔑</div>
+        <div class="summary-text">
+          <strong>No Login Required</strong>
+          <span>Use the app without an account</span>
+        </div>
+      </div>
+      <div class="summary-item">
+        <div class="summary-icon blue">📵</div>
+        <div class="summary-text">
+          <strong>No GPS Tracking</strong>
+          <span>Uses sensor only, not location</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="section">
+      <p>
+        This Privacy Policy describes how <strong>StepFit</strong> ("we", "our", or "us") — developed by
+        <strong>Zavi Studio</strong> — handles your information when you use the StepFit Android application
+        ("the App"). We are committed to protecting your privacy and being fully transparent about our practices.
+      </p>
+      <p>
+        By using StepFit, you agree to the collection and use of information as described in this policy.
+        If you do not agree, please discontinue use of the App.
+      </p>
+      <div class="highlight-box">
+        Short version: StepFit stores all your data locally on your device. We do not operate servers that receive your personal health data.
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>Data We Collect</h2>
+      </div>
+      <p>StepFit collects the following data, all of which is stored locally on your device and <strong>never transmitted to our servers</strong>:</p>
+      <ul class="perm-list">
+        <li><span><strong>Step count</strong> — via the Android Step Counter hardware sensor</span></li>
+        <li><span><strong>Calories burned, distance walked, active minutes</strong> — calculated from your step count and body measurements</span></li>
+        <li><span><strong>Personal profile</strong> — name, date of birth, gender, height, weight, stride length (entered voluntarily by you to improve calculation accuracy)</span></li>
+        <li><span><strong>Fitness goal preference</strong> — Lose Weight, Stay Active, Stay Fit, or Reduce Stress</span></li>
+        <li><span><strong>App preferences</strong> — theme, measurement units, notification settings</span></li>
+        <li><span><strong>Profile photo</strong> — stored as a local URI reference on your device; the image file itself is never copied or uploaded</span></li>
+      </ul>
+      <p style="margin-top: 14px;">We do not collect your GPS location, contacts, call logs, camera stream, microphone input, or any other data not listed above.</p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2>How We Use Your Data</h2>
+      </div>
+      <p>All data collected is used solely to provide and improve the StepFit experience:</p>
+      <ul class="use-list">
+        <li><span>Calculate and display your daily, weekly, and lifetime step statistics</span></li>
+        <li><span>Personalise calorie burn and distance calculations using your height, weight, and stride length</span></li>
+        <li><span>Track your progress toward daily step goals and mini-goals</span></li>
+        <li><span>Display achievement badges when you reach milestones</span></li>
+        <li><span>Send optional push notifications — daily reminders, goal reached alerts, and inactivity nudges (only if you enable them in Settings)</span></li>
+        <li><span>Apply your selected app theme and measurement unit preferences</span></li>
+      </ul>
+      <p style="margin-top:14px;">We do not use your data for advertising profiling, analytics reporting, or any purpose outside of the App's core functionality.</p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2>Data Storage &amp; Security</h2>
+      </div>
+      <p>
+        All data is stored exclusively on your Android device using <strong>Android Room (SQLite)</strong> for step history
+        and <strong>Jetpack DataStore</strong> for preferences and personal information. No data is uploaded to
+        any cloud server operated by Zavi Studio.
+      </p>
+      <p>
+        Your data is protected by your device's built-in security features (screen lock, encryption) and Android's
+        app sandboxing — other apps cannot access StepFit's stored data.
+      </p>
+      <p>
+        If a Google Drive backup feature is introduced in a future release, it will be strictly opt-in,
+        and only your step history in CSV format will be written to your own personal Google Drive account,
+        governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--purple);">Google's Privacy Policy</a>.
+      </p>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2>Permissions We Request</h2>
+      </div>
+      <p>StepFit requests only the permissions it needs to function. Here is exactly why each permission is required:</p>
+      <ul class="perm-list">
+        <li><span><strong>ACTIVITY_RECOGNITION</strong> — required on Android 10+ to read step count data from the device's motion sensor. Without this, the step counter cannot function.</span></li>
+        <li><span><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_HEALTH</strong> — required to count steps while the app is in the background. The persistent notification you see is a system requirement for this service.</span></li>
+        <li><span><strong>POST_NOTIFICATIONS</strong> — required on Android 13+ to send daily reminders, goal alerts, and inactivity nudges. These are all optional and can be disabled in Settings.</span></li>
+        <li><span><strong>RECEIVE_BOOT_COMPLETED</strong> — allows the step counter service to restart automatically after your device reboots, ensuring continuous step tracking.</span></li>
+        <li><span><strong>INTERNET / ACCESS_NETWORK_STATE</strong> — required exclusively to load Google AdMob banner advertisements. No personal data is sent over this connection by StepFit itself.</span></li>
+        <li><span><strong>READ_MEDIA_IMAGES (API 33+) or READ_EXTERNAL_STORAGE</strong> — requested only when you choose to select a profile photo from your gallery. StepFit accesses only the single image you select.</span></li>
+        <li><span><strong>SCHEDULE_EXACT_ALARM</strong> — required to fire daily reminder notifications at the precise time you configure.</span></li>
+      </ul>
+      <p style="margin-top: 14px;">You can revoke any permission at any time in your device's <strong>Settings → Apps → StepFit → Permissions</strong>. Revoking a permission may disable the corresponding feature.</p>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2>Advertisements (Google AdMob)</h2>
+      </div>
+      <p>
+        StepFit displays banner advertisements powered by <strong>Google AdMob</strong>. AdMob operates independently
+        of StepFit and may collect certain device identifiers (such as an advertising ID) and usage signals to
+        serve relevant ads, in accordance with
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--purple);">Google's Privacy Policy</a>.
+      </p>
+      <p>
+        StepFit itself does not pass any of your personal health data (steps, weight, goals, etc.) to AdMob.
+        AdMob operates in an isolated web view context and only has access to standard device identifiers.
+      </p>
+      <p>
+        You can opt out of personalised advertisements at any time by going to your device's
+        <strong>Settings → Google → Ads → Delete advertising ID</strong>, or by enabling "Opt out of Ads Personalisation".
+      </p>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <h2>Third-Party Services &amp; Integrations</h2>
+      </div>
+      <p>StepFit supports optional connections to third-party health platforms. These are all <strong>opt-in</strong> and can be toggled off in <strong>Settings → Connect Apps</strong>:</p>
+      <ul class="perm-list">
+        <li><span><strong>Google Fit, Samsung Health, Fitbit</strong> — via Android Health Connect API. Data sharing is governed by the respective platform's privacy policy.</span></li>
+        <li><span><strong>MyFitnessPal, Strava, Runkeeper</strong> — integration toggles are available. When connected, only step and calorie data is shared.</span></li>
+        <li><span><strong>Wear OS</strong> — smartwatch pairing for live step data display.</span></li>
+      </ul>
+      <p style="margin-top: 14px;">Disabling a toggle immediately stops any ongoing data sync. We recommend reviewing each platform's own privacy policy to understand how they handle data.</p>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>
+        StepFit is not directed at children under the age of 13. We do not knowingly collect personal information
+        from children under 13. If you are a parent or guardian and believe your child has provided personal
+        information through the App, please contact us at
+        <a href="mailto:support@zavistudio.com" style="color: var(--purple);">support@zavistudio.com</a>
+        and we will take immediate steps to delete that information.
+      </p>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">8</div>
+        <h2>Your Rights &amp; Data Control</h2>
+      </div>
+      <p>
+        Because all data is stored locally on your device, you are always in complete control.
+        You have the following rights at any time:
+      </p>
+      <ul class="use-list">
+        <li><span><strong>Access</strong> — all your data is visible inside the App at any time.</span></li>
+        <li><span><strong>Delete</strong> — go to <strong>Settings → Delete all data</strong> to permanently erase all step history, personal info, and preferences.</span></li>
+        <li><span><strong>Export</strong> — a CSV export feature is available to download your step history.</span></li>
+        <li><span><strong>Uninstall</strong> — uninstalling the App removes all locally stored data from your device permanently.</span></li>
+        <li><span><strong>Revoke permissions</strong> — disable any permission in your device Settings at any time.</span></li>
+      </ul>
+      <div class="highlight-box">
+        We do not hold copies of your data on any external server, so there is nothing additional to request deletion of from us.
+      </div>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">9</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>
+        We may update this Privacy Policy from time to time to reflect changes in the App's features,
+        legal requirements, or our practices. When we do, we will update the "Last updated" date at the
+        top of this page.
+      </p>
+      <p>
+        For significant changes, we will notify you via an in-app notice. Continued use of StepFit after
+        any changes constitutes your acceptance of the revised Privacy Policy. We encourage you to
+        review this page periodically.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-section">
+      <h2>Questions? We're here.</h2>
+      <p>If you have any questions or concerns about this Privacy Policy or how StepFit handles your data, get in touch.</p>
+      <a class="contact-link" href="mailto:support@zavistudio.com">
+        ✉️ &nbsp;support@zavistudio.com
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ──────────────────────────────────────────────────── -->
+  <footer>
+    <p>
+      &copy; 2026 <strong>Zavi Studio</strong> · StepFit – Step Counter &amp; Tracker ·
+      <a href="mailto:support@zavistudio.com">Contact</a>
+    </p>
+    <p style="margin-top: 6px; font-size: 12px; color: #9CA3AF;">
+      Built with ❤️ for Android · All data stays on your device
+    </p>
+  </footer>
+
+</body>
+</html>
