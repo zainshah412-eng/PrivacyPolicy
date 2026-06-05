@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — نماز ٹائم | Namaz Time & Qibla</title>
+  <meta name="description" content="Privacy Policy for Namaz Time & Qibla Android app by Zavi Studio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── CSS Variables — Islamic green/gold palette ───────────────────── */
+    :root {
+      --green-900: #0A2E19;
+      --green-800: #0D4A26;
+      --green-700: #1B6B3A;
+      --green-600: #2E8B57;
+      --green-400: #4CAF7D;
+      --green-100: #E8F5EE;
+      --green-50:  #F3FAF6;
+      --gold-700:  #8B6914;
+      --gold-500:  #D4AF37;
+      --gold-400:  #E8C84A;
+      --gold-100:  #FDF7DC;
+      --white:     #FFFFFF;
+      --text-900:  #0F1F15;
+      --text-700:  #1E3D2A;
+      --text-500:  #3D6B4F;
+      --text-400:  #5A8A6E;
+      --text-300:  #8AB89A;
+      --border:    #C8E6D4;
+      --shadow:    rgba(27, 107, 58, 0.12);
+    }
+
+    /* ── Reset & Base ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--green-50);
+      color: var(--text-900);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Geometric background pattern ────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(27,107,58,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 85% 85%, rgba(212,175,55,0.06) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B6B3A' fill-opacity='0.03'%3E%3Cpath d='M30 0L37 11H23L30 0zm0 60L23 49h14L30 60zM0 30L11 23v14L0 30zm60 0L49 37V23L60 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Header ───────────────────────────────────────────────────────── */
+    header {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 60%, var(--green-600) 100%);
+      padding: 0;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 60px;
+      background: var(--green-50);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    /* Crescent decoration */
+    header::before {
+      content: '☽';
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(80px, 15vw, 160px);
+      color: rgba(212,175,55,0.08);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 32px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,175,55,0.18);
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-400);
+      margin-bottom: 20px;
+    }
+
+    .badge::before { content: '🕌'; font-size: 14px; }
+
+    h1 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .urdu-title {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: clamp(20px, 3.5vw, 32px);
+      color: var(--gold-400);
+      direction: rtl;
+      display: block;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .meta-chip .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold-400);
+      flex-shrink: 0;
+    }
+
+    /* ── Main layout ──────────────────────────────────────────────────── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    /* ── Table of Contents ────────────────────────────────────────────── */
+    .toc {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .toc-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-400);
+      margin-bottom: 16px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-700);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .toc a:hover {
+      background: var(--green-100);
+      color: var(--green-800);
+    }
+
+    .toc a .num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-500);
+      min-width: 18px;
+    }
+
+    /* ── Section cards ────────────────────────────────────────────────── */
+    .section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px var(--shadow);
+      scroll-margin-top: 24px;
+      transition: box-shadow 0.2s;
+    }
+
+    .section:hover {
+      box-shadow: 0 8px 32px rgba(27,107,58,0.16);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--green-700), var(--green-600));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(27,107,58,0.25);
+    }
+
+    .section-title-wrap { flex: 1; }
+
+    h2 {
+      font-family: 'Amiri', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-700);
+      line-height: 1.3;
+      margin-bottom: 2px;
+    }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-300);
+    }
+
+    p {
+      color: var(--text-500);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Info cards inside sections ───────────────────────────────────── */
+    .info-card {
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .info-card.green {
+      background: var(--green-50);
+      border-left: 3px solid var(--green-600);
+      color: var(--text-500);
+    }
+
+    .info-card.gold {
+      background: var(--gold-100);
+      border-left: 3px solid var(--gold-500);
+      color: var(--gold-700);
+    }
+
+    .info-card.neutral {
+      background: #F8F9FA;
+      border-left: 3px solid #CBD5E1;
+      color: #475569;
+    }
+
+    .info-card strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Permission table ─────────────────────────────────────────────── */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .perm-table th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-400);
+      background: var(--green-50);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .perm-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-500);
+      vertical-align: top;
+    }
+
+    .perm-table tr:last-child td { border-bottom: none; }
+
+    .perm-table tr:hover td { background: var(--green-50); }
+
+    .perm-name {
+      font-family: 'DM Sans', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green-700);
+      background: var(--green-100);
+      padding: 3px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    /* ── Data row items ───────────────────────────────────────────────── */
+    .data-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .data-row:last-child { border-bottom: none; }
+
+    .data-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .data-icon.collected { background: var(--green-100); }
+    .data-icon.not-collected { background: #FEF2F2; }
+
+    .data-label { font-weight: 600; color: var(--text-700); margin-bottom: 2px; }
+    .data-desc  { color: var(--text-400); font-size: 13px; }
+
+    /* ── Third party list ─────────────────────────────────────────────── */
+    .third-party-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .third-party-item:hover {
+      border-color: var(--green-400);
+      background: var(--green-50);
+    }
+
+    .tp-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--green-100);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .tp-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-700);
+    }
+
+    .tp-desc {
+      font-size: 12px;
+      color: var(--text-400);
+      margin-top: 2px;
+    }
+
+    .tp-link {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--green-600);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ── Contact box ──────────────────────────────────────────────────── */
+    .contact-box {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 100%);
+      border-radius: 16px;
+      padding: 36px 40px;
+      text-align: center;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: '☽';
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 100px;
+      color: rgba(212,175,55,0.07);
+      pointer-events: none;
+    }
+
+    .contact-box h2 {
+      color: var(--white);
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: 100px;
+      padding: 12px 28px;
+      color: var(--gold-400);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .contact-email:hover {
+      background: rgba(212,175,55,0.25);
+    }
+
+    /* ── Footer ───────────────────────────────────────────────────────── */
+    footer {
+      position: relative;
+      z-index: 1;
+      background: var(--green-900);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--gold-400);
+      font-weight: 600;
+    }
+
+    .footer-divider {
+      margin: 0 12px;
+      opacity: 0.4;
+    }
+
+    /* ── Responsive ───────────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .header-inner { padding: 40px 20px 70px; }
+      main { padding: 32px 16px 60px; }
+      .section { padding: 24px 20px; }
+      .contact-box { padding: 28px 20px; }
+      .toc { padding: 20px; }
+      .perm-table { font-size: 12px; }
+      .perm-table th,
+      .perm-table td { padding: 8px 10px; }
+      h2 { font-size: 19px; }
+    }
+
+    /* ── Scroll reveal animation ──────────────────────────────────────── */
+    .section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section:nth-child(1)  { animation-delay: 0.05s; }
+    .section:nth-child(2)  { animation-delay: 0.10s; }
+    .section:nth-child(3)  { animation-delay: 0.15s; }
+    .section:nth-child(4)  { animation-delay: 0.20s; }
+    .section:nth-child(5)  { animation-delay: 0.25s; }
+    .section:nth-child(6)  { animation-delay: 0.30s; }
+    .section:nth-child(7)  { animation-delay: 0.35s; }
+    .section:nth-child(8)  { animation-delay: 0.40s; }
+    .section:nth-child(9)  { animation-delay: 0.45s; }
+    .section:nth-child(10) { animation-delay: 0.50s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <div class="badge">Privacy Policy</div>
+      <h1>Namaz Time &amp; Qibla</h1>
+      <span class="urdu-title">نماز ٹائم اور قبلہ — رازداری کی پالیسی</span>
+      <div class="header-meta">
+        <span class="meta-chip"><span class="dot"></span>Zavi Studio</span>
+        <span class="meta-chip"><span class="dot"></span>Package: com.scriptup.prayertimes</span>
+        <span class="meta-chip"><span class="dot"></span>Last updated: June 2025</span>
+        <span class="meta-chip"><span class="dot"></span>Effective: June 2025</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN ───────────────────────────────────────────────────────────── -->
+  <main>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+      <div class="toc-title">Contents</div>
+      <div class="toc-grid">
+        <a href="#overview">        <span class="num">01</span> Overview</a>
+        <a href="#data-collected">  <span class="num">02</span> Data We Collect</a>
+        <a href="#data-not-collected"><span class="num">03</span> Data We Do NOT Collect</a>
+        <a href="#permissions">     <span class="num">04</span> App Permissions</a>
+        <a href="#local-storage">   <span class="num">05</span> Local Storage</a>
+        <a href="#third-party">     <span class="num">06</span> Third-Party Services</a>
+        <a href="#admob">           <span class="num">07</span> Advertising (AdMob)</a>
+        <a href="#children">        <span class="num">08</span> Children's Privacy</a>
+        <a href="#rights">          <span class="num">09</span> Your Rights</a>
+        <a href="#contact">         <span class="num">10</span> Contact Us</a>
+      </div>
+    </div>
+
+    <!-- 01 Overview -->
+    <div class="section" id="overview">
+      <div class="section-header">
+        <div class="section-icon">🕌</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 01</div>
+          <h2>Overview</h2>
+        </div>
+      </div>
+      <p>
+        <strong style="color:var(--text-700)">Namaz Time &amp; Qibla</strong> ("the App") is developed
+        by <strong style="color:var(--text-700)">Zavi Studio</strong>. This Privacy Policy explains what
+        information the App collects, how it is used, and your choices regarding your data.
+      </p>
+      <p>
+        By using this App, you agree to the practices described in this policy. If you do not agree,
+        please discontinue use of the App.
+      </p>
+      <div class="info-card green">
+        <strong>Our Core Principle</strong>
+        This App is designed to work fully offline. We do not operate any server that receives
+        or stores your personal data. Your prayer times, location, and tracker data stay
+        on your device only.
+      </div>
+    </div>
+
+    <!-- 02 Data We Collect -->
+    <div class="section" id="data-collected">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 02</div>
+          <h2>Data We Collect</h2>
+        </div>
+      </div>
+      <p>
+        The App collects only the minimum information needed to calculate accurate prayer
+        times and provide its features. All data is stored locally on your device.
+      </p>
+
+      <div class="data-row">
+        <div class="data-icon collected">📍</div>
+        <div>
+          <div class="data-label">Location (Latitude &amp; Longitude)</div>
+          <div class="data-desc">
+            Used solely to calculate prayer times and Qibla direction for your area.
+            Stored on your device only via Android DataStore. Never transmitted to any server.
+            You may enter your location manually instead of using GPS.
+          </div>
+        </div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-icon collected">🌆</div>
+        <div>
+          <div class="data-label">City &amp; Country Name</div>
+          <div class="data-desc">
+            Derived from your GPS coordinates via Android Geocoder for display purposes only.
+            Stored locally. Not shared with anyone.
+          </div>
+        </div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-icon collected">⚙️</div>
+        <div>
+          <div class="data-label">App Settings &amp; Preferences</div>
+          <div class="data-desc">
+            Your chosen calculation method, Azan sound, reminder times, language preference,
+            and prayer enable/disable toggles. Stored locally on your device only.
+          </div>
+        </div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-icon collected">🕐</div>
+        <div>
+          <div class="data-label">Prayer Tracking Data</div>
+          <div class="data-desc">
+            Records of which prayers you have marked as completed or missed. Stored locally
+            in Room database on your device. Never uploaded or shared.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Data We Do NOT Collect -->
+    <div class="section" id="data-not-collected">
+      <div class="section-header">
+        <div class="section-icon">🚫</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 03</div>
+          <h2>Data We Do NOT Collect</h2>
+        </div>
+      </div>
+      <p>
+        We want to be completely transparent. The following data is <strong style="color:var(--text-700)">never
+        collected, stored, or transmitted</strong> by Zavi Studio:
+      </p>
+
+      <div class="data-row">
+        <div class="data-icon not-collected">✗</div>
+        <div>
+          <div class="data-label">Name, email address, or any account information</div>
+          <div class="data-desc">No account or registration is required to use this App.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon not-collected">✗</div>
+        <div>
+          <div class="data-label">Phone number or device identifiers</div>
+          <div class="data-desc">We do not collect IMEI, phone number, or any unique device ID.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon not-collected">✗</div>
+        <div>
+          <div class="data-label">Contacts, messages, or call logs</div>
+          <div class="data-desc">The App has no access to your contacts or communications.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon not-collected">✗</div>
+        <div>
+          <div class="data-label">Browsing history or app usage data</div>
+          <div class="data-desc">We do not track what other apps you use or websites you visit.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon not-collected">✗</div>
+        <div>
+          <div class="data-label">Financial or payment information</div>
+          <div class="data-desc">The App is free and requires no payment details.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon not-collected">✗</div>
+        <div>
+          <div class="data-label">Real-time or continuous location tracking</div>
+          <div class="data-desc">Location is read once when you tap "Detect My Location". It is not
+          tracked continuously or in the background.</div>
+        </div>
+      </div>
+
+      <div class="info-card gold">
+        <strong>Note on AdMob</strong>
+        Google AdMob (our advertising partner) may collect certain anonymous device and
+        usage data independently for ad personalization. See Section 07 for full details
+        and how to opt out.
+      </div>
+    </div>
+
+    <!-- 04 Permissions -->
+    <div class="section" id="permissions">
+      <div class="section-header">
+        <div class="section-icon">🔐</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 04</div>
+          <h2>App Permissions Explained</h2>
+        </div>
+      </div>
+      <p>
+        The following Android permissions are requested by the App. Each permission is used
+        only for its stated purpose.
+      </p>
+
+      <table class="perm-table">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why It's Needed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="perm-name">ACCESS_FINE_LOCATION</span><br><span class="perm-name">ACCESS_COARSE_LOCATION</span></td>
+            <td>To detect your GPS coordinates once for calculating accurate prayer times and Qibla direction. Not used continuously. You can skip this and enter your city manually.</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">POST_NOTIFICATIONS</span></td>
+            <td>To show Azan alerts and prayer reminder notifications at prayer times. Required on Android 13+.</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">SCHEDULE_EXACT_ALARM</span><br><span class="perm-name">USE_EXACT_ALARM</span></td>
+            <td>To trigger Azan notifications at precise prayer times. Without this, alarms may be delayed by Android's battery optimization.</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">FOREGROUND_SERVICE</span><br><span class="perm-name">FOREGROUND_SERVICE_MEDIA_PLAYBACK</span></td>
+            <td>To play the Azan audio reliably in the foreground without being interrupted by Android's background process limits.</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">RECEIVE_BOOT_COMPLETED</span></td>
+            <td>To reschedule prayer alarms automatically after the device is restarted, so you never miss an Azan.</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">VIBRATE</span></td>
+            <td>To provide vibration feedback in the digital Tasbeeh counter feature.</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">WAKE_LOCK</span></td>
+            <td>To ensure the Azan plays even when the screen is off or the device is in sleep mode.</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">INTERNET</span></td>
+            <td>Required only to load advertisements from Google AdMob. Prayer time calculations work fully offline.</td>
+          </tr>
+          <tr>
+            <td>Accelerometer &amp; Compass sensors</td>
+            <td>To power the live Qibla compass screen. Only active when the Qibla screen is open.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 05 Local Storage -->
+    <div class="section" id="local-storage">
+      <div class="section-header">
+        <div class="section-icon">💾</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 05</div>
+          <h2>Local Storage</h2>
+        </div>
+      </div>
+      <p>
+        All data saved by this App is stored locally on your device using Android's
+        built-in secure storage systems. No data leaves your device to any server
+        operated by Zavi Studio.
+      </p>
+
+      <div class="info-card green">
+        <strong>Android DataStore (Preferences)</strong>
+        Stores your settings: location coordinates, city name, calculation method, Azan
+        sound preference, reminder minutes, and language selection.
+      </div>
+
+      <div class="info-card green">
+        <strong>Room Database (SQLite)</strong>
+        Stores prayer time cache for the current day and your prayer tracker records
+        (which prayers you marked completed or missed).
+      </div>
+
+      <div class="info-card neutral">
+        <strong>How to delete all data</strong>
+        Go to Android Settings → Apps → Namaz Time → Storage → Clear Data.
+        This permanently removes all locally stored data. Uninstalling the App also
+        removes all data.
+      </div>
+    </div>
+
+    <!-- 06 Third-Party Services -->
+    <div class="section" id="third-party">
+      <div class="section-header">
+        <div class="section-icon">🔗</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 06</div>
+          <h2>Third-Party Services</h2>
+        </div>
+      </div>
+      <p>
+        This App uses the following third-party libraries and services. Each operates under
+        its own privacy policy.
+      </p>
+
+      <a class="third-party-item" href="https://developers.google.com/admob/android/privacy" target="_blank" rel="noopener">
+        <div class="tp-icon">📢</div>
+        <div>
+          <div class="tp-name">Google AdMob</div>
+          <div class="tp-desc">Advertising SDK — may collect anonymous usage data for ads</div>
+        </div>
+        <span class="tp-link">View Policy →</span>
+      </a>
+
+      <a class="third-party-item" href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+        <div class="tp-icon">📍</div>
+        <div>
+          <div class="tp-name">Google Play Services — Location</div>
+          <div class="tp-desc">FusedLocationProviderClient for one-time GPS detection</div>
+        </div>
+        <span class="tp-link">View Policy →</span>
+      </a>
+
+      <a class="third-party-item" href="https://github.com/batoulapps/adhan-java" target="_blank" rel="noopener">
+        <div class="tp-icon">🕐</div>
+        <div>
+          <div class="tp-name">Adhan Library (batoulapps)</div>
+          <div class="tp-desc">Open-source prayer time calculation — runs 100% on-device, no data sent</div>
+        </div>
+        <span class="tp-link">View on GitHub →</span>
+      </a>
+
+      <a class="third-party-item" href="https://developers.google.com/android/guides/overview" target="_blank" rel="noopener">
+        <div class="tp-icon">⚙️</div>
+        <div>
+          <div class="tp-name">Google Hilt / Room / WorkManager</div>
+          <div class="tp-desc">Android Jetpack libraries — local only, no data transmitted</div>
+        </div>
+        <span class="tp-link">View Policy →</span>
+      </a>
+    </div>
+
+    <!-- 07 AdMob -->
+    <div class="section" id="admob">
+      <div class="section-header">
+        <div class="section-icon">📣</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 07</div>
+          <h2>Advertising (Google AdMob)</h2>
+        </div>
+      </div>
+      <p>
+        This App displays advertisements provided by <strong style="color:var(--text-700)">Google AdMob</strong>.
+        AdMob may use cookies and similar technologies to serve ads based on your prior
+        visits to this App or other websites and apps.
+      </p>
+      <p>
+        AdMob may collect the following information independently:
+      </p>
+
+      <div class="data-row">
+        <div class="data-icon collected">📱</div>
+        <div>
+          <div class="data-label">Advertising ID (GAID)</div>
+          <div class="data-desc">A resettable anonymous identifier used for ad personalization.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon collected">🌐</div>
+        <div>
+          <div class="data-label">IP Address &amp; General Location</div>
+          <div class="data-desc">Used to serve geographically relevant ads. Not precise GPS location.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon collected">📊</div>
+        <div>
+          <div class="data-label">Ad interaction data</div>
+          <div class="data-desc">Whether an ad was viewed or tapped. Used to measure ad performance.</div>
+        </div>
+      </div>
+
+      <div class="info-card gold">
+        <strong>How to opt out of personalized ads</strong>
+        Go to your Android device: Settings → Google → Ads → Delete Advertising ID
+        (Android 12+) or opt out of Ads Personalization (older Android).
+        You can also visit <a href="https://adssettings.google.com" style="color:var(--gold-700);font-weight:600">adssettings.google.com</a> to manage your preferences.
+      </div>
+
+      <div class="info-card green">
+        <strong>Our Ad Placement Policy</strong>
+        We never display ads on screens showing Quranic text, prayer content, Duas,
+        or the Qibla compass. Ads are shown only on the Home screen and Settings screen,
+        never during any religious content.
+      </div>
+    </div>
+
+    <!-- 08 Children -->
+    <div class="section" id="children">
+      <div class="section-header">
+        <div class="section-icon">👶</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 08</div>
+          <h2>Children's Privacy</h2>
+        </div>
+      </div>
+      <p>
+        This App is not directed at children under the age of 13. We do not knowingly
+        collect any personal information from children under 13. Since the App collects no
+        personal data from any user, it is safe for family use.
+      </p>
+      <p>
+        If you are a parent or guardian and believe your child has provided personal
+        information through this App, please contact us at the email below and we will
+        take immediate steps to address your concern.
+      </p>
+    </div>
+
+    <!-- 09 Your Rights -->
+    <div class="section" id="rights">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 09</div>
+          <h2>Your Rights &amp; Choices</h2>
+        </div>
+      </div>
+      <p>
+        Since all data is stored locally on your device and no personal data is collected
+        by our servers, you have complete control:
+      </p>
+
+      <div class="data-row">
+        <div class="data-icon collected">🗑️</div>
+        <div>
+          <div class="data-label">Delete your data</div>
+          <div class="data-desc">Clear App data via Android Settings, or simply uninstall the App.
+          All locally stored information is permanently deleted.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon collected">📍</div>
+        <div>
+          <div class="data-label">Revoke location permission</div>
+          <div class="data-desc">Go to Android Settings → Apps → Namaz Time → Permissions → Location → Deny.
+          You can still use the App by entering your location manually.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon collected">🔔</div>
+        <div>
+          <div class="data-label">Disable notifications</div>
+          <div class="data-desc">Turn off Azan and prayer reminder notifications from within the App's
+          Settings screen, or from Android Settings → Apps → Namaz Time → Notifications.</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-icon collected">📢</div>
+        <div>
+          <div class="data-label">Opt out of personalized ads</div>
+          <div class="data-desc">Reset or delete your Advertising ID in Android Settings → Google → Ads.</div>
+        </div>
+      </div>
+
+      <div class="info-card green">
+        <strong>GDPR / CCPA</strong>
+        Since we do not collect, store, or process personal data on our servers, formal
+        data subject requests (access, deletion, portability) are handled entirely by
+        deleting the App from your device. For AdMob-related data requests, contact
+        Google directly at <a href="https://policies.google.com/privacy" style="color:var(--green-700);font-weight:600">policies.google.com/privacy</a>.
+      </div>
+    </div>
+
+    <!-- 10 Changes -->
+    <div class="section" id="changes">
+      <div class="section-header">
+        <div class="section-icon">📝</div>
+        <div class="section-title-wrap">
+          <div class="section-num">Section 10</div>
+          <h2>Changes to This Policy</h2>
+        </div>
+      </div>
+      <p>
+        We may update this Privacy Policy from time to time to reflect changes in the App's
+        features or legal requirements. When we do, we will update the "Last updated" date
+        at the top of this page.
+      </p>
+      <p>
+        We encourage you to review this page periodically. Continued use of the App after
+        any changes constitutes your acceptance of the updated policy.
+      </p>
+    </div>
+
+    <!-- Contact Box -->
+    <div class="contact-box" id="contact">
+      <h2>Questions? Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy or the App's data practices,
+        we are happy to help.
+      </p>
+      <a href="mailto:zavistudio.dev@gmail.com" class="contact-email">
+        ✉ zavistudio.dev@gmail.com
+      </a>
+      <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.5)">
+        Developer: Zavi Studio &nbsp;·&nbsp; Response within 48 hours
+      </p>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+  <footer>
+    <strong>Zavi Studio</strong>
+    <span class="footer-divider">|</span>
+    Namaz Time &amp; Qibla
+    <span class="footer-divider">|</span>
+    com.scriptup.prayertimes
+    <span class="footer-divider">|</span>
+    © 2025 All rights reserved
+    <br style="margin-bottom:6px"/>
+    <span style="font-size:12px">This policy is hosted on GitHub Pages</span>
+  </footer>
+
+</body>
+</html>
