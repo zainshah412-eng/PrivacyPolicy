@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Noor: Islamic AI & Quran App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-900: #1a3d2b;
+      --green-700: #2f7d52;
+      --green-500: #4CAF7D;
+      --green-100: #e8f5ee;
+      --gold:      #C49A20;
+      --gold-light:#f0d98a;
+      --ink:       #1a1a1a;
+      --ink-soft:  #4a4a4a;
+      --surface:   #fafaf8;
+      --border:    #e0e0d8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--surface);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(160deg, var(--green-900) 0%, var(--green-700) 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .header-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 28px;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+      display: block;
+    }
+    header h1 {
+      font-size: clamp(22px, 5vw, 32px);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.3px;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      position: relative;
+    }
+    .gold-line {
+      width: 48px; height: 2px;
+      background: var(--gold);
+      margin: 20px auto 0;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--green-500);
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--green-900);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    p { color: var(--ink-soft); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Cards ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card-icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .card p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: var(--green-100);
+      border-left: 3px solid var(--green-500);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .highlight p { color: var(--green-900); margin: 0; font-size: 14.5px; }
+
+    /* ── List ── */
+    ul.policy-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 12px;
+    }
+    ul.policy-list li {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14.5px;
+      color: var(--ink-soft);
+    }
+    ul.policy-list li:last-child { border-bottom: none; }
+    ul.policy-list li::before {
+      content: '✓';
+      color: var(--green-500);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Contact ── */
+    .contact-box {
+      background: var(--green-900);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    .contact-box h2 { color: #fff; margin-bottom: 8px; }
+    .contact-box p  { color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+    .contact-box a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-900);
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .contact-box a:hover { opacity: 0.85; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      color: #999;
+      border-top: 1px solid var(--border);
+    }
+    footer strong { color: var(--green-700); }
+
+    @media (max-width: 480px) {
+      .card-grid { grid-template-columns: 1fr; }
+      header { padding: 40px 20px 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</span>
+  <h1>Privacy Policy</h1>
+  <p>Noor: Islamic AI &amp; Quran App &nbsp;·&nbsp; by Zavi Studio</p>
+  <div class="gold-line"></div>
+</header>
+
+<main>
+
+  <!-- Last Updated -->
+  <div class="section">
+    <p style="font-size:13px; color:#999; margin-bottom:0;">
+      Last updated: <strong style="color:var(--ink-soft);">June 2025</strong>
+      &nbsp;·&nbsp; Effective immediately upon installation
+    </p>
+  </div>
+
+  <!-- Overview -->
+  <div class="section">
+    <div class="section-label">Overview</div>
+    <h2>We built Noor to respect your privacy</h2>
+    <p>
+      Noor is a free Islamic AI and Quran app developed by Zavi Studio. This policy explains
+      what data the app uses, how it is handled, and what choices you have.
+    </p>
+    <div class="highlight">
+      <p>
+        <strong>Short version:</strong> Your personal data — your name, location, habits, bookmarks,
+        and prayer logs — stays on your device. We do not collect it, sell it, or share it.
+      </p>
+    </div>
+  </div>
+
+  <!-- What we collect -->
+  <div class="section">
+    <div class="section-label">Data</div>
+    <h2>What data Noor uses</h2>
+
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-icon">📍</span>
+        <h3>Location (GPS)</h3>
+        <p>Used only to detect your city for prayer times and Qibla direction. Never stored on our servers. Processed entirely on your device.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🤖</span>
+        <h3>AI Chat Messages</h3>
+        <p>Questions you send to Noor AI are transmitted securely to Groq (groq.com) for processing. Zavi Studio does not store or log your conversations.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📱</span>
+        <h3>Device Identifiers</h3>
+        <p>Google AdMob may use your device's advertising ID to serve relevant ads. You can reset or opt out via your device's ad settings.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔔</span>
+        <h3>Notification Permissions</h3>
+        <p>Used only to deliver prayer time reminders, habit notifications, and Islamic event alerts. No notification content is sent to our servers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What we do NOT collect -->
+  <div class="section">
+    <div class="section-label">Your Data</div>
+    <h2>What stays on your device — always</h2>
+    <ul class="policy-list">
+      <li>Your name and profile information</li>
+      <li>Quran and Hadith bookmarks</li>
+      <li>Prayer completion logs</li>
+      <li>Islamic habit tracker data and streaks</li>
+      <li>Tasbih (dhikr) counter sessions</li>
+      <li>Umrah savings and charity goals</li>
+      <li>Quran reading progress</li>
+      <li>Dark mode and language preferences</li>
+      <li>Profile photo (stored in your device's internal storage only)</li>
+    </ul>
+    <p style="margin-top:16px;">
+      None of this data leaves your device. It is stored locally in a Room database
+      and Android DataStore. Uninstalling the app removes all of it permanently.
+    </p>
+  </div>
+
+  <!-- Third-party services -->
+  <div class="section">
+    <div class="section-label">Third Parties</div>
+    <h2>Services Noor connects to</h2>
+    <p>Noor uses the following free, public APIs. No account or personal data is required to use them.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <span class="card-icon">🕌</span>
+        <h3>Aladhan API</h3>
+        <p>Provides prayer times and the Islamic (Hijri) calendar. Your city name is sent as a query parameter. No personal data is transmitted.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📖</span>
+        <h3>AlQuran.cloud</h3>
+        <p>Provides the full Quran text in Arabic, Urdu, and English. Read-only API — no data is sent from your device other than surah number requests.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📚</span>
+        <h3>HadithAPI.com</h3>
+        <p>Provides Hadith collections from the 6 major books. Read-only requests by book and page number only.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🤖</span>
+        <h3>Groq AI</h3>
+        <p>Powers the Noor AI chat. Messages are processed by Groq's infrastructure. See <a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener" style="color:var(--green-700);">Groq's Privacy Policy</a> for details.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">💰</span>
+        <h3>Google AdMob</h3>
+        <p>Displays banner ads to support the app's free availability. AdMob may use your device's advertising ID. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--green-700);">Google's Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Permissions -->
+  <div class="section">
+    <div class="section-label">Permissions</div>
+    <h2>Android permissions and why we need them</h2>
+    <ul class="policy-list">
+      <li><strong>POST_NOTIFICATIONS</strong> — Prayer time, habit, and Islamic event reminders</li>
+      <li><strong>SCHEDULE_EXACT_ALARM</strong> — Deliver notifications at the precise prayer time</li>
+      <li><strong>ACCESS_FINE_LOCATION / COARSE_LOCATION</strong> — Auto-detect city for prayer times and Qibla</li>
+      <li><strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong> — Prevent Android from blocking prayer alarms on Samsung and Xiaomi devices</li>
+      <li><strong>RECEIVE_BOOT_COMPLETED</strong> — Reschedule prayer alarms after device restart</li>
+      <li><strong>INTERNET</strong> — Load Quran, Hadith, prayer times, and AI responses</li>
+      <li><strong>FOREGROUND_SERVICE</strong> — Ensure prayer notifications are delivered reliably</li>
+      <li><strong>WAKE_LOCK</strong> — Keep CPU alive for the brief moment needed to deliver a prayer notification</li>
+    </ul>
+  </div>
+
+  <!-- Children -->
+  <div class="section">
+    <div class="section-label">Children</div>
+    <h2>Children's privacy</h2>
+    <p>
+      Noor is suitable for all ages. The app does not knowingly collect any personal information
+      from children under 13. If you believe your child has provided personal information through
+      the app, please contact us and we will remove it immediately.
+    </p>
+  </div>
+
+  <!-- Changes -->
+  <div class="section">
+    <div class="section-label">Updates</div>
+    <h2>Changes to this policy</h2>
+    <p>
+      If we make material changes to this privacy policy, we will update the date at the top
+      of this page. Continued use of the app after changes constitutes acceptance of the
+      updated policy. We will never change our core commitment: your personal data stays on
+      your device.
+    </p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <h2>Questions?</h2>
+    <p>We're a small studio that cares about doing things right. If you have any questions about this policy, reach out directly.</p>
+    <a href="mailto:zavistudio@gmail.com">zavistudio@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2025 <strong>Zavi Studio</strong> · Noor: Islamic AI &amp; Quran App · All rights reserved</p>
+  <p style="margin-top:6px;">This app is free to use. No personal data is sold or shared.</p>
+</footer>
+
+</body>
+</html>
