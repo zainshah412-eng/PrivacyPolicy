@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Gas Bill Checker</title>
+  <meta name="description" content="Privacy Policy for Gas Bill Checker by Zavi Studio. Learn how we handle your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Tokens ────────────────────────────────────────────────────────── */
+    :root {
+      --bg:        #0f1117;
+      --surface:   #181c27;
+      --border:    #252b3b;
+      --accent:    #3b82f6;
+      --accent-lo: rgba(59,130,246,0.12);
+      --text:      #e2e8f0;
+      --muted:     #8892a4;
+      --green:     #22c55e;
+      --green-lo:  rgba(34,197,94,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ────────────────────────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-lo);
+      border: 1px solid rgba(34,197,94,0.25);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .badge::before {
+      content: '';
+      display: block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
+
+    header h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    header h1 span { color: var(--accent); }
+
+    header p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Layout ────────────────────────────────────────────────────────── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Sections ──────────────────────────────────────────────────────── */
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    section h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--accent-lo);
+      border: 1px solid rgba(59,130,246,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    section p { color: var(--muted); margin-bottom: 10px; }
+    section p:last-child { margin-bottom: 0; }
+
+    section ul {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    section ul li:last-child { border-bottom: none; }
+
+    section ul li::before {
+      content: '→';
+      color: var(--accent);
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Callout box (no data collected) ──────────────────────────────── */
+    .callout {
+      background: var(--green-lo);
+      border: 1px solid rgba(34,197,94,0.20);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .callout-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+    .callout p {
+      color: #a3e8b8 !important;
+      font-size: 13.5px;
+      margin: 0 !important;
+      line-height: 1.6;
+    }
+
+    /* ── Third-party table ─────────────────────────────────────────────── */
+    .tp-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .tp-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tp-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .tp-name {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    .tp-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    .tp-desc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 12px;
+      display: block;
+      margin-top: 2px;
+      opacity: 0.8;
+    }
+
+    .tp-desc a:hover { opacity: 1; text-decoration: underline; }
+
+    /* ── Contact ───────────────────────────────────────────────────────── */
+    .contact-card {
+      background: var(--accent-lo);
+      border: 1px solid rgba(59,130,246,0.20);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 14px;
+    }
+
+    .contact-card p { color: var(--text) !important; font-size: 14px; }
+    .contact-card a { color: var(--accent); text-decoration: none; }
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Dates strip ───────────────────────────────────────────────────── */
+    .dates {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .date-item { font-size: 13px; color: var(--muted); }
+    .date-item strong { color: var(--text); display: block; font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+
+    /* ── Footer ────────────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ────────────────────────────────────────────────────── */
+    @media (max-width: 540px) {
+      section { padding: 20px 18px; }
+      .tp-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────────────── -->
+<header>
+  <div class="badge">Privacy Policy</div>
+  <h1>Gas Bill <span>Checker</span></h1>
+  <p>By Zavi Studio &nbsp;·&nbsp; Effective June 17, 2025</p>
+</header>
+
+<!-- ── Main Content ─────────────────────────────────────────────────────── -->
+<main>
+
+  <!-- 1. Overview -->
+  <section>
+    <h2><span class="icon">📋</span> Overview</h2>
+    <p>
+      Gas Bill Checker ("the App") is developed and maintained by <strong style="color:#e2e8f0">Zavi Studio</strong>.
+      This Privacy Policy explains how the App handles information when you use it to check utility bills
+      from SNGPL, SSGC, PTCL, Nayatel, and StormFiber.
+    </p>
+    <p>
+      We built this App as a convenience tool. We do not collect, store, or sell your personal information.
+      Please read this policy carefully to understand our practices.
+    </p>
+
+    <div class="callout">
+      <span class="callout-icon">✅</span>
+      <p>
+        <strong>Short version:</strong> We do not collect your name, email, location, or identity.
+        The consumer number you type stays on your device. We do not operate any backend server.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Information We Do NOT Collect -->
+  <section>
+    <h2><span class="icon">🚫</span> Information We Do Not Collect</h2>
+    <p>Zavi Studio does not collect, transmit to our servers, or retain any of the following:</p>
+    <ul>
+      <li>Your name, email address, or phone number</li>
+      <li>Your device ID, IMEI, or hardware identifiers</li>
+      <li>Your precise or approximate location</li>
+      <li>Your consumer/account/reference numbers entered in the App</li>
+      <li>Bill contents, payment history, or any financial data</li>
+      <li>Browsing history or usage analytics beyond what is described below</li>
+    </ul>
+  </section>
+
+  <!-- 3. How the App Works -->
+  <section>
+    <h2><span class="icon">⚙️</span> How the App Works</h2>
+    <p>
+      When you enter a consumer number, the App makes a direct network request from your device
+      to the relevant utility company's public website (e.g. <code style="color:var(--accent);font-size:13px">sngpl.com.pk</code>,
+      <code style="color:var(--accent);font-size:13px">viewbill.ssgc.com.pk</code>) using the same
+      URL you would open in a browser. The App acts as a browser wrapper.
+    </p>
+    <ul>
+      <li>Bill data is fetched directly from the utility company's servers — not routed through Zavi Studio systems</li>
+      <li>Downloaded bill PDFs are saved temporarily to your device's internal cache only and are not uploaded anywhere</li>
+      <li>Cached PDFs are stored in your device's app cache folder and can be cleared at any time via Android Settings → Apps → Gas Bill Checker → Clear Cache</li>
+      <li>Bill history labels you create are stored locally on your device using Android's local database (Room) and never leave your device</li>
+    </ul>
+  </section>
+
+  <!-- 4. Third-Party Services -->
+  <section>
+    <h2><span class="icon">🔗</span> Third-Party Services</h2>
+    <p>
+      The App uses the following third-party services. Each operates under its own privacy policy
+      and may collect data according to its own terms.
+    </p>
+
+    <div class="tp-grid">
+
+      <div class="tp-row">
+        <div class="tp-name">Google AdMob</div>
+        <div class="tp-desc">
+          Displays banner and interstitial advertisements. AdMob may collect device advertising ID,
+          IP address, and interaction data to serve and measure ads. You can opt out via
+          Android's "Delete advertising ID" setting (Android 12+) or "Opt out of Ads Personalization"
+          (Android 11 and below).
+          <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Ads Privacy Policy ↗</a>
+        </div>
+      </div>
+
+      <div class="tp-row">
+        <div class="tp-name">SNGPL</div>
+        <div class="tp-desc">
+          Sui Northern Gas Pipelines Limited. The App queries their public bill portal.
+          Your consumer number is sent to their server when you perform a lookup.
+          <a href="https://www.sngpl.com.pk/" target="_blank" rel="noopener">sngpl.com.pk ↗</a>
+        </div>
+      </div>
+
+      <div class="tp-row">
+        <div class="tp-name">SSGC</div>
+        <div class="tp-desc">
+          Sui Southern Gas Company. Your consumer number is sent to their public bill portal.
+          <a href="https://www.ssgc.com.pk/" target="_blank" rel="noopener">ssgc.com.pk ↗</a>
+        </div>
+      </div>
+
+      <div class="tp-row">
+        <div class="tp-name">PTCL</div>
+        <div class="tp-desc">
+          Pakistan Telecommunication Company Ltd. Your account number is sent to their eBill portal.
+          <a href="https://ebill.ptcl.com.pk/" target="_blank" rel="noopener">ebill.ptcl.com.pk ↗</a>
+        </div>
+      </div>
+
+      <div class="tp-row">
+        <div class="tp-name">Nayatel</div>
+        <div class="tp-desc">
+          Your account ID is sent to the Nayatel customer portal.
+          <a href="https://customer.nayatel.com/" target="_blank" rel="noopener">customer.nayatel.com ↗</a>
+        </div>
+      </div>
+
+      <div class="tp-row">
+        <div class="tp-name">StormFiber</div>
+        <div class="tp-desc">
+          Your account number is sent to the StormFiber (Jazz) bill inquiry portal.
+          <a href="https://myjazz.jazz.com.pk/" target="_blank" rel="noopener">jazz.com.pk ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. Internet Permission -->
+  <section>
+    <h2><span class="icon">🌐</span> Internet Permission</h2>
+    <p>
+      The App requests the <code style="color:var(--accent);font-size:13px">android.permission.INTERNET</code>
+      and <code style="color:var(--accent);font-size:13px">android.permission.ACCESS_NETWORK_STATE</code> permissions.
+      These are used solely to:
+    </p>
+    <ul>
+      <li>Fetch bill information from utility company websites</li>
+      <li>Download bill PDFs to your device cache</li>
+      <li>Load and display advertisements via Google AdMob</li>
+    </ul>
+    <p style="margin-top:12px">No other network communication is made by the App itself.</p>
+  </section>
+
+  <!-- 6. Advertising & Your Choices -->
+  <section>
+    <h2><span class="icon">📢</span> Advertising &amp; Your Choices</h2>
+    <p>
+      Gas Bill Checker is a free app supported by advertising. Ads are served by Google AdMob
+      and may be personalized based on your interest profile. You can control ad personalization:
+    </p>
+    <ul>
+      <li><strong style="color:#e2e8f0">Android 12+:</strong> Settings → Privacy → Ads → Delete advertising ID (disables personalized ads across all apps)</li>
+      <li><strong style="color:#e2e8f0">Android 11 and below:</strong> Settings → Google → Ads → Opt out of Ads Personalization</li>
+      <li>Ads will still appear but will be non-personalized if you opt out</li>
+    </ul>
+  </section>
+
+  <!-- 7. Data Security -->
+  <section>
+    <h2><span class="icon">🔒</span> Data Security</h2>
+    <p>
+      Since we do not collect or store your personal data on our servers, there is no data at risk
+      on our end. Bill PDFs downloaded to your device are stored in Android's private app cache
+      directory, which is not accessible to other apps without root access.
+    </p>
+    <p>
+      We use HTTPS for all network requests. Note that SNGPL's servers use an expired SSL
+      certificate — the App accepts it to maintain functionality, consistent with how a browser
+      would behave when you click "Proceed anyway."
+    </p>
+  </section>
+
+  <!-- 8. Children's Privacy -->
+  <section>
+    <h2><span class="icon">👶</span> Children's Privacy</h2>
+    <p>
+      Gas Bill Checker is not directed at children under the age of 13. We do not knowingly
+      collect any personal information from children. If you believe a child has provided personal
+      information through the App, please contact us and we will take appropriate steps.
+    </p>
+  </section>
+
+  <!-- 9. Changes to this Policy -->
+  <section>
+    <h2><span class="icon">🔄</span> Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. Any changes will be reflected
+      on this page with an updated "Last Modified" date below. We encourage you to review
+      this policy periodically. Continued use of the App after changes constitutes acceptance
+      of the updated policy.
+    </p>
+    <div class="dates">
+      <div class="date-item">
+        <strong>Effective Date</strong>
+        June 17, 2025
+      </div>
+      <div class="date-item">
+        <strong>Last Modified</strong>
+        June 17, 2025
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Contact -->
+  <section>
+    <h2><span class="icon">✉️</span> Contact Us</h2>
+    <p>
+      If you have any questions or concerns about this Privacy Policy or the App's data practices,
+      please contact us:
+    </p>
+    <div class="contact-card">
+      <p><strong>Zavi Studio</strong></p>
+      <p>Email: <a href="mailto:zavistudio.dev@gmail.com">zavistudio.dev@gmail.com</a></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ───────────────────────────────────────────────────────────── -->
+<footer>
+  <p>© 2025 Zavi Studio. All rights reserved.</p>
+  <p style="margin-top:6px">
+    <a href="https://zainshah412-eng.github.io" target="_blank" rel="noopener">Zavi Studio</a>
+    &nbsp;·&nbsp;
+    <a href="https://play.google.com/store/apps/developer?id=Zavi+Studio" target="_blank" rel="noopener">Play Store</a>
+  </p>
+</footer>
+
+</body>
+</html>
