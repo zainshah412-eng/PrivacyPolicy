@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Loqma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:          #0E0E0E;
+    --surface:     #161616;
+    --surface-2:   #1C1C1C;
+    --border:      rgba(255,255,255,0.07);
+    --border-soft: rgba(255,255,255,0.04);
+    --green:       #C8F090;
+    --green-dim:   rgba(200,240,144,0.10);
+    --green-glow:  rgba(200,240,144,0.06);
+    --blue:        #7DD4FC;
+    --amber:       #F0A070;
+    --red:         #F87171;
+    --purple:      #A78BFA;
+    --text:        #FFFFFF;
+    --text-mid:    rgba(255,255,255,0.55);
+    --text-low:    rgba(255,255,255,0.30);
+    --text-hint:   rgba(255,255,255,0.18);
+    --mono:        'JetBrains Mono', monospace;
+    --sans:        'Sora', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Noise texture overlay ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Layout ── */
+  .wrap {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Header ── */
+  header {
+    padding: 56px 0 48px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--green-dim);
+    border: 0.5px solid rgba(200,240,144,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-mark svg { width: 18px; height: 18px; }
+
+  .logo-name {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    font-family: var(--mono);
+    text-transform: uppercase;
+  }
+
+  .header-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-low);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--green);
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: var(--text-mid);
+  }
+
+  .meta-chip .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  /* ── Summary card ── */
+  .summary-card {
+    margin: 36px 0;
+    padding: 24px;
+    background: var(--green-glow);
+    border: 0.5px solid rgba(200,240,144,0.15);
+    border-radius: 16px;
+  }
+
+  .summary-card p {
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .summary-card strong {
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    margin: 0 0 52px;
+    padding: 20px 24px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+  }
+
+  .toc-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-hint);
+    margin-bottom: 12px;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+
+  .toc li { counter-increment: toc; }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-mid);
+    font-size: 13px;
+    padding: 4px 0;
+    transition: color 0.15s;
+  }
+
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-hint);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .toc a:hover { color: var(--green); }
+  .toc a:hover::before { color: var(--green); }
+
+  /* ── Sections ── */
+  .section {
+    padding: 48px 0;
+    border-bottom: 0.5px solid var(--border-soft);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .section-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--green);
+    opacity: 0.6;
+    padding-top: 7px;
+    flex-shrink: 0;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .section-body { padding-left: 44px; }
+
+  p {
+    color: var(--text-mid);
+    margin-bottom: 14px;
+    font-size: 14.5px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* ── Data table ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+
+  .data-table th {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-hint);
+    text-align: left;
+    padding: 0 16px 10px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .data-table td {
+    padding: 12px 16px 12px 0;
+    vertical-align: top;
+    border-bottom: 0.5px solid var(--border-soft);
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  .data-table td:first-child {
+    color: var(--text);
+    font-weight: 500;
+    white-space: nowrap;
+    width: 30%;
+  }
+
+  /* ── Pill badges ── */
+  .pill {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+  .pill-green  { background: rgba(200,240,144,0.10); color: var(--green);  border: 0.5px solid rgba(200,240,144,0.2); }
+  .pill-blue   { background: rgba(125,212,252,0.10); color: var(--blue);   border: 0.5px solid rgba(125,212,252,0.2); }
+  .pill-amber  { background: rgba(240,160,112,0.10); color: var(--amber);  border: 0.5px solid rgba(240,160,112,0.2); }
+  .pill-red    { background: rgba(248,113,113,0.10); color: var(--red);    border: 0.5px solid rgba(248,113,113,0.2); }
+  .pill-purple { background: rgba(167,139,250,0.10); color: var(--purple); border: 0.5px solid rgba(167,139,250,0.2); }
+
+  /* ── Info block ── */
+  .info-block {
+    padding: 16px 18px;
+    border-radius: 12px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  .info-block.green {
+    background: var(--green-glow);
+    border: 0.5px solid rgba(200,240,144,0.15);
+    color: rgba(200,240,144,0.75);
+  }
+
+  .info-block.amber {
+    background: rgba(240,160,112,0.06);
+    border: 0.5px solid rgba(240,160,112,0.15);
+    color: rgba(240,160,112,0.75);
+  }
+
+  .info-block.blue {
+    background: rgba(125,212,252,0.05);
+    border: 0.5px solid rgba(125,212,252,0.15);
+    color: rgba(125,212,252,0.75);
+  }
+
+  /* ── List ── */
+  ul.clean {
+    list-style: none;
+    margin: 12px 0;
+  }
+
+  ul.clean li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    color: var(--text-mid);
+    font-size: 14px;
+    padding: 6px 0;
+    border-bottom: 0.5px solid var(--border-soft);
+  }
+
+  ul.clean li:last-child { border-bottom: none; }
+
+  ul.clean li::before {
+    content: '·';
+    color: var(--green);
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 1px;
+  }
+
+  /* ── Contact card ── */
+  .contact-card {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--green-dim);
+    border: 0.5px solid rgba(200,240,144,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+
+  .contact-card a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .contact-card a:hover { text-decoration: underline; }
+  .contact-card p { color: var(--text-low); font-size: 12px; margin: 2px 0 0; }
+
+  /* ── Footer ── */
+  footer {
+    padding: 40px 0 56px;
+    border-top: 0.5px solid var(--border);
+    margin-top: 16px;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-brand {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text-hint);
+    text-transform: uppercase;
+  }
+
+  .footer-brand span { color: var(--green); }
+
+  .footer-note {
+    font-size: 12px;
+    color: var(--text-hint);
+  }
+
+  /* ── Scroll progress bar ── */
+  #progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--green);
+    width: 0%;
+    z-index: 100;
+    transition: width 0.05s linear;
+    box-shadow: 0 0 8px rgba(200,240,144,0.4);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 560px) {
+    .toc ol { grid-template-columns: 1fr; }
+    .section-body { padding-left: 0; }
+    .section-header { flex-direction: column; gap: 6px; }
+    .section-num { padding-top: 0; }
+    .contact-card { flex-direction: column; text-align: center; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .data-table td:first-child { width: auto; white-space: normal; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<div class="wrap">
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="logo-row">
+      <div class="logo-mark">
+        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="9" cy="9" r="7" stroke="#C8F090" stroke-width="1.2"/>
+          <path d="M6 9 Q9 5.5 12 9 Q9 12.5 6 9Z" fill="#C8F090" opacity="0.7"/>
+        </svg>
+      </div>
+      <span class="logo-name">Loqma · لُقمہ</span>
+    </div>
+
+    <div class="header-eyebrow">Legal document</div>
+    <h1>Privacy <em>Policy</em></h1>
+
+    <div class="header-meta">
+      <span class="meta-chip"><span class="dot"></span>Effective: July 1, 2026</span>
+      <span class="meta-chip"><span class="dot"></span>Version 1.0</span>
+      <span class="meta-chip"><span class="dot"></span>com.zavistudio.loqma</span>
+    </div>
+
+    <div class="summary-card" style="margin-top:28px; margin-bottom:0;">
+      <p>
+        <strong>Plain-language summary:</strong> Loqma is a calorie and macro tracker built for South Asian cuisine. 
+        Your food logs, body metrics, and health data are stored <strong>only on your device</strong>. 
+        We do not sell your data, serve ads, or share your information with third parties for marketing. 
+        The only external services we contact are Open Food Facts (to look up packaged food) and 
+        Google Gemini AI (to identify unknown barcodes) — both are called on your behalf and receive no personally identifying information.
+      </p>
+    </div>
+  </header>
+
+  <!-- ── TOC ── -->
+  <nav style="margin-top:36px;">
+    <div class="toc">
+      <div class="toc-label">Contents</div>
+      <ol>
+        <li><a href="#s1">Information We Collect</a></li>
+        <li><a href="#s2">How We Use It</a></li>
+        <li><a href="#s3">Data Storage & Security</a></li>
+        <li><a href="#s4">Third-Party Services</a></li>
+        <li><a href="#s5">Health Data</a></li>
+        <li><a href="#s6">Children's Privacy</a></li>
+        <li><a href="#s7">Your Rights</a></li>
+        <li><a href="#s8">Changes to This Policy</a></li>
+        <li><a href="#s9">Contact</a></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ── S1: Information We Collect ── -->
+  <section class="section" id="s1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Information We Collect</h2>
+    </div>
+    <div class="section-body">
+      <p>Loqma collects only what is necessary to calculate your nutrition targets and track your daily food intake. Nothing else.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Why we need it</th>
+            <th>Where it lives</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>Personalise your dashboard greeting</td>
+            <td><span class="pill pill-green">On-device only</span></td>
+          </tr>
+          <tr>
+            <td>Age, gender, height, weight</td>
+            <td>Calculate BMR, TDEE, and daily macro targets using Mifflin-St Jeor formula</td>
+            <td><span class="pill pill-green">On-device only</span></td>
+          </tr>
+          <tr>
+            <td>Activity level & fitness goal</td>
+            <td>Adjust calorie and macro targets to your lifestyle</td>
+            <td><span class="pill pill-green">On-device only</span></td>
+          </tr>
+          <tr>
+            <td>Meal logs & food entries</td>
+            <td>Track daily calorie and macro intake</td>
+            <td><span class="pill pill-green">On-device only</span></td>
+          </tr>
+          <tr>
+            <td>Water intake logs</td>
+            <td>Track daily hydration toward your goal</td>
+            <td><span class="pill pill-green">On-device only</span></td>
+          </tr>
+          <tr>
+            <td>Barcode scans</td>
+            <td>Look up packaged food nutrition via Open Food Facts or Gemini AI</td>
+            <td><span class="pill pill-amber">Sent to API (barcode only)</span></td>
+          </tr>
+          <tr>
+            <td>Camera</td>
+            <td>Scan product barcodes — never stored or transmitted as images</td>
+            <td><span class="pill pill-green">Not stored</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-block green">
+        We do <strong>not</strong> collect your email address, phone number, location, device identifiers, IP address, or any form of analytics or crash reporting data.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── S2: How We Use It ── -->
+  <section class="section" id="s2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>How We Use Your Information</h2>
+    </div>
+    <div class="section-body">
+      <p>Your data serves one purpose: making Loqma work for you.</p>
+      <ul class="clean">
+        <li>Calculate personalised calorie and macro targets from your body metrics</li>
+        <li>Display your daily food and water logs on the dashboard</li>
+        <li>Show weekly trends and progress in the Trends tab</li>
+        <li>Send water intake reminders via local notifications (no server involved)</li>
+        <li>Look up nutrition data for barcodes you scan</li>
+      </ul>
+      <div class="info-block blue" style="margin-top:18px;">
+        Your data is <strong>never</strong> used for advertising, profiling, analytics, or sold to any third party. We do not operate any servers that store your personal information.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── S3: Data Storage & Security ── -->
+  <section class="section" id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Data Storage &amp; Security</h2>
+    </div>
+    <div class="section-body">
+      <p>All personal data is stored locally on your Android device using the following mechanisms:</p>
+      <ul class="clean">
+        <li><strong>Room Database</strong> — meal logs, water logs, and food cache stored in an SQLite database within the app's private storage directory</li>
+        <li><strong>DataStore Preferences</strong> — your profile, body metrics, and settings stored in the app's private DataStore</li>
+        <li><strong>Android's private app storage</strong> — inaccessible to other apps without root access</li>
+      </ul>
+      <p style="margin-top:14px;">
+        No data is transmitted to our servers because we operate no servers. 
+        If you uninstall Loqma, all your data is permanently deleted from your device by Android's standard app removal process.
+      </p>
+      <div class="info-block amber">
+        <strong>Backup:</strong> If you have Android Auto Backup enabled in your device settings, app data may be included in your Google account backup. This backup is encrypted and controlled entirely by Google's backup infrastructure — Loqma has no access to it.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── S4: Third-Party Services ── -->
+  <section class="section" id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Third-Party Services</h2>
+    </div>
+    <div class="section-body">
+      <p>Loqma makes outbound network requests to exactly two external services, and only when you trigger a specific action:</p>
+
+      <table class="data-table" style="margin-top:8px;">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>When contacted</th>
+            <th>What is sent</th>
+            <th>Their policy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Open Food Facts</td>
+            <td>When you search for packaged food by name or scan a barcode</td>
+            <td>Barcode number or search query text only. No user identity.</td>
+            <td><span class="pill pill-blue">openfoodfacts.org/privacy</span></td>
+          </tr>
+          <tr>
+            <td>Google Gemini AI</td>
+            <td>When a scanned barcode returns no result from Open Food Facts</td>
+            <td>Barcode number only, with a structured prompt. No user identity, no images.</td>
+            <td><span class="pill pill-purple">ai.google.dev/terms</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>No analytics SDKs (Firebase Analytics, Mixpanel, Amplitude, etc.), no advertising SDKs, and no crash reporting services are included in Loqma.</p>
+
+      <div class="info-block green">
+        When Loqma contacts Open Food Facts or Gemini, your name, body metrics, meal history, and all personal data remain entirely on your device. Only the minimum information needed to answer your search query is transmitted.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── S5: Health Data ── -->
+  <section class="section" id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Health Data &amp; Android Health Connect</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        Loqma optionally integrates with <strong>Android Health Connect</strong> to read and write nutrition and hydration records. 
+        This integration is optional and requires your explicit permission grant during setup.
+      </p>
+      <ul class="clean">
+        <li>Loqma may <strong>write</strong> nutrition records (calories, protein, carbs, fat) and hydration records to Health Connect when you log a meal or water intake</li>
+        <li>Loqma may <strong>read</strong> existing records to avoid double-counting if you use other health apps</li>
+        <li>Health Connect data is governed by <a href="https://support.google.com/fit/answer/14478487" target="_blank" style="color:var(--blue);">Google's Health Connect Privacy Policy</a></li>
+        <li>You can revoke Loqma's Health Connect permissions at any time in your device's Health Connect settings</li>
+      </ul>
+      <p style="margin-top:14px;">
+        Your health data stored in Health Connect is controlled by you and Android. Loqma does not transmit Health Connect data anywhere.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── S6: Children ── -->
+  <section class="section" id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Children's Privacy</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        Loqma is designed for users aged 13 and above. The app is not directed at children under 13, and we do not knowingly collect any information from children under 13 years of age.
+      </p>
+      <p>
+        If you believe a child under 13 has used Loqma and entered personal information, please contact us at the address below and we will take appropriate action, which may include providing guidance on uninstalling the app and clearing local data.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── S7: Your Rights ── -->
+  <section class="section" id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>Your Rights &amp; Data Control</h2>
+    </div>
+    <div class="section-body">
+      <p>Because all your data lives on your own device, you have full control at all times:</p>
+      <ul class="clean">
+        <li><strong>Access:</strong> All your data is visible directly within the app — your dashboard, meal logs, water logs, and profile settings</li>
+        <li><strong>Edit:</strong> Update your profile, body metrics, and goals at any time via the Settings screen</li>
+        <li><strong>Delete:</strong> Uninstalling Loqma permanently removes all locally stored data from your device</li>
+        <li><strong>Portability:</strong> We are working on a data export feature (CSV/PDF) for a future release</li>
+        <li><strong>Withdraw consent:</strong> Revoke camera permission or Health Connect access at any time in Android Settings → Apps → Loqma → Permissions</li>
+      </ul>
+      <div class="info-block green" style="margin-top:16px;">
+        Since we hold no data on any server, there is nothing for us to delete on your behalf. Your data exists only on your device and optionally in your Google account's encrypted Android backup.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── S8: Changes ── -->
+  <section class="section" id="s8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        If we make material changes to this Privacy Policy — for example, if a future version of Loqma introduces cloud sync or account creation — we will update this page and change the "Effective" date at the top. For significant changes, we will notify you via an in-app notice on the next app launch.
+      </p>
+      <p>
+        This page is hosted publicly on GitHub. You can view the full revision history of this document at any time by checking the commit log of the repository.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── S9: Contact ── -->
+  <section class="section" id="s9">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2>Contact</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        Questions about this Privacy Policy, requests regarding your data, or any privacy concern — reach out directly:
+      </p>
+      <div class="contact-card">
+        <div class="contact-icon">✉</div>
+        <div>
+          <a href="mailto:privacy@zavistudio.com">privacy@zavistudio.com</a>
+          <p>ZaviStudio · Developer of Loqma · Pakistan</p>
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:13px; color:var(--text-low);">
+        We aim to respond to all privacy inquiries within 5 business days.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span>Loqma</span> · لُقمہ · ZaviStudio
+      </div>
+      <div class="footer-note">
+        © 2026 ZaviStudio. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Scroll progress bar
+  const bar = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const max  = document.documentElement.scrollHeight - window.innerHeight;
+    const pct  = max > 0 ? (window.scrollY / max) * 100 : 0;
+    bar.style.width = pct + '%';
+  }, { passive: true });
+</script>
+</body>
+</html>
