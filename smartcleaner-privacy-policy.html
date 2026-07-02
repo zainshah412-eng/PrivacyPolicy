@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — SmartCleaner</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #161a21;
+    --text: #e6e8ec;
+    --muted: #9aa3af;
+    --accent: #4f8cff;
+    --border: #262b34;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+  h1 { font-size: 1.9rem; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 0.9rem; }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    color: var(--accent);
+  }
+  h3 { font-size: 1rem; margin-top: 24px; margin-bottom: 8px; }
+  p, li { color: var(--text); font-size: 0.97rem; }
+  ul { padding-left: 22px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.92rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { background: var(--card); color: var(--accent); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  code {
+    background: var(--card);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Privacy Policy — SmartCleaner</h1>
+    <div class="meta">
+      Developer: Zavi Studio &nbsp;•&nbsp; Package: <code>com.scriptupsolutions.smartcleaner</code><br>
+      Effective date: <strong>July 3, 2026</strong> &nbsp;•&nbsp; Last updated: <strong>July 3, 2026</strong>
+    </div>
+  </header>
+
+  <p>
+    This Privacy Policy explains how SmartCleaner ("the App", "we", "us") handles information
+    when you use the App. SmartCleaner is a storage-management utility that helps you find and
+    remove junk files, duplicate files, large files, screenshots, leftover APKs, and app cache to
+    free up space on your device.
+  </p>
+
+  <div class="card">
+    <strong>Short version:</strong> SmartCleaner does not require an account, does not collect or
+    transmit your personal files, photos, or documents to us or to any server, and does not sell
+    your data. All file scanning and cleaning happens entirely on your device. The only data
+    leaving your device is limited technical/advertising data handled by Google AdMob, described
+    below.
+  </div>
+
+  <h2>1. Information We Do Not Collect</h2>
+  <p>SmartCleaner does not collect, store, or transmit:</p>
+  <ul>
+    <li>Your name, email address, phone number, or any account/profile information (the App has no sign-in or account system)</li>
+    <li>The contents of your photos, videos, documents, or downloaded files</li>
+    <li>File contents are never uploaded anywhere — scanning, hashing (for duplicate detection), and deletion all happen locally on your device</li>
+    <li>Precise or approximate location data</li>
+    <li>Contacts, messages, or call logs</li>
+  </ul>
+
+  <h2>2. Information Processed On-Device</h2>
+  <p>
+    To provide its core features, SmartCleaner reads certain file metadata (name, size, file
+    path, last-modified date, and MIME type) via the Android MediaStore and file system APIs.
+    This metadata is processed and stored <strong>only locally on your device</strong> using
+    Room (SQLite) and DataStore, to:
+  </p>
+  <ul>
+    <li>Display scan results (junk, duplicate, large, screenshot, and APK files)</li>
+    <li>Remember your last scan results and settings</li>
+    <li>Track your lifetime storage freed and auto-clean schedule</li>
+  </ul>
+  <p>None of this metadata is sent to us or to any third party. Uninstalling the App permanently deletes all locally stored data.</p>
+
+  <h2>3. Permissions Used and Why</h2>
+  <table>
+    <tr><th>Permission</th><th>Purpose</th></tr>
+    <tr>
+      <td><code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code>, <code>READ_MEDIA_AUDIO</code>, <code>READ_MEDIA_VISUAL_USER_SELECTED</code>, <code>READ_EXTERNAL_STORAGE</code> (legacy)</td>
+      <td>Read media file metadata (name, size, date) to detect junk, duplicate, large, and screenshot files. File contents are never read beyond what's needed to compute a duplicate-detection hash on-device.</td>
+    </tr>
+    <tr>
+      <td><code>QUERY_ALL_PACKAGES</code></td>
+      <td>Core to the App's file-management function: used to (a) list installed apps and their external cache sizes for the Cache Cleaner feature, and (b) detect leftover ("residual") folders belonging to apps you've already uninstalled.</td>
+    </tr>
+    <tr>
+      <td><code>POST_NOTIFICATIONS</code></td>
+      <td>Shows a notification when a scheduled background auto-clean completes, if you've enabled that feature in Settings.</td>
+    </tr>
+    <tr>
+      <td><code>FOREGROUND_SERVICE</code>, <code>FOREGROUND_SERVICE_DATA_SYNC</code>, <code>RECEIVE_BOOT_COMPLETED</code></td>
+      <td>Allow the optional scheduled auto-clean feature to run reliably in the background, in compliance with Android's background execution limits.</td>
+    </tr>
+    <tr>
+      <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td>
+      <td>Required by Google AdMob to serve ads (see Section 4). SmartCleaner itself makes no other network calls.</td>
+    </tr>
+  </table>
+
+  <h2>4. Advertising (Google AdMob)</h2>
+  <p>
+    SmartCleaner shows banner ads through Google AdMob to keep the App free. AdMob may collect
+    and process device and usage information — such as your Advertising ID, IP address, device
+    type, and general ad-interaction data — to serve and measure ads. This data is collected and
+    processed by Google, not by us, and Google acts as an independent controller for this data.
+  </p>
+  <p>
+    You can control ad personalization and reset or delete your Advertising ID at any time in
+    your device's Settings → Privacy → Ads. For details on how Google collects and uses this
+    data, see
+    <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">
+      How Google uses information from sites or apps that use our services</a>
+    and Google's own
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
+  </p>
+
+  <h2>5. Data Sharing</h2>
+  <p>
+    We do not sell your data. We do not share any data with third parties except as described in
+    Section 4 (Google AdMob), which is required for the App's ad-supported free model.
+  </p>
+
+  <h2>6. Data Retention and Deletion</h2>
+  <p>
+    All app data (scan history, settings, preferences) is stored locally in Room/DataStore on
+    your device and is automatically and permanently deleted when you uninstall the App. There is
+    no server-side account or backup of this data for us to retain.
+  </p>
+
+  <h2>7. Children's Privacy</h2>
+  <p>
+    SmartCleaner is not directed at children under 13, and we do not knowingly collect personal
+    information from children. If you believe a child has provided us with personal information,
+    contact us using the details below and we will address it.
+  </p>
+
+  <h2>8. Security</h2>
+  <p>
+    Since SmartCleaner does not transmit your personal files or file metadata to any server,
+    there is no server-side data store for us to secure. Locally stored app data is sandboxed by
+    Android's standard app-data protections.
+  </p>
+
+  <h2>9. Your Choices</h2>
+  <ul>
+    <li>You can grant or revoke storage/media and notification permissions at any time via Android Settings → Apps → SmartCleaner → Permissions.</li>
+    <li>You can disable the scheduled auto-clean feature at any time from within the App's Settings screen.</li>
+    <li>You can reset your Advertising ID or opt out of ad personalization from your device's system settings.</li>
+    <li>Uninstalling the App removes all locally stored data.</li>
+  </ul>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>
+    We may update this Privacy Policy from time to time. Changes will be posted on this page with
+    an updated "Last updated" date. Continued use of the App after changes are posted constitutes
+    acceptance of the revised policy.
+  </p>
+
+  <h2>11. Contact Us</h2>
+  <p>
+    If you have questions about this Privacy Policy or the App's data practices, contact:
+  </p>
+  <div class="card">
+    <strong>Zavi Studio</strong><br>
+    Email: <a href="mailto:zavistudio.apps@gmail.com">zavistudio.apps@gmail.com</a><br>
+    Portfolio: <a href="https://zainshah412-eng.github.io" target="_blank" rel="noopener">zainshah412-eng.github.io</a>
+  </div>
+
+  <footer>
+    © 2026 Zavi Studio. This policy applies solely to the SmartCleaner Android application.
+  </footer>
+
+</div>
+</body>
+</html>
