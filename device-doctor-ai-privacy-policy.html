@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Device Doctor AI</title>
+<meta name="description" content="Privacy Policy for Device Doctor AI by Zavi Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1A73E8;
+    --blue-dark:#8AB4F8;
+    --green:#34A853;
+    --orange:#FA7B17;
+    --red:#EA4335;
+    --purple:#9334E6;
+    --teal:#00BCD4;
+
+    --bg:#F8F9FA;
+    --card:#FFFFFF;
+    --card-border:#E7E0EC;
+    --text:#1C1B1F;
+    --text-dim:#49454F;
+    --divider:#E7E0EC;
+    --chip-bg:#D3E3FD;
+    --chip-text:#0842A0;
+
+    --radius:16px;
+    --maxw:920px;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1C1B1F;
+      --card:#2D2C31;
+      --card-border:#3A383E;
+      --text:#E6E1E5;
+      --text-dim:#CAC4D0;
+      --divider:#3A383E;
+      --blue:#8AB4F8;
+      --chip-bg:#0842A0;
+      --chip-text:#D3E3FD;
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Manrope', sans-serif;
+    letter-spacing:-0.01em;
+    color:var(--text);
+  }
+  a{ color:var(--blue); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  a:focus-visible, button:focus-visible, .toc a:focus-visible{
+    outline:2px solid var(--blue);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ---------- Header / hero ---------- */
+  .hero{
+    padding:56px 24px 40px;
+    border-bottom:1px solid var(--divider);
+  }
+  .hero-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .eyebrow{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Roboto Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    margin-bottom:18px;
+  }
+  .brand-mark{
+    width:34px;height:34px;border-radius:10px;
+    background:linear-gradient(135deg, var(--blue), var(--teal));
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .brand-mark svg{ width:19px; height:19px; }
+  h1.title{
+    font-size:clamp(28px, 4.5vw, 40px);
+    font-weight:800;
+    margin:0 0 10px;
+  }
+  .subtitle{
+    color:var(--text-dim);
+    font-size:16px;
+    max-width:640px;
+    margin:0 0 26px;
+  }
+  .meta-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .chip{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--chip-bg); color:var(--chip-text);
+    font-size:12.5px; font-weight:600;
+    padding:6px 12px; border-radius:100px;
+    font-family:'Roboto Mono', monospace;
+  }
+
+  /* diagnostic strip — signature element echoing the app's health-scan UI */
+  .scan-strip{
+    margin-top:32px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--divider);
+    border:1px solid var(--divider);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .scan-cell{
+    background:var(--card);
+    padding:14px 16px;
+  }
+  .scan-cell .dot{
+    width:8px;height:8px;border-radius:50%;
+    display:inline-block;margin-right:7px;
+  }
+  .scan-cell .label{
+    font-family:'Roboto Mono', monospace;
+    font-size:11px; letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--text-dim);
+  }
+  .scan-cell .value{
+    font-size:13.5px; font-weight:600; margin-top:4px;
+  }
+
+  /* ---------- Layout ---------- */
+  .layout{
+    max-width:var(--maxw);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:48px;
+    padding:40px 24px 100px;
+    align-items:start;
+  }
+  .toc{
+    position:sticky;
+    top:28px;
+    font-size:13.5px;
+  }
+  .toc-label{
+    font-family:'Roboto Mono', monospace;
+    font-size:11px; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--text-dim);
+    margin-bottom:12px;
+  }
+  .toc ol{ list-style:none; margin:0; padding:0; counter-reset:toc; }
+  .toc li{ counter-increment:toc; margin-bottom:2px; }
+  .toc a{
+    display:flex; gap:8px;
+    color:var(--text-dim);
+    padding:6px 8px;
+    border-radius:8px;
+  }
+  .toc a::before{
+    content:counter(toc, decimal-leading-zero);
+    font-family:'Roboto Mono', monospace;
+    font-size:11px;
+    color:var(--blue);
+    opacity:0.7;
+  }
+  .toc a:hover{ background:var(--card); color:var(--text); text-decoration:none; }
+
+  main{ min-width:0; }
+  section{
+    padding:26px 0;
+    border-bottom:1px solid var(--divider);
+    scroll-margin-top:24px;
+  }
+  section:last-child{ border-bottom:none; }
+  h2{
+    font-size:20px;
+    font-weight:800;
+    display:flex; align-items:center; gap:10px;
+    margin:0 0 14px;
+  }
+  h2 .num{
+    font-family:'Roboto Mono', monospace;
+    font-size:13px;
+    color:var(--blue);
+    font-weight:600;
+  }
+  h3{ font-size:15px; margin:20px 0 8px; }
+  p{ margin:0 0 14px; color:var(--text); }
+  ul{ margin:0 0 14px; padding-left:20px; }
+  li{ margin-bottom:8px; }
+  strong{ font-weight:600; }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    padding:20px 22px;
+    margin:16px 0;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:14px 0 20px;
+    font-size:14px;
+  }
+  th,td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--divider);
+    vertical-align:top;
+  }
+  th{
+    font-family:'Roboto Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    font-weight:600;
+  }
+  td.perm{ font-family:'Roboto Mono', monospace; font-size:12.5px; white-space:nowrap; }
+
+  .badge{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:100px;
+    font-family:'Roboto Mono', monospace;
+  }
+  .badge.local{ background:rgba(52,168,83,0.15); color:var(--green); }
+  .badge.runtime{ background:rgba(250,123,23,0.15); color:var(--orange); }
+  .badge.thirdparty{ background:rgba(147,52,230,0.15); color:var(--purple); }
+
+  footer{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px 60px;
+    color:var(--text-dim);
+    font-size:13px;
+  }
+  footer a{ color:var(--text-dim); text-decoration:underline; }
+
+  @media (max-width:760px){
+    .layout{ grid-template-columns:1fr; }
+    .toc{ position:relative; top:0; }
+    .scan-strip{ grid-template-columns:repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L4 6V11C4 16 7.5 20.5 12 22C16.5 20.5 20 16 20 11V6L12 2Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Zavi Studio · Legal
+      </div>
+      <h1 class="title">Privacy Policy</h1>
+      <p class="subtitle">This policy explains what Device Doctor AI accesses on your device, why, and how it's handled. Written in plain terms — no account, no profile, no data broker involved.</p>
+      <div class="meta-row">
+        <span class="chip">App: Device Doctor AI</span>
+        <span class="chip">Effective: July 4, 2026</span>
+        <span class="chip">Developer: Zavi Studio</span>
+      </div>
+
+      <div class="scan-strip">
+        <div class="scan-cell">
+          <div class="label"><span class="dot" style="background:var(--green)"></span>Accounts</div>
+          <div class="value">Not required</div>
+        </div>
+        <div class="scan-cell">
+          <div class="label"><span class="dot" style="background:var(--green)"></span>Personal data sold</div>
+          <div class="value">None</div>
+        </div>
+        <div class="scan-cell">
+          <div class="label"><span class="dot" style="background:var(--orange)"></span>Ad network</div>
+          <div class="value">Google AdMob</div>
+        </div>
+        <div class="scan-cell">
+          <div class="label"><span class="dot" style="background:var(--blue)"></span>Data storage</div>
+          <div class="value">On-device only</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-label">On this page</div>
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#data-we-access">Data we access</a></li>
+        <li><a href="#permissions">Permissions explained</a></li>
+        <li><a href="#advertising">Advertising (AdMob)</a></li>
+        <li><a href="#storage">Storage &amp; retention</a></li>
+        <li><a href="#widgets">Home screen widgets</a></li>
+        <li><a href="#sharing">Data sharing</a></li>
+        <li><a href="#children">Children's privacy</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#rights">Your choices</a></li>
+        <li><a href="#changes">Policy changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </nav>
+
+    <main>
+      <section id="overview">
+        <h2><span class="num">01</span> Overview</h2>
+        <p>Device Doctor AI ("the app") is a system diagnostics utility developed by <strong>Zavi Studio</strong> that monitors CPU, RAM, battery, storage, and network health on your Android device, and produces an on-device health score.</p>
+        <p>The app is built to work without a server backend. There is no sign-up, no user profile, and no account system. Diagnostic data the app reads (battery level, RAM usage, storage breakdown, network type, etc.) is processed <strong>locally on your device</strong> to generate the readings, history, and health score you see in the app — it is not transmitted to Zavi Studio or stored on any server we operate.</p>
+      </section>
+
+      <section id="data-we-access">
+        <h2><span class="num">02</span> Data we access</h2>
+        <p>The table below lists every category of data the app reads, exactly matching what the app requests on your device — nothing is read beyond this list.</p>
+        <div class="card">
+          <table>
+            <thead>
+              <tr><th>Category</th><th>What's read</th><th>Purpose</th><th>Leaves device?</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Network status</td>
+                <td>Connection type, Wi-Fi state</td>
+                <td>Network Center readings</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Mobile network generation</td>
+                <td>2G/3G/4G/5G indicator via phone state</td>
+                <td>Display current network generation</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Wi-Fi network name</td>
+                <td>SSID/BSSID (requires location permission on Android 12 and below, per Android platform requirements)</td>
+                <td>Show which Wi-Fi network you're connected to</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Storage contents</td>
+                <td>File sizes/paths for the largest-files scan</td>
+                <td>Storage Analyzer feature</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Installed apps</td>
+                <td>List of installed package names</td>
+                <td>Installed Apps screen</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Device diagnostics</td>
+                <td>Battery level/health, RAM usage, CPU load</td>
+                <td>Core monitoring &amp; health score</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Advertising identifiers</td>
+                <td>Google Advertising ID</td>
+                <td>Served by Google AdMob (see §4)</td>
+                <td><span class="badge thirdparty">Yes — to Google</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>We do <strong>not</strong> collect your name, email address, phone number, contacts, messages, precise real-time location history, photos, or file contents. Fine location permission is used solely to let Android resolve the connected Wi-Fi network's name, as required by the platform — the app does not track or store your location.</p>
+      </section>
+
+      <section id="permissions">
+        <h2><span class="num">03</span> Permissions explained</h2>
+        <p>Android permissions the app requests, and when each is triggered:</p>
+        <table>
+          <thead>
+            <tr><th>Permission</th><th>Requested</th><th>Why</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="perm">ACCESS_NETWORK_STATE<br>ACCESS_WIFI_STATE</td>
+              <td><span class="badge local">Install time</span></td>
+              <td>Read current connection type for Network Center</td>
+            </tr>
+            <tr>
+              <td class="perm">READ_PHONE_STATE</td>
+              <td><span class="badge runtime">Runtime</span></td>
+              <td>Determine mobile network generation (2G–5G) only — not used to read device or SIM identifiers</td>
+            </tr>
+            <tr>
+              <td class="perm">ACCESS_FINE_LOCATION</td>
+              <td><span class="badge runtime">Runtime</span></td>
+              <td>Required by Android to expose Wi-Fi SSID/BSSID on API 27+; not used for location tracking</td>
+            </tr>
+            <tr>
+              <td class="perm">READ_EXTERNAL_STORAGE</td>
+              <td><span class="badge runtime">Runtime, Android 12L and below only</span></td>
+              <td>Largest-files scan in Storage Analyzer</td>
+            </tr>
+            <tr>
+              <td class="perm">QUERY_ALL_PACKAGES</td>
+              <td><span class="badge local">Install time</span></td>
+              <td>Populate the Installed Apps screen</td>
+            </tr>
+            <tr>
+              <td class="perm">VIBRATE</td>
+              <td><span class="badge local">Install time</span></td>
+              <td>Vibration motor diagnostic test</td>
+            </tr>
+            <tr>
+              <td class="perm">INTERNET</td>
+              <td><span class="badge local">Install time</span></td>
+              <td>Required to serve ads via Google AdMob</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="advertising">
+        <h2><span class="num">04</span> Advertising (AdMob)</h2>
+        <p>The free version of Device Doctor AI shows banner, interstitial, and rewarded ads served through <strong>Google AdMob</strong>. AdMob may collect and process the advertising identifier, coarse device/network information, and interaction data to serve and measure ads, and may use this data consistent with Google's own policies.</p>
+        <p>Zavi Studio does not receive or store the data AdMob collects — it is processed directly by Google. You can review or reset your advertising identifier, and opt out of personalized ads, from your device's Google Settings app under <em>Ads</em>.</p>
+        <p>For details on how Google handles this data, see Google's own <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">How Google uses information from sites or apps that use our services</a>.</p>
+        <p>Purchasing the premium tier (where available) removes ads from the app.</p>
+      </section>
+
+      <section id="storage">
+        <h2><span class="num">05</span> Storage &amp; retention</h2>
+        <p>Diagnostic readings and history (battery, RAM, storage, health score trends) are stored in a local database on your device only, using Android's Room persistence library. This data:</p>
+        <ul>
+          <li>Never leaves your device or reaches Zavi Studio servers — we don't operate a backend for this app.</li>
+          <li>Is retained on-device for the history window shown in Settings, and is deleted automatically as older entries roll off, or immediately if you clear the app's data or uninstall it.</li>
+          <li>Is included in Android's standard app backup (if enabled on your device) since the app does not disable system backup — you can turn this off in your device's system backup settings.</li>
+        </ul>
+      </section>
+
+      <section id="widgets">
+        <h2><span class="num">06</span> Home screen widgets</h2>
+        <p>Device Doctor AI offers Battery, RAM, and Health Score home-screen widgets. Widgets read the same on-device diagnostics described in §2 to display live values and do not introduce any additional data collection.</p>
+      </section>
+
+      <section id="sharing">
+        <h2><span class="num">07</span> Data sharing</h2>
+        <p>We do not sell your data. We do not share diagnostic data, installed-app lists, or usage data with third parties, brokers, or advertisers. The only outbound data flow is the advertising identifier passed to Google AdMob as described in §4, which is required for the ad-supported free tier to function.</p>
+      </section>
+
+      <section id="children">
+        <h2><span class="num">08</span> Children's privacy</h2>
+        <p>Device Doctor AI is a general-audience system utility not directed at children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided us information, contact us using the details in §11 and we will address it.</p>
+      </section>
+
+      <section id="security">
+        <h2><span class="num">09</span> Security</h2>
+        <p>Because diagnostic data stays on-device rather than being transmitted to a server, the primary safeguard is the security of your own device (screen lock, OS updates, and Android's app sandboxing). We follow standard Android development practices to avoid exposing this data to other apps.</p>
+      </section>
+
+      <section id="rights">
+        <h2><span class="num">10</span> Your choices</h2>
+        <ul>
+          <li><strong>Revoke permissions</strong> anytime from Android Settings → Apps → Device Doctor AI → Permissions. Some features (e.g. Wi-Fi name display, largest-files scan) will stop working without their corresponding permission.</li>
+          <li><strong>Delete your data</strong> by clearing app storage or uninstalling the app — since all history is local, this permanently removes it.</li>
+          <li><strong>Opt out of ad personalization</strong> via your device's Google Settings → Ads → "Opt out of Ads Personalization."</li>
+        </ul>
+      </section>
+
+      <section id="changes">
+        <h2><span class="num">11</span> Changes to this policy</h2>
+        <p>If this policy changes — for example, if we add crash reporting, analytics, or a cloud backup feature in a future update — we'll update the "Effective" date at the top of this page and, for material changes, note it in the app's release notes.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="num">12</span> Contact</h2>
+        <p>Questions about this policy or how Device Doctor AI handles data:</p>
+        <div class="card">
+          <p style="margin-bottom:6px;"><strong>Zavi Studio</strong></p>
+          <p style="margin-bottom:6px;">✉️ <a href="mailto:zavistudio.apps@gmail.com">zavistudio.apps@gmail.com</a></p>
+          <p style="margin-bottom:0;">🌐 <a href="https://zainshah412-eng.github.io" target="_blank" rel="noopener">zainshah412-eng.github.io</a></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    © 2026 Zavi Studio. This page is published for use as the Play Store data-safety privacy policy link for Device Doctor AI.
+  </footer>
+
+</body>
+</html>
