@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — VoiceNova</title>
+<meta name="description" content="Privacy policy for VoiceNova, an offline voice recorder for Android by Zavi Studio.">
+<style>
+  :root{
+    --bg:#f7f8fb; --surface:#ffffff; --text:#161c29; --muted:#444b5a;
+    --brand:#2d4a7c; --accent:#0c6f7d; --line:#c7ccd8; --callout:#eef1f7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#111726; --surface:#192031; --text:#e3e7f0; --muted:#c2c8d6;
+      --brand:#a9c6f5; --accent:#5fd4e4; --line:#414859; --callout:#1b2334;
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:0; background:var(--bg); color:var(--text);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:40px 20px 72px}
+  header{border-bottom:1px solid var(--line); padding-bottom:24px; margin-bottom:32px}
+  .mark{display:flex; align-items:flex-end; gap:4px; height:34px; margin-bottom:18px}
+  .mark i{display:block; width:7px; border-radius:4px; background:var(--accent)}
+  .mark i:nth-child(1),.mark i:nth-child(5){height:14px}
+  .mark i:nth-child(2),.mark i:nth-child(4){height:24px}
+  .mark i:nth-child(3){height:34px}
+  h1{font-size:1.9rem; line-height:1.25; margin:0 0 8px; letter-spacing:-.02em}
+  h2{font-size:1.15rem; margin:40px 0 10px; color:var(--brand); letter-spacing:-.01em}
+  .meta{color:var(--muted); font-size:.9rem; margin:0}
+  .lede{font-size:1.1rem; color:var(--text); margin:0 0 8px}
+  p{margin:0 0 14px}
+  ul{margin:0 0 14px; padding-left:22px}
+  li{margin-bottom:7px}
+  a{color:var(--accent)}
+  .callout{
+    background:var(--callout); border-left:3px solid var(--accent);
+    padding:16px 18px; border-radius:0 8px 8px 0; margin:0 0 14px;
+  }
+  .callout p:last-child{margin-bottom:0}
+  footer{margin-top:48px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem}
+  code{background:var(--callout); padding:2px 6px; border-radius:4px; font-size:.9em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <h1>Privacy Policy</h1>
+  <p class="meta">VoiceNova &middot; Zavi Studio &middot; Last updated 20 August 2026</p>
+</header>
+
+<p class="lede"><strong>VoiceNova is an offline voice recorder. Your recordings are created on your device, stay on your device, and are never uploaded to us or to anyone else.</strong></p>
+
+<p>This policy explains, in plain language, exactly what the app does and does not do with your information. It applies to the VoiceNova Android application published by Zavi Studio (package <code>com.zavistudio.voicenova</code>).</p>
+
+<h2>Your recordings</h2>
+<p>Recordings, their names, the folders you put them in and their waveform previews are stored in this app's own private storage on your device. The app has no server, no account and no sign-in, and there is no feature anywhere in it that uploads audio.</p>
+<p>A recording leaves the app only when you explicitly choose to share it, and only to the app you pick in the share sheet. From that point the receiving app's own privacy policy applies.</p>
+
+<h2>Permissions</h2>
+<p><strong>Microphone</strong> is the only sensitive permission VoiceNova requests. It is used solely to capture audio while you are recording, and it is asked for the first time you record rather than on first launch. Audio is written straight to a file on your device; it is not streamed, analysed or transmitted.</p>
+<p><strong>Notifications</strong> are optional and are used only to show the ongoing recording controls. Declining them does not stop you recording.</p>
+<p>VoiceNova does not read your contacts, your location, your call state or your other files.</p>
+
+<h2>Storage and deleting your data</h2>
+<div class="callout">
+  <p>Recordings live in app-specific storage, which means <strong>uninstalling VoiceNova permanently deletes every recording it holds.</strong> Share or export anything you want to keep before uninstalling.</p>
+</div>
+<p>Deleting a recording in the app removes both its audio file and its entry. There is no separate copy for us to hold, because there is no server.</p>
+
+<h2>Advertising</h2>
+<p>VoiceNova shows ads supplied by Google AdMob. To do that, the Google Mobile Ads SDK may access your device's advertising ID and coarse technical information such as device model, language, and general location inferred from your IP address. It never receives your recordings, their names, or anything else from inside the app.</p>
+<p>Where the law requires it, a Google-provided consent form is shown before any personalised ad is requested, and you can change that choice at any time from <strong>Settings &rarr; Privacy options</strong>. No ad is ever shown while a recording is in progress.</p>
+<p>Google's handling of this data is governed by its own policies. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from sites or apps that use our services</a>.</p>
+
+<h2>Analytics and crash reports</h2>
+<p>This app can report anonymous usage events and crash diagnostics through Firebase Analytics and Crashlytics. They are disabled entirely unless the app has been configured with Firebase credentials, and you can switch usage analytics off at any time in Settings.</p>
+<p>When they are active, events describe only what kind of action happened — for example that a recording was completed, roughly how long it was as a broad range, and which quality preset was in use. Recording names, folder names, file paths, search text and audio content are never included, and the app actively strips any such value before it can be sent.</p>
+
+<h2>Children</h2>
+<p>VoiceNova is not directed to children under 13, and we do not knowingly collect personal information from them. Because the app has no account system and no server, it holds no personal information about any user on our side.</p>
+
+<h2>Your rights</h2>
+<p>Because your recordings and settings live only on your device, you control them directly: delete an individual recording in the app, clear the app's data from Android Settings, or uninstall the app to remove everything at once. Ad personalisation can be withdrawn at any time from Settings &rarr; Privacy options, and your advertising ID can be reset or deleted in your device's Android settings.</p>
+
+<h2>Questions and changes</h2>
+<p>If this policy changes, the updated version is published at this address and in a future update of the app. The published policy is the authoritative one, and the "last updated" date above will change with it.</p>
+<p>Questions about this policy or about the app: <a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a></p>
+
+<footer>
+  <p>VoiceNova is published by Zavi Studio.<br>
+  Contact: <a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a></p>
+</footer>
+
+</div>
+</body>
+</html>
