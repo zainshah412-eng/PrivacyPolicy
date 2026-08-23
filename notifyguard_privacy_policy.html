@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NotifyGuard Privacy Policy</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1c1e30; --muted:#5b5f77; --accent:#5661f0;
+    --card:#f5f6fb; --border:#e4e6f0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#12131c; --fg:#e9eaf4; --muted:#a9adc4; --accent:#8e97ff;
+           --card:#1b1d2a; --border:#2a2d40; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       line-height:1.65;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:40px 22px 80px}
+  header{border-bottom:1px solid var(--border);padding-bottom:20px;margin-bottom:8px}
+  h1{font-size:1.8rem;margin:0 0 6px}
+  h2{font-size:1.2rem;margin:34px 0 10px;color:var(--fg)}
+  h3{font-size:1rem;margin:20px 0 6px}
+  p,li{color:var(--fg)}
+  .muted{color:var(--muted);font-size:.92rem}
+  a{color:var(--accent)}
+  .callout{background:var(--card);border:1px solid var(--border);border-radius:14px;
+           padding:16px 18px;margin:18px 0}
+  ul{padding-left:22px}
+  li{margin:6px 0}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.94rem}
+  th,td{border:1px solid var(--border);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--card)}
+  footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--border)}
+  code{background:var(--card);padding:1px 6px;border-radius:6px;font-size:.9em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Privacy Policy — NotifyGuard</h1>
+  <p class="muted">Publisher: Zavi Studio &nbsp;·&nbsp; App: NotifyGuard (<code>com.zavistudio.notifyguard</code>)<br>
+  Effective date: 23 August 2026 &nbsp;·&nbsp; Last updated: 23 August 2026</p>
+</header>
+
+<div class="callout">
+  <strong>The short version.</strong> NotifyGuard is built to be private by design.
+  Your notifications — their titles, text, and the apps they came from — are processed
+  and stored <strong>only on your device</strong>. We never receive them, never upload them,
+  and never sell or share them. The only information that ever leaves your device is the
+  limited data Google's advertising and consent services need to show ads, which you
+  control (details in Section 6).
+</div>
+
+<h2>1. Who we are</h2>
+<p>NotifyGuard is developed and published by <strong>Zavi Studio</strong> ("we", "us", "our").
+This policy explains what NotifyGuard does and does not do with your information. By using
+the app you agree to this policy. If you do not agree, please do not use the app.</p>
+
+<h2>2. Our privacy principle: local-first</h2>
+<p>NotifyGuard is an offline, on-device notification manager and history log. Everything the
+app does with your notifications happens locally, inside the app's private storage on your
+phone. There is no NotifyGuard account, no cloud sync, and no NotifyGuard server that
+receives your notification data.</p>
+
+<h2>3. Information we do NOT collect</h2>
+<ul>
+  <li>We do <strong>not</strong> collect, transmit, or store on our servers the content of your
+      notifications (titles, messages, sender names, or the apps they came from).</li>
+  <li>We do <strong>not</strong> require you to create an account or provide your name, email,
+      or phone number to use the app.</li>
+  <li>We do <strong>not</strong> access your contacts, call logs, photos, files, precise
+      location, or microphone.</li>
+  <li>We do <strong>not</strong> sell your personal information to anyone.</li>
+</ul>
+
+<h2>4. Information processed on your device</h2>
+<p>To do its job, NotifyGuard reads and stores the following <em>on your device only</em>:</p>
+<table>
+  <tr><th>Data</th><th>Why</th><th>Where it lives</th></tr>
+  <tr><td>Notification content (title, text, app package, timestamp)</td>
+      <td>To build your notification history, apply your rules, and power search and digests</td>
+      <td>Local encrypted-at-rest app database on your device</td></tr>
+  <tr><td>Your rules, filters, and app preferences</td>
+      <td>To mute, prioritize, highlight, or group notifications the way you set up</td>
+      <td>Local app storage (DataStore) on your device</td></tr>
+  <tr><td>App settings (theme, retention period, lock, etc.)</td>
+      <td>To remember how you configured the app</td>
+      <td>Local app storage on your device</td></tr>
+  <tr><td>Encrypted backup files you choose to create</td>
+      <td>Only if you use the Backup feature; the file is written where you choose and is
+          protected with a password you set (AES-256)</td>
+      <td>Wherever you save/share it — it never comes to us</td></tr>
+</table>
+<p>This data stays on your device unless you deliberately export or share a backup file. If you
+turn on automatic retention, older notifications are deleted automatically after the period you choose.</p>
+
+<h2>5. Permissions we request and why</h2>
+<table>
+  <tr><th>Permission</th><th>Purpose</th></tr>
+  <tr><td>Notification access (Notification Listener)</td>
+      <td>The core permission. It lets NotifyGuard see incoming notifications so it can log,
+          filter, and manage them. This access is used entirely on-device. You can revoke it any
+          time in your phone's Settings.</td></tr>
+  <tr><td>Post notifications</td>
+      <td>To show you digests, re-alerts, and highlighted notifications you asked for.</td></tr>
+  <tr><td>Run at startup / background work</td>
+      <td>To keep logging and to deliver scheduled digests after your phone restarts.</td></tr>
+  <tr><td>Biometric / device credential</td>
+      <td>Only if you enable the in-app lock, to protect your history behind your fingerprint,
+          face, or device PIN.</td></tr>
+  <tr><td>Internet &amp; network state</td>
+      <td>Used only to request and display ads and to fetch the ad-consent form. It is not used
+          to transmit your notification data.</td></tr>
+</table>
+
+<h2>6. Advertising</h2>
+<p>The free version of NotifyGuard shows ads through <strong>Google AdMob</strong>. To serve
+ads, Google and its partners may collect and process a limited set of data, such as a device
+advertising identifier, coarse (non-precise) location derived from your IP address, and
+ad-interaction events. This is standard for AdMob-supported apps and is governed by Google's
+own policies, not by us.</p>
+<ul>
+  <li><strong>Your notification content is never used for ads</strong> and is never shared with
+      Google or any ad partner.</li>
+  <li><strong>Consent (EEA, UK, and other applicable regions):</strong> On first launch we show
+      Google's certified consent form (User Messaging Platform). Your choice determines whether
+      you see personalized or non-personalized ads.</li>
+  <li><strong>Your controls:</strong> You can reset or delete your advertising ID in your device
+      settings, and you can change your consent choice at any time from the app's privacy options.</li>
+  <li>Learn how Google uses this data:
+      <a href="https://policies.google.com/technologies/partner-sites">
+      Google Privacy &amp; Terms — How Google uses information from partner apps</a>.</li>
+</ul>
+
+<h2>7. Analytics</h2>
+<p>We may collect a small amount of anonymous, aggregated diagnostic and usage data (for example,
+which screens are opened, crash reports, and ad-performance counts) to keep the app stable and
+improve it. This data is not tied to your identity and never includes the content of your
+notifications. Where the app offers an analytics toggle in Settings, you can turn this off.</p>
+
+<h2>8. How your information is shared</h2>
+<p>We do not share your personal or notification data with third parties. The only third party
+involved in data processing is Google, solely for the advertising and consent functions described
+in Section 6, and any anonymous analytics/crash reporting in Section 7. We do not sell personal
+information, and we do not share it for cross-context behavioral advertising beyond the ad
+personalization you consent to.</p>
+
+<h2>9. Data retention and deletion</h2>
+<ul>
+  <li>You are in control. You can delete individual notifications, clear an app's history, or
+      clear all history from within NotifyGuard at any time.</li>
+  <li>Automatic retention deletes older notifications after the period you set.</li>
+  <li><strong>Uninstalling NotifyGuard permanently deletes all of its on-device data</strong>,
+      including your history, rules, and settings.</li>
+  <li>Because we never receive your notification data, there is nothing about it for us to
+      retain or delete on our side.</li>
+</ul>
+
+<h2>10. Security</h2>
+<p>Your data is stored in the app's private storage, which other apps cannot read. NotifyGuard
+also offers optional protections you can enable: a biometric/PIN app lock, screenshot and
+recents-screen protection, hiding sensitive notification content, and password-based AES-256
+encryption for any backup file you create.</p>
+
+<h2>11. Children's privacy</h2>
+<p>NotifyGuard is not directed to children under 13 (or the minimum age required in your
+country). We do not knowingly collect personal information from children. The app is rated for a
+general audience.</p>
+
+<h2>12. Your rights</h2>
+<p>Depending on where you live (for example under the GDPR or CCPA/CPRA), you may have rights to
+access, correct, or delete personal data and to opt out of certain processing. Because your
+notification data lives only on your device, you can exercise most of these rights directly in
+the app (view, edit, delete, and export your data). For any request relating to advertising or
+analytics data processed by Google, please use the controls in Section 6 or contact us below.</p>
+
+<h2>13. Changes to this policy</h2>
+<p>We may update this policy from time to time. When we do, we will revise the "Last updated"
+date above and, where appropriate, notify you within the app. Continued use of NotifyGuard after
+changes take effect means you accept the revised policy.</p>
+
+<h2>14. Contact us</h2>
+<p>Questions, requests, or privacy concerns? Contact Zavi Studio at
+<a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a>.</p>
+
+<footer>
+  <p class="muted">© 2026 Zavi Studio. NotifyGuard and the Zavi Studio name are used to identify
+  this application and its publisher. This policy applies to the NotifyGuard Android application
+  distributed on Google Play.</p>
+</footer>
+</div>
+</body>
+</html>
