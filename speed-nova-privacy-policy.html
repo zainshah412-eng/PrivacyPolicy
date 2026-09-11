@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — SpeedNova</title>
+<style>
+  :root {
+    --ground: #F3F5F4;
+    --surface: #FFFFFF;
+    --ink: #16201F;
+    --ink-muted: #55645F;
+    --rule: #DCE3E0;
+    --accent: #0E6E64;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0D1413;
+      --surface: #141D1B;
+      --ink: #E3EAE8;
+      --ink-muted: #94A6A2;
+      --rule: #24312F;
+      --accent: #52C9B5;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+  h1 { font-size: clamp(30px, 6vw, 42px); line-height: 1.1; margin: 0 0 10px; letter-spacing: -.02em; }
+  .sub { color: var(--ink-muted); margin: 0; }
+  h2 {
+    font-size: 21px;
+    letter-spacing: -.01em;
+    margin: 40px 0 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  h3 { font-size: 17px; margin: 24px 0 6px; }
+  p, li { color: var(--ink); }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); }
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 18px 20px;
+    margin: 28px 0;
+  }
+  .callout p { margin: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { background: var(--surface); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted); }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--ink-muted); font-size: 14px; }
+  .scroller { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Privacy Policy</h1>
+    <p class="sub">SpeedNova — GPS Speedometer · Zavi Studio · Last updated 11 September 2026</p>
+  </header>
+
+  <div class="callout">
+    <p><strong>The short version.</strong> SpeedNova works entirely on your phone. Your location, your speed and your trips are never sent to us or to anyone else. We have no servers, no accounts, and no copy of your data. The only information that ever leaves your device relates to advertising, and you control that.</p>
+  </div>
+
+  <h2>Who we are</h2>
+  <p>SpeedNova is published by <strong>Zavi Studio</strong>. This policy covers the Android application <strong>SpeedNova — GPS Speedometer</strong> (package <code>com.zavistudio.speednova</code>), distributed through Google Play.</p>
+  <p>Questions about this policy, or about your data: <a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a>.</p>
+
+  <h2>Location</h2>
+  <p>SpeedNova is a GPS speedometer. It needs precise location to work at all — speed and distance are calculated from the satellite fixes your phone's GNSS receiver produces. Approximate location cannot produce a speed reading.</p>
+
+  <h3>What we do with it</h3>
+  <ul>
+    <li>Location is read on your device, used to calculate speed and distance, and then discarded.</li>
+    <li><strong>Your location is never transmitted off your device.</strong> No coordinate, route, address, start point or end point is ever uploaded, shared, or sold — to us or to anyone else.</li>
+    <li>Completed trips are saved in a database on your phone. They contain distance, duration, moving time, average and maximum speed — <em>not</em> the route you took. SpeedNova does not record routes.</li>
+  </ul>
+
+  <h3>When location is used</h3>
+  <p>Only while you are actually looking at a speed reading or recording a trip. Specifically: while the speedometer screen is open, while the head-up display is open, while the floating speedometer is switched on, or while a trip is running.</p>
+  <p>When you pause a trip, finish a trip, close the floating window, or leave the app, SpeedNova releases location immediately. <strong>There is no background location tracking.</strong></p>
+
+  <h3>Foreground services</h3>
+  <p>Two features keep location running while the app is not in front of you, and each shows a permanent notification while it does:</p>
+  <ul>
+    <li><strong>Trip recording</strong> — so a journey you started keeps recording when the screen turns off or you switch apps.</li>
+    <li><strong>Floating speedometer</strong> — so your speed stays visible on top of a navigation app.</li>
+  </ul>
+  <p>Both stop the moment you end the activity that started them.</p>
+
+  <h2>Data stored on your device</h2>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>What</th><th>Why</th><th>Leaves your device?</th></tr></thead>
+    <tbody>
+      <tr><td>Trip history (distance, duration, speeds, times, names)</td><td>So you can review past journeys</td><td>No</td></tr>
+      <tr><td>Lifetime odometer total</td><td>Running total across all journeys</td><td>No</td></tr>
+      <tr><td>Your settings (units, theme, alert limit, activity mode, overlay position)</td><td>So the app remembers your preferences</td><td>No</td></tr>
+      <tr><td>An in-progress trip snapshot</td><td>So a trip survives the app being closed or the phone restarting</td><td>No</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>All of it is removed when you uninstall the app. You can also clear trip history from within the app at any time.</p>
+
+  <h2>Exporting your own data</h2>
+  <p>SpeedNova can export your trip history to a CSV file. You choose where that file goes using your phone's own file picker — your storage, Google Drive, or anywhere else. The app does not send it anywhere, and does not keep a copy. Once the file exists, it is yours and this policy no longer governs it.</p>
+
+  <h2>Advertising</h2>
+  <p>SpeedNova shows advertising supplied by <strong>Google AdMob</strong>. There is a small banner on the Settings, Trips and Trip Detail screens, and one full-screen advert that can appear when you open a saved trip. <strong>No advertising is shown on the speedometer screen, in the head-up display, or in the floating window.</strong></p>
+  <p>To serve adverts, Google may collect and process:</p>
+  <ul>
+    <li>Your device's <strong>Advertising ID</strong></li>
+    <li>Device and app information (model, Android version, app version, language)</li>
+    <li>Coarse, IP-derived location — this is Google's own processing, and is separate from the precise GPS location described above, which never leaves your phone</li>
+  </ul>
+  <p>How Google uses this is governed by Google's own policies, not ours:</p>
+  <ul>
+    <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from sites or apps that use our services</a></li>
+    <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob &amp; AdSense privacy information</a></li>
+  </ul>
+
+  <h3>Your choices</h3>
+  <ul>
+    <li>If you are in the EEA, the UK or Switzerland, SpeedNova shows a consent form the first time it runs, and you can change your answer at any time from <strong>Settings → Privacy options</strong>.</li>
+    <li>You can reset or delete your Advertising ID in <strong>Android Settings → Privacy → Ads</strong>, and opt out of personalised advertising there.</li>
+  </ul>
+
+  <h2>Analytics and crash reporting</h2>
+  <p>SpeedNova can use Google Firebase Analytics and Crashlytics to understand which features are used and to find crashes. You can switch analytics off in <strong>Settings → Usage analytics</strong>.</p>
+  <p>Where analytics is active, the events sent are deliberately coarse. They describe things like which screen was opened, which units were selected, which activity mode was chosen, and — for a completed trip — a broad distance band such as "1–5 km".</p>
+  <div class="callout">
+    <p><strong>Analytics never contains a coordinate, a route, an address, a destination, or an exact distance or time.</strong> This is a design rule in the app, not a promise about intent — the code has no path that could send one.</p>
+  </div>
+
+  <h2>Permissions and why each one exists</h2>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>Permission</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Precise and approximate location</td><td>Calculating your speed and distance. The core function of the app.</td></tr>
+      <tr><td>Foreground service (location)</td><td>Keeping a trip recording, or the floating window updating, when the app is not in front.</td></tr>
+      <tr><td>Display over other apps</td><td>The floating speedometer. Requested only when you switch that feature on, and never at launch.</td></tr>
+      <tr><td>Notifications</td><td>The trip and overlay status notifications, which are also how you stop them.</td></tr>
+      <tr><td>Vibration</td><td>The buzz when you go over your speed limit.</td></tr>
+      <tr><td>Internet and network state</td><td>Loading adverts. The speedometer itself works with no connection at all.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Children</h2>
+  <p>SpeedNova is not directed to children and we do not knowingly collect information from children. The app is intended for general audiences.</p>
+
+  <h2>Your rights</h2>
+  <p>Because we hold no copy of your data, there is nothing for us to retrieve, correct or delete on your behalf. Everything is on your phone and under your control:</p>
+  <ul>
+    <li><strong>Access it</strong> — open the app, or export your trips to CSV.</li>
+    <li><strong>Delete it</strong> — clear trip history in the app, or uninstall the app to remove everything.</li>
+    <li><strong>Withdraw ad consent</strong> — Settings → Privacy options.</li>
+    <li><strong>Stop analytics</strong> — Settings → Usage analytics.</li>
+    <li><strong>Revoke location</strong> — Android Settings → Apps → SpeedNova → Permissions. The app will keep opening; it simply will not be able to show a speed.</li>
+  </ul>
+  <p>For anything else, write to <a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a>.</p>
+
+  <h2>A note on accuracy</h2>
+  <p>GPS speed is an estimate. It is usually within a few km/h of your vehicle's speedometer under open sky, and less reliable in tunnels, between tall buildings, and under heavy tree cover. SpeedNova tells you when the signal is weak rather than hiding it, but it is not a certified measuring instrument and must not be relied on as one — including for any legal or safety purpose. Always follow your vehicle's own speedometer and the posted speed limit.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the date at the top of this page changes with it, and a material change will be noted in the app's release notes. Continuing to use the app after a change means you accept the updated policy.</p>
+
+  <footer>
+    <p>SpeedNova — GPS Speedometer · Published by Zavi Studio · <a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a></p>
+  </footer>
+
+</main>
+</body>
+</html>
