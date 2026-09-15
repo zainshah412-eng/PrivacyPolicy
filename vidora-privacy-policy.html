@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Vidora: Video Player All Format</title>
+<style>
+  :root { color-scheme: light dark; --bg:#ffffff; --fg:#14171c; --muted:#5b6370; --rule:#e3e6ea; --accent:#B8860B; --card:#f7f8fa; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0F1114; --fg:#E4E7EC; --muted:#98A0AC; --rule:#242a31; --accent:#F5B54A; --card:#15181C; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 96px; }
+  h1 { font-size: 2rem; line-height:1.2; margin:0 0 .35em; letter-spacing:-.02em; }
+  h2 { font-size: 1.22rem; margin: 2.2em 0 .6em; letter-spacing:-.01em; }
+  h3 { font-size: 1rem; margin: 1.6em 0 .4em; }
+  .meta { color: var(--muted); font-size:.92rem; margin-bottom: 2em; padding-bottom:1.5em; border-bottom:1px solid var(--rule); }
+  .lead { font-size:1.06rem; }
+  ul { padding-left: 1.25em; }
+  li { margin: .4em 0; }
+  a { color: var(--accent); }
+  code { background: var(--card); padding: .12em .4em; border-radius: 4px; font-size:.9em; }
+  .card { background: var(--card); border:1px solid var(--rule); border-radius:12px; padding:18px 20px; margin:1.4em 0; }
+  table { border-collapse: collapse; width:100%; margin:1.2em 0; font-size:.94rem; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--rule); vertical-align:top; }
+  th { font-weight:600; }
+  footer { margin-top:3em; padding-top:1.5em; border-top:1px solid var(--rule); color:var(--muted); font-size:.9rem; }
+  .tbl-wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Privacy Policy</h1>
+<p class="meta">
+  <strong>Vidora: Video Player All Format</strong><br>
+  Package: <code>com.zavistudio.vidora</code><br>
+  Developer: Zavi Studio<br>
+  Effective date: 15 September 2026 &nbsp;·&nbsp; Last updated: 15 September 2026
+</p>
+
+<p class="lead">Vidora is an offline video player. It plays video files that are already on your
+device. We do not operate an account system, we do not upload your videos, and we do not build a
+profile of what you watch.</p>
+
+<div class="card">
+<h3 style="margin-top:0">The short version</h3>
+<ul>
+  <li><strong>Your videos never leave your device.</strong> Vidora has no upload, sync or cloud feature. We never transmit, copy or read the contents of your media files off your phone.</li>
+  <li><strong>We never send file names, folder names or file paths anywhere.</strong> This is enforced in the app's code, including in crash reports.</li>
+  <li><strong>We do not sell personal information</strong> and we do not share it with data brokers.</li>
+  <li>Vidora shows ads through Google AdMob, and (unless you turn it off) collects anonymous, aggregate usage statistics. Both are described in detail below.</li>
+</ul>
+</div>
+
+<h2>1. Information Vidora stores on your device only</h2>
+<p>The following stays in the app's private storage on your phone. It is not sent to us or to any
+third party, and it is deleted when you uninstall the app or clear its data.</p>
+<ul>
+  <li><strong>Playback history and resume positions</strong> — which videos you have watched and where you stopped, so "Continue watching" works.</li>
+  <li><strong>Favourites</strong> — videos you have marked.</li>
+  <li><strong>Settings</strong> — theme, subtitle appearance, playback speed, sort and view preferences, background-playback and sleep-timer settings.</li>
+  <li><strong>Private folder contents</strong> — videos you move into the in-app private folder, along with your PIN.</li>
+</ul>
+
+<h3>Private folder security</h3>
+<p>Videos you add to the private folder are stored inside the app's own private storage and are
+encrypted with AES-256-GCM. The encryption key is generated on your device, wrapped by a key held in
+the Android Keystore, and never leaves your device. Private folder files are excluded from Android
+cloud backup and from device-to-device transfer. Your PIN is stored as a salted hash, not as
+readable text.</p>
+<p><strong>Important:</strong> because the key is bound to your device's Keystore, we cannot recover
+private-folder videos for you. If you uninstall the app, wipe the device, or clear the app's data
+without first unhiding your videos, those videos cannot be recovered by anyone, including us.</p>
+
+<h2>2. Permissions and why they are needed</h2>
+<div class="tbl-wrap">
+<table>
+<tr><th>Permission</th><th>Why Vidora asks for it</th></tr>
+<tr><td>Photos and videos (<code>READ_MEDIA_VIDEO</code>, <code>READ_MEDIA_VISUAL_USER_SELECTED</code>, and on Android 12 and older <code>READ_EXTERNAL_STORAGE</code>)</td><td>To find and play the video files on your device. Vidora reads your videos through Android's MediaStore, on your device, for playback and thumbnails only.</td></tr>
+<tr><td>Notifications (<code>POST_NOTIFICATIONS</code>, Android 13+)</td><td>To show the playback notification with play, pause and skip controls. Optional — Vidora works without it.</td></tr>
+<tr><td>Foreground service — media playback</td><td>To keep audio or video playing when you leave the app or lock the screen.</td></tr>
+<tr><td>Internet and network state</td><td>Used only to load advertisements and, if enabled, to send anonymous usage statistics and crash reports. It is <em>not</em> used to transfer your videos.</td></tr>
+<tr><td>Wake lock</td><td>To keep the screen or CPU awake during playback.</td></tr>
+<tr><td>Biometric</td><td>Optional. If you enable it, your fingerprint or face unlocks the private folder. Biometric data is handled entirely by Android and is never seen by, or shared with, Vidora.</td></tr>
+</table>
+</div>
+<p>Vidora does not request location, contacts, microphone, camera or call-log permissions.</p>
+
+<h2>3. Advertising</h2>
+<p>Vidora is free and is supported by advertising provided by <strong>Google AdMob</strong>. Vidora
+shows banner ads and native ads placed between items in your video list. Ads never appear over the
+video player and never interrupt playback.</p>
+<p>To serve ads, Google may collect and process information such as your device's advertising ID,
+approximate (IP-based) location, device model, operating system version and ad interaction data.
+This processing is governed by Google's own privacy policy, not ours:</p>
+<ul>
+  <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+  <li><a href="https://support.google.com/admob/answer/6128543" rel="noopener">How Google uses information from sites or apps that use its services</a></li>
+</ul>
+<p><strong>Your choices.</strong> If you are in the EEA, the UK or Switzerland, Vidora shows a
+consent dialog (Google's User Messaging Platform) on first launch where you can accept or refuse
+personalised advertising, and you can change that choice later from Settings → Privacy options. On
+any device you can also reset or delete your advertising ID, or opt out of ad personalisation, from
+your Android system settings.</p>
+<p>Vidora never sends file names, folder names, file paths or anything about your video library to
+advertising networks.</p>
+
+<h2>4. Analytics and crash reporting</h2>
+<p>Vidora uses <strong>Google Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>
+to understand which features are used and to find bugs.</p>
+<p>Analytics is enabled by default and can be turned off at any time in <strong>Settings →
+Analytics</strong>. When it is off, no analytics events are sent.</p>
+<p>The events we record are deliberately coarse. They tell us <em>that</em> a feature was used, never
+<em>what</em> you watched. Examples: a video started playing, a video finished, picture-in-picture was
+used, subtitles were enabled, background playback was used, the sleep timer was used, a private-folder
+feature was used. Attached details are limited to values such as whether the video came from the main
+library or the private folder, a resolution bucket (for example "1080p"), and rounded durations.</p>
+<div class="card">
+<p style="margin:0"><strong>Enforced in code:</strong> Vidora is built so that no file name, display
+name, folder name, relative path, subtitle file name, MediaStore URI or MediaStore ID can be attached
+to an analytics event, and nothing at all about the contents of the private folder is ever reported.
+Crash reports are filtered the same way: exception messages that could contain file paths are stripped
+before the report is sent, leaving only the error type and the stack trace.</p>
+</div>
+<p>Firebase processing is described in the
+<a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy and Security
+documentation</a> and Google's <a href="https://policies.google.com/privacy" rel="noopener">Privacy
+Policy</a>.</p>
+
+<h2>5. Data we do not collect</h2>
+<ul>
+  <li>We do not collect your name, email address, phone number or any account credentials — Vidora has no sign-in.</li>
+  <li>We do not collect the contents, names or locations of your video files.</li>
+  <li>We do not collect precise location, contacts, messages, call logs, photos, microphone or camera data.</li>
+  <li>We do not sell or rent personal information, and we do not share it with data brokers.</li>
+</ul>
+
+<h2>6. Data retention and deletion</h2>
+<p>All Vidora data stored on your device — history, favourites, settings, PIN and private-folder
+files — is removed when you uninstall Vidora or clear its data from Android Settings. You can also
+clear playback history from within the app.</p>
+<p>Advertising and analytics data held by Google is retained according to Google's own policies. You
+can reset your advertising identifier at any time from Android Settings, which disassociates future
+ad data from past data. To request deletion of analytics data associated with your device, or to ask
+any question about this policy, write to
+<a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a> and we will respond within 30
+days.</p>
+
+<h2>7. Children</h2>
+<p>Vidora is not directed at children under 13 and we do not knowingly collect personal information
+from children. Vidora plays whatever video files are already on the device; it does not provide,
+stream or recommend any content of its own. If you believe a child has provided us with personal
+information, contact us and we will delete it.</p>
+
+<h2>8. Your rights</h2>
+<p>Depending on where you live (for example under the GDPR or the CCPA), you may have the right to
+access, correct, delete, or restrict processing of your personal information, to object to
+processing, and to opt out of the "sale" or "sharing" of personal information. Because Vidora holds
+no account data, most of your data is under your direct control on your own device. For requests
+relating to advertising or analytics data processed by Google, contact us at
+<a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a> and we will assist you.</p>
+
+<h2>9. Security</h2>
+<p>App data is stored in Android's private per-app storage, which other apps cannot read.
+Private-folder videos are additionally encrypted with AES-256-GCM using a Keystore-backed key. All
+network traffic generated by the app (ads, analytics, crash reports) uses encrypted HTTPS
+connections. No system is perfectly secure, but we do not hold your media on any server, so there is
+no central store of your videos to breach.</p>
+
+<h2>10. Changes to this policy</h2>
+<p>If we change how Vidora handles data, we will update this page and change the "Last updated" date
+above. Material changes will also be noted in the app's release notes on Google Play. Continuing to
+use Vidora after an update means you accept the revised policy.</p>
+
+<h2>11. Contact</h2>
+<p>
+  Zavi Studio<br>
+  Email: <a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a>
+</p>
+
+<footer>
+  © 2026 Zavi Studio. Vidora is an independent app and is not affiliated with or endorsed by Google LLC.
+  Android and Google Play are trademarks of Google LLC.
+</footer>
+
+</div>
+</body>
+</html>
