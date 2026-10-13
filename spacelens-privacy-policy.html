@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpaceLens — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; --fg: #1b1b1f; --bg: #fdfdfd; --muted: #5a5a63; --rule: #e2e2e8; --accent: #2f5eff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #e5e2e9; --bg: #131316; --muted: #a0a0ab; --rule: #2c2c32; --accent: #93aaff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1rem 5rem; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .25rem; letter-spacing: -.02em; }
+  h2 { font-size: 1.2rem; margin: 2.5rem 0 .6rem; letter-spacing: -.01em; }
+  .sub { color: var(--muted); margin: 0 0 2.5rem; }
+  p, li { margin: .7rem 0; }
+  ul { padding-left: 1.3rem; }
+  a { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0 1.5rem; }
+  .lead { font-size: 1.05rem; }
+  footer { color: var(--muted); font-size: .92rem; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Privacy Policy for SpaceLens</h1>
+<p class="sub">Last updated: 13 October 2026</p>
+
+<p class="lead">SpaceLens is a storage analyzer for Android. It answers one question — what is
+taking up space on this device — and it answers it on the device itself. This policy explains
+what the app reads, what it never does, and what the third-party services inside it collect.</p>
+
+<p>SpaceLens is published by Zavi Studio ("we"). It applies to the Android app
+<code>com.zavistudio.spacelens</code> distributed through Google Play.</p>
+
+<h2>The short version</h2>
+<ul>
+  <li>There is no account, no sign-in, and no server of ours. We operate no backend for this app.</li>
+  <li>Your files, their names, their folder paths, their thumbnails and their metadata never leave
+      your device, and we never receive them.</li>
+  <li>SpaceLens keeps no index or database of your files. Nothing about them is written to disk —
+      every figure you see is read from Android at the moment it is shown.</li>
+  <li>The app never deletes anything on its own. Deleting always goes through Android's own
+      confirmation, and storage is only reported as freed after Android confirms the file is gone.</li>
+  <li>Advertising and crash reporting are provided by Google and do collect data. Those are the
+      only parts of the app that send anything anywhere.</li>
+</ul>
+
+<h2>What SpaceLens reads on your device</h2>
+<p>To measure your storage, the app queries Android's own system services:</p>
+<ul>
+  <li><strong>MediaStore</strong> — Android's media index. Provides file sizes, types, modification
+      dates and folder names for the photos, videos, audio and other files it can see.</li>
+  <li><strong>StorageStatsManager and StatFs</strong> — total, used and free space for each storage
+      volume, and, only if you grant Usage access, the combined space used by installed apps and
+      their data.</li>
+  <li><strong>Folders you choose</strong> — if you add a folder in <strong>Settings → Folder
+      access</strong>, the app reads the names, sizes, types and dates of the documents, archives and
+      installers inside that folder, through Android's own document picker.</li>
+</ul>
+<p>All of this is read in memory, used to draw what is on screen, and discarded. None of it is
+transmitted, and none of it is saved.</p>
+
+<h2>Permissions, and why each one exists</h2>
+<ul>
+  <li><strong>Photos and videos, and music and audio</strong> — on Android 13 and above,
+      <code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code> and
+      <code>READ_MEDIA_AUDIO</code>, plus <code>READ_MEDIA_VISUAL_USER_SELECTED</code> on
+      Android 14 and above; on Android 12L and below, <code>READ_EXTERNAL_STORAGE</code> — without these, Android reports almost nothing about your
+      media and the app cannot tell you what is using your space. If you grant only some of them, or
+      only selected items, SpaceLens says so on screen and labels the affected figures as a minimum
+      rather than a total.</li>
+  <li><strong>Modify or delete storage contents</strong> (<code>WRITE_EXTERNAL_STORAGE</code>, Android
+      9 and below only) — required to delete a file you have chosen to delete. It is requested at the
+      moment you tap Delete, never at launch. On Android 10 and above it is not requested at all,
+      because your tap in the system's own delete dialog is the permission.</li>
+  <li><strong>Usage access</strong> (<code>PACKAGE_USAGE_STATS</code>) — optional, and never requested
+      at launch. It is a special access you switch on yourself in Android's settings. SpaceLens uses it
+      for one thing: asking Android how much space installed apps and their data occupy in total. It
+      does not read which apps you use, when, or for how long, and it does not list your installed
+      apps or send their names anywhere. You can switch it off at any time in Android's settings.</li>
+  <li><strong>Folder access</strong> — optional. Android does not let any app see documents, archives
+      or installers created by other apps. If you want those measured, you can pick a folder with
+      Android's own folder picker, and SpaceLens can then read that folder and nothing outside it.
+      The list of folders is kept by Android, not by SpaceLens; you can remove a folder in the app's
+      Settings at any time, and uninstalling the app removes every grant. Files in those folders are
+      deleted only when you select them, review the list and confirm.</li>
+  <li><strong>Internet and network state</strong> — used only to request ads and, if enabled, to send
+      crash and usage reports. No feature of the analysis needs the network, and the app works fully
+      offline.</li>
+</ul>
+<p><strong>SpaceLens does not request All Files Access</strong> (<code>MANAGE_EXTERNAL_STORAGE</code>).
+That permission would let the app read every file on the device, and it is not needed to measure
+storage. The cost of not having it is that some documents, archives and installers placed by other
+apps are invisible to SpaceLens — and where that happens, the app tells you instead of quietly
+leaving them out.</p>
+
+<h2>What we collect</h2>
+<p>Nothing, directly. We have no server for this app and receive no data from it. The two
+Google services embedded in the app collect data under their own policies:</p>
+
+<h2>Advertising (Google AdMob)</h2>
+<p>SpaceLens shows banner advertisements, one native advertisement on the Overview screen (marked
+“Ad”) and, at most once per session, one full-screen
+advertisement after a completed delete. Ads are served by Google AdMob, which may collect and
+process device and usage information — including your device's advertising ID, IP address, and
+interactions with the ad — to serve and measure advertising. We never send AdMob anything about
+your files.</p>
+<ul>
+  <li>Google's practices are described in
+      <a href="https://policies.google.com/technologies/partner-sites">How Google uses information
+      from sites or apps that use our services</a>.</li>
+  <li>If you are in the European Economic Area, the United Kingdom or Switzerland, the app asks for
+      your consent choices before requesting ads, using Google's consent management platform. You
+      can change those choices at any time from <strong>Settings → Privacy options</strong> inside
+      the app.</li>
+  <li>You can reset or delete your advertising ID at any time in your device's settings, under
+      Google → Ads.</li>
+</ul>
+
+<h2>Crash and usage reporting (Firebase)</h2>
+<p>If crash reporting is enabled in this build, the app uses Firebase Crashlytics and Firebase
+Analytics, which collect device and app information such as device model, operating system version,
+app version, an app instance identifier, and — for a crash — a stack trace of the code that
+failed.</p>
+<p>The usage events the app records are deliberately coarse and contain no file information: which
+screen was opened, which setting was changed, how many files a delete affected and whether it
+succeeded, and whether an ad was shown. <strong>No filename, folder path or file content is ever
+included in an analytics event or a crash report.</strong></p>
+<p>SpaceLens does not offer an in-app switch for usage analytics. Uninstalling the app stops all
+collection. Firebase's handling of this data is covered by the
+<a href="https://firebase.google.com/support/privacy">Firebase privacy documentation</a> and
+<a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+
+<h2>Data stored on your device</h2>
+<p>SpaceLens saves only your own settings — theme choice, notification preference,
+your consent choices, and simple counters used to decide when to offer the in-app review prompt.
+These stay on your device. Uninstalling the app removes them.</p>
+<p>The app also offers a "Copy report" button on its Scan details screen, so you can send us a
+description of a scan when something looks wrong. That report is checked to contain no filenames,
+paths or names you have typed, and nothing is sent unless you choose to send it.</p>
+
+<h2>Deleting files</h2>
+<p>SpaceLens never deletes a file by itself, and has no "clean all" action. You select files, review
+the exact list and total, and confirm — through Android's own dialog for photos, videos and audio,
+and on SpaceLens's review screen for files in a folder you added, which Android deletes permanently
+with no recycle bin. Afterwards the app verifies with
+Android which files are actually gone: where it cannot verify, it says so rather than reporting space
+as freed.</p>
+
+<h2>Children</h2>
+<p>SpaceLens is a general-purpose utility and is not directed to children. We do not knowingly
+collect personal information from children.</p>
+
+<h2>Your rights</h2>
+<p>Because we hold no data about you, there is nothing for us to export or erase on request. For the
+data processed by Google's advertising and analytics services, your choices are the consent form
+described above, the advertising ID controls in your device settings, and the
+rights described in Google's own privacy policy.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the updated version will be published at this address with a new "last
+updated" date. Material changes will also be noted in the app's Play Store release notes.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy or about the app: <a href="mailto:zavistudioinfo@gmail.com">zavistudioinfo@gmail.com</a></p>
+
+<hr>
+<footer>Zavi Studio · SpaceLens: Storage Analyzer · <code>com.zavistudio.spacelens</code></footer>
+
+</main>
+</body>
+</html>
