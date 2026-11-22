@@ -447,7 +447,7 @@
 
     <h1>Privacy Policy</h1>
     <p class="subtitle">NetPulse — WiFi Analyzer &nbsp;·&nbsp; com.zavistudio.netplus</p>
-    <div class="updated-badge">Last updated: April 27, 2026</div>
+    <div class="updated-badge">Last updated: November 22, 2026</div>
   </header>
 
   <!-- ── Table of Contents ──────────────────────────────────── -->
@@ -502,7 +502,16 @@
       </ul>
     </div>
 
-    <p>This data is stored in a local Room database on your device. It is used exclusively to display your 7-day speed history chart. You can clear it at any time by uninstalling the app.</p>
+    <div class="card">
+      <div class="card-title"><div class="dot dot-purple"></div>Network Devices &amp; Alerts (stored locally)</div>
+      <ul class="item-list">
+        <li>Devices you mark as "trusted" on your network — IP, MAC, hostname, vendor and the name you give them</li>
+        <li>New-device alerts when an unknown device appears on your LAN</li>
+        <li>App settings and preferences</li>
+      </ul>
+    </div>
+
+    <p>All of the above is stored in a local Room database / DataStore on your device. It is used exclusively to power on-device features such as your 7-day speed history chart and new-device alerts. It is never transmitted to us and is removed when you clear the app's storage or uninstall it.</p>
 
     <div class="note">
       <strong>Note:</strong> Speed test measurements are performed using Cloudflare's public speed test endpoints (speed.cloudflare.com). Cloudflare may log standard HTTP request metadata per their own privacy policy. NetPulse does not receive or store any data from these requests beyond the measured speed values.
@@ -553,7 +562,7 @@
       <tbody>
         <tr>
           <td>INTERNET</td>
-          <td>Run speed tests and fetch public IP info via ip-api.com</td>
+          <td>Run speed tests and fetch public IP info via ipinfo.io</td>
           <td>We never send personal data over the internet</td>
         </tr>
         <tr>
@@ -581,6 +590,16 @@
           <td>Fallback for WiFi scanning on older Android versions</td>
           <td>Same as above — location coordinates are never used</td>
         </tr>
+        <tr>
+          <td>POST_NOTIFICATIONS</td>
+          <td>Show a notification when a new, unknown device joins your network (Android 13+)</td>
+          <td>Not used for marketing or promotional notifications</td>
+        </tr>
+        <tr>
+          <td>AD_ID</td>
+          <td>Provide the advertising ID to Google AdMob for showing ads</td>
+          <td>Only used for advertising; see the Advertising section below</td>
+        </tr>
       </tbody>
     </table>
 
@@ -599,8 +618,8 @@
     <p>NetPulse uses the following third-party services. Each has its own privacy policy which governs their data practices.</p>
 
     <div class="card">
-      <div class="card-title"><div class="dot dot-cyan"></div>ip-api.com</div>
-      <p style="font-size:14px;color:var(--text2);margin:0">Used to fetch your public IP address and ISP name for the Network Info screen. A standard HTTP request is made to <code style="font-family:var(--mono);font-size:12px;color:var(--cyan)">ip-api.com/json/</code> from your device. NetPulse does not store the result on any server. Privacy policy: <a href="https://ip-api.com/docs/legal" target="_blank" rel="noopener" style="color:var(--cyan)">ip-api.com/docs/legal</a></p>
+      <div class="card-title"><div class="dot dot-cyan"></div>ipinfo.io</div>
+      <p style="font-size:14px;color:var(--text2);margin:0">Used to fetch your public IP address and ISP name for the Network Info screen. A standard HTTPS request is made to <code style="font-family:var(--mono);font-size:12px;color:var(--cyan)">ipinfo.io/json</code> from your device. NetPulse does not store the result on any server. Privacy policy: <a href="https://ipinfo.io/privacy-policy" target="_blank" rel="noopener" style="color:var(--cyan)">ipinfo.io/privacy-policy</a></p>
     </div>
 
     <div class="card">
@@ -621,7 +640,7 @@
       <h2>Advertising (AdMob)</h2>
     </div>
 
-    <p>NetPulse uses Google AdMob to display rewarded advertisements. Watching a rewarded ad is optional and unlocks additional Deep Audit runs.</p>
+    <p>NetPulse is ad-supported and uses Google AdMob to display banner and occasional full-screen (interstitial) advertisements. Ad requests are gated by a consent flow (Google's User Messaging Platform) and, in the EEA/UK, you can change your choice any time from Settings → "Privacy &amp; ad choices".</p>
 
     <div class="card">
       <div class="card-title"><div class="dot dot-amber"></div>What AdMob may collect</div>
@@ -660,7 +679,7 @@
     <p>Continued use of NetPulse after any changes to this policy constitutes acceptance of those changes. If the changes are significant, we will provide a more prominent notice within the app.</p>
 
     <div class="highlight">
-      <p><strong>Version history:</strong> This policy was first published on April 27, 2026 for NetPulse v1.0.0.</p>
+      <p><strong>Version history:</strong> First published April 27, 2026 for NetPulse v1.0.0. Updated November 22, 2026 for v1.5.1 — IP lookup provider changed to ipinfo.io, ad formats clarified (banner + interstitial), and the notification and advertising-ID permissions documented.</p>
     </div>
   </section>
 
@@ -686,7 +705,7 @@
   <!-- ── Footer ─────────────────────────────────────────────── -->
   <footer>
     <div class="footer-brand">Net<span>Pulse</span> · Zavi Studio</div>
-    <div class="footer-meta">Privacy Policy · v1.0 · April 2026</div>
+    <div class="footer-meta">Privacy Policy · v1.5.1 · November 2026</div>
   </footer>
 
 </div>
