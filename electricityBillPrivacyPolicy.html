@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Electricity Bill Checker</title>
+  <title>Privacy Policy — Bijli &amp; Gas Bill (Electricity Bill Checker)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -235,14 +235,14 @@
 <header>
   <p class="header-eyebrow">Legal Document</p>
   <h1>Privacy Policy</h1>
-  <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-top:0.5rem;">Electricity Bill Checker</p>
-  <p class="header-meta"><span>Last updated: May 2025</span></p>
+  <p style="color:rgba(255,255,255,0.7); font-size:15px; margin-top:0.5rem;">Bijli &amp; Gas Bill (Electricity Bill Checker)</p>
+  <p class="header-meta"><span>Last updated: November 2026</span></p>
 </header>
 
 <main>
 
   <div class="intro-card">
-    <strong>Summary:</strong> This app does not collect, store, or share your personal data. We do not require sign-up or login. Your bill reference numbers are stored locally on your device only.
+    <strong>Summary:</strong> We do not require sign-up or login, and we never ask for your name, phone number, or location. Your bill reference / consumer numbers and saved bills are stored locally on your device only. The app uses Google AdMob (ads), Google Firebase Analytics &amp; Crashlytics (anonymous usage and crash data), and loads your bill from your utility company's own official website.
   </div>
 
   <!-- 1 -->
@@ -251,7 +251,7 @@
       <div class="section-num">1</div>
       <h2>Introduction</h2>
     </div>
-    <p>Electricity Bill Checker ("the App") is a utility application that allows users in Pakistan to check their electricity bills from various DISCOs (Distribution Companies) including LESCO, MEPCO, GEPCO, FESCO, IESCO, PESCO, QESCO, HESCO, SEPCO, TESCO, KE, HAZECO, and AJK.</p>
+    <p>Bijli &amp; Gas Bill ("the App") is a utility application that allows users in Pakistan to check their electricity bills from various DISCOs (Distribution Companies) including LESCO, MEPCO, GEPCO, FESCO, IESCO, PESCO, QESCO, HESCO, SEPCO, TESCO, KE, HAZECO, and AJK, as well as Sui Northern (SNGPL) gas bills.</p>
     <p>This Privacy Policy explains how we handle information when you use our App. We are committed to protecting your privacy and being transparent about our practices.</p>
   </section>
 
@@ -266,12 +266,18 @@
       <li>No name, email address, or phone number is collected</li>
       <li>No account registration or login is required</li>
       <li>No location data is collected or tracked</li>
-      <li>Bill reference numbers you enter are stored locally on your device only</li>
+      <li>Bill reference / consumer numbers you enter are stored locally on your device only</li>
+    </ul>
+    <p>The App does collect limited <strong>anonymous</strong> data through third-party services so we can keep it running and show ads:</p>
+    <ul>
+      <li><strong>Advertising identifier</strong> — Google AdMob uses your device's advertising ID (GAID) to serve ads.</li>
+      <li><strong>Anonymous usage events</strong> — Firebase Analytics records whether a bill lookup succeeded or failed and which company/source was used, so we can spot broken portals. These events never include your reference / consumer number.</li>
+      <li><strong>Crash &amp; diagnostic data</strong> — Firebase Crashlytics records crash reports and basic device diagnostics to help us fix bugs.</li>
     </ul>
     <div class="tag-row">
       <span class="tag">No sign-up required</span>
       <span class="tag">No personal data collected</span>
-      <span class="tag">Local storage only</span>
+      <span class="tag">Reference numbers stay on device</span>
     </div>
   </section>
 
@@ -281,8 +287,8 @@
       <div class="section-num">3</div>
       <h2>How the app works</h2>
     </div>
-    <p>The App functions as a WebView-based interface. When you enter a bill reference number, the App opens the official DISCO website in a WebView to display your bill. We do not intercept, store, or transmit any data you enter or any data returned from those official websites.</p>
-    <p>Saved bills are stored using Android SharedPreferences — entirely on your local device — and are never uploaded to any server.</p>
+    <p>When you enter a bill reference or consumer number, the App fetches your bill directly from your utility company's own official website — either by opening it in a WebView (electricity DISCOs) or by making a direct request to the company's public bill endpoint (SNGPL gas). Your reference / consumer number is sent only to that utility's website so it can return your bill. We do not run a server of our own, and we do not store or transmit the contents of your bill.</p>
+    <p>Saved bills and recent reference numbers are stored using Android SharedPreferences — entirely on your local device — and are never uploaded to any Zavi Studio server.</p>
   </section>
 
   <!-- 4 -->
@@ -299,12 +305,12 @@
     </div>
 
     <div class="highlight-box" style="margin-top: 0.75rem;">
-      <p><strong>Google Firebase</strong> — Used for app stability and crash reporting. Firebase may collect anonymised diagnostic data.</p>
+      <p><strong>Google Firebase (Analytics &amp; Crashlytics)</strong> — Used for anonymous usage analytics (e.g. whether a bill lookup worked) and for app stability and crash reporting. Firebase may collect anonymised diagnostic and device data.</p>
       <p style="margin-top:0.5rem;"><a href="https://firebase.google.com/support/privacy" style="color: #1D5C3A; font-size:13px;">firebase.google.com/support/privacy →</a></p>
     </div>
 
     <div class="highlight-box" style="margin-top: 0.75rem;">
-      <p><strong>Official DISCO Websites</strong> — When viewing a bill, the App loads the official electricity company website. That website's own privacy policy applies to any data exchanged with it.</p>
+      <p><strong>Official DISCO &amp; SNGPL Websites</strong> — When viewing a bill, the App loads the official electricity company or SNGPL gas website. That website's own privacy policy applies to any data exchanged with it.</p>
     </div>
   </section>
 
@@ -347,7 +353,12 @@
       <div class="section-num">8</div>
       <h2>Internet permission</h2>
     </div>
-    <p>The App requires internet access (<code style="background:#F0EDE8; padding:1px 6px; border-radius:4px; font-size:13px;">android.permission.INTERNET</code>) solely to load official DISCO websites in the WebView and to serve advertisements. No other network calls are made by the App itself.</p>
+    <p>The App requests only the permissions it needs:</p>
+    <ul>
+      <li><code style="background:#F0EDE8; padding:1px 6px; border-radius:4px; font-size:13px;">INTERNET</code> and <code style="background:#F0EDE8; padding:1px 6px; border-radius:4px; font-size:13px;">ACCESS_NETWORK_STATE</code> — to load official DISCO/SNGPL bill pages, serve advertisements, and send anonymous analytics/crash data.</li>
+      <li><code style="background:#F0EDE8; padding:1px 6px; border-radius:4px; font-size:13px;">POST_NOTIFICATIONS</code> — to show optional bill due-date reminders you enable.</li>
+      <li><code style="background:#F0EDE8; padding:1px 6px; border-radius:4px; font-size:13px;">WRITE_EXTERNAL_STORAGE</code> (Android 9 and below only) — to let you save a bill as an image.</li>
+    </ul>
   </section>
 
   <!-- 9 -->
@@ -377,7 +388,7 @@
 </main>
 
 <footer>
-  &copy; 2025 Zavi Studio · Electricity Bill Checker · All rights reserved
+  &copy; 2026 Zavi Studio · Bijli &amp; Gas Bill (Electricity Bill Checker) · All rights reserved
 </footer>
 
 </body>
