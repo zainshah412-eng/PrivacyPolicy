@@ -497,7 +497,7 @@
     <h1>Privacy <em>Policy</em></h1>
     <div class="header-meta">
       <span><span class="dot"></span> Effective: January 1, 2025</span>
-      <span><span class="dot"></span> Last updated: May 2025</span>
+      <span><span class="dot"></span> Last updated: November 24, 2026</span>
       <span><span class="dot"></span> Developer: Zavi Studio</span>
     </div>
   </header>
@@ -528,7 +528,7 @@
     <p>Privacy Permission Manager ("the App") is an Android application developed by Zavi Studio. This app is designed to help you understand and audit the permissions and access levels granted to apps installed on your Android device.</p>
     <p>We are fully committed to protecting your privacy. This policy explains what data the app accesses, why it accesses it, and how it is handled. Please read it carefully.</p>
     <div class="info-card safe">
-      <p>🔒 <strong>Core principle:</strong> All analysis happens entirely on your device. No personal data, app data, or scan results are ever transmitted to our servers or any third party.</p>
+      <p>🔒 <strong>Core principle:</strong> All permission analysis happens entirely on your device. Your app list, permissions and scan results are never transmitted to our servers. The app is ad-supported: it shows ads through Google AdMob, which requires an internet connection and uses an advertising identifier as described below.</p>
     </div>
   </div>
 
@@ -549,6 +549,7 @@
     <div class="info-card highlight">
       <p>📱 This data is stored in a local Room database on your device and never leaves it. Clearing app data or uninstalling the app permanently removes all stored information.</p>
     </div>
+    <p>Separately, because the app is ad-supported, the Google AdMob advertising SDK collects a limited set of data to serve ads — including your device's advertising ID, in-app activity used for ad measurement, and an approximate location derived from your IP address. This collection is handled by Google, not by us, and is covered in "Third-Party Services" below.</p>
   </div>
 
   <!-- Section 3: Permissions Used -->
@@ -588,12 +589,21 @@
       </li>
 
       <li>
-        <div class="perm-icon blue">📡</div>
+        <div class="perm-icon blue">🌐</div>
         <div class="perm-info">
-          <div class="perm-name">RECEIVE_BOOT_COMPLETED</div>
-          <div class="perm-desc">Allows the app to restore its monitoring state after the device restarts, so newly installed app alerts continue to work.</div>
+          <div class="perm-name">INTERNET / ACCESS_NETWORK_STATE</div>
+          <div class="perm-desc">Added by the Google AdMob advertising SDK to request and display ads. Your permission-audit data is never sent over the network — only the ad SDK uses the connection.</div>
         </div>
         <span class="perm-badge required">Required</span>
+      </li>
+
+      <li>
+        <div class="perm-icon warn">📣</div>
+        <div class="perm-info">
+          <div class="perm-name">AD_ID (Advertising ID)</div>
+          <div class="perm-desc">Added by Google AdMob so it can serve ads. In the EU/UK you are asked for consent first, and you can change your choice at any time from the app's Settings.</div>
+        </div>
+        <span class="perm-badge required">Ads</span>
       </li>
 
     </ul>
@@ -621,15 +631,14 @@
       <div class="section-num">05</div>
       <h2>Data Sharing</h2>
     </div>
-    <p>We do <strong>not</strong> share, sell, rent, or disclose any of your data to third parties under any circumstances. Specifically:</p>
+    <p>We, Zavi Studio, do <strong>not</strong> operate any server for this app and do <strong>not</strong> sell or rent your data. Specifically:</p>
     <ul class="bullet-list">
-      <li>No data is uploaded to any server, cloud, or backend</li>
-      <li>No analytics SDKs or advertising SDKs are integrated into the app</li>
-      <li>No crash reporting services with remote data collection are used</li>
-      <li>The app functions entirely offline — no internet permission is declared in the manifest</li>
+      <li>Your permission-audit data (installed apps, permissions, usage, risk scores) is never uploaded to us or to any third party — it stays on your device</li>
+      <li>We run no backend, analytics server, or crash-reporting service of our own for this app</li>
+      <li>The one third party that receives data is <strong>Google AdMob</strong>, the advertising network that shows ads in the app</li>
     </ul>
-    <div class="info-card safe">
-      <p>✅ The app operates 100% offline. It does not request the <code>INTERNET</code> permission, making network data transmission technically impossible.</p>
+    <div class="info-card highlight">
+      <p>📣 <strong>Ads:</strong> Google AdMob collects a limited set of data (advertising ID, ad interactions, and an approximate IP-based location) to serve and measure ads. This is the only data that leaves your device, and it is handled by Google under <a href="https://policies.google.com/privacy" style="color:inherit;">Google's Privacy Policy</a>. In the EU/UK you are asked for consent before any ad is requested, and you can change your choice anytime from the app's Settings.</p>
     </div>
   </div>
 
@@ -642,7 +651,7 @@
     <p>All data generated by the app is stored in a local SQLite database (via Android Room) on your device's private internal storage. This storage is:</p>
     <ul class="bullet-list">
       <li><strong>Private</strong> — accessible only to this app, sandboxed by Android's security model</li>
-      <li><strong>On-device only</strong> — never backed up to cloud services (backup is disabled in the app manifest)</li>
+      <li><strong>On-device only</strong> — your audit data is never uploaded to our servers; the only data that leaves the device is the ad data handled by Google AdMob described above</li>
       <li><strong>User-controlled</strong> — can be cleared at any time via Settings → Apps → Privacy Permission Manager → Clear Data</li>
       <li><strong>Removed on uninstall</strong> — all app data is permanently deleted when the app is uninstalled</li>
     </ul>
@@ -655,13 +664,17 @@
       <div class="section-num">07</div>
       <h2>Third-Party Services</h2>
     </div>
-    <p>Privacy Permission Manager does not integrate any third-party SDKs, analytics platforms, advertising networks, or remote services. The app uses only Android platform APIs and the following open-source libraries, all of which operate entirely on-device:</p>
+    <p>The app integrates the following third-party service that processes data off your device:</p>
     <ul class="bullet-list">
-      <li>Android Jetpack (Room, Navigation, Compose) — local UI and database</li>
-      <li>Google Gson — local JSON serialization for share/export features only</li>
+      <li><strong>Google AdMob &amp; Google User Messaging Platform (UMP)</strong> — serves the ads that keep the app free, and manages your EU/UK consent choice. AdMob collects your advertising ID, ad interaction data and an approximate IP-based location. Governed by <a href="https://policies.google.com/privacy" style="color:inherit;">Google's Privacy Policy</a>.</li>
+    </ul>
+    <p>All other libraries operate entirely on-device and send nothing anywhere:</p>
+    <ul class="bullet-list">
+      <li>Android Jetpack (Room, Navigation, Compose, WorkManager) — local UI, database and background checks</li>
+      <li>Google Gson — local JSON serialization for the share/export feature only</li>
       <li>Kotlin Coroutines — local async processing</li>
     </ul>
-    <p>The only external service involved is the Google Play Store, which distributes the app. Google's own privacy policy governs Play Store data handling.</p>
+    <p>The Google Play Store distributes the app; Google's own privacy policy governs Play Store data handling.</p>
   </div>
 
   <!-- Section 8: Children's Privacy -->
@@ -670,7 +683,7 @@
       <div class="section-num">08</div>
       <h2>Children's Privacy</h2>
     </div>
-    <p>This app is not directed at children under the age of 13. We do not knowingly collect any information from children. Since the app does not collect any personal information from any users, there is no specific risk to children's privacy.</p>
+    <p>This app is not directed at children under the age of 13. We do not knowingly collect any personal information from children. The app does not collect personal information for its own use; the only data processed off-device is the limited advertising data handled by Google AdMob, which is not intended to identify individual users.</p>
     <p>If you are a parent or guardian and believe your child has provided personal information through this app, please contact us and we will address the concern promptly.</p>
   </div>
 
@@ -703,7 +716,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Zavi Studio. All rights reserved.</p>
+    <p>© 2026 Zavi Studio. All rights reserved.</p>
     <a href="#">Privacy Permission Manager</a>
   </footer>
 
