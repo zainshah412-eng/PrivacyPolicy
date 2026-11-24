@@ -320,7 +320,7 @@
   </div>
   <h1>Privacy <em>Policy</em></h1>
   <p class="subtitle">Zavi Studio · com.scriptupsolutions.contactstransfer</p>
-  <span class="badge">Effective: May 2026</span>
+  <span class="badge">Effective: November 2026</span>
 </header>
 
 <main>
@@ -329,9 +329,9 @@
   <div class="tldr">
     <div class="tldr-label">TL;DR — The short version</div>
     <ul>
-      <li>All contact transfers happen directly between devices over Wi-Fi Direct — no servers involved.</li>
-      <li>We never collect, upload, or store your contacts on any external server or cloud.</li>
-      <li>No analytics, no advertising SDKs, no third-party data sharing.</li>
+      <li>Contact transfers happen directly between the two devices over local Wi-Fi, a local-only hotspot, or a QR-paired connection — no servers involved.</li>
+      <li>Transfers are end-to-end encrypted, and we never collect, upload, or store your contacts on any external server or cloud.</li>
+      <li>The free app shows ads via Google AdMob, which uses your device's advertising ID.</li>
       <li>Transfer history is stored locally on your device only and never leaves it.</li>
     </ul>
   </div>
@@ -340,8 +340,8 @@
   <section>
     <div class="section-number">01</div>
     <h2>Overview</h2>
-    <p>Contacts Transfer ("the App") is a peer-to-peer contact sharing application developed by Zavi Studio. It allows users to transfer contacts directly from one Android device to another using Wi-Fi Direct (P2P), LAN discovery, or QR code connection — without any internet connectivity or server intermediaries.</p>
-    <p>This Privacy Policy explains what information the App accesses, how it is used, and the guarantees we make regarding your data. By using the App, you agree to these terms.</p>
+    <p>Contacts Transfer ("the App") is a peer-to-peer contact sharing application developed by Zavi Studio. It allows users to transfer contacts directly from one Android device to another using local Wi-Fi (LAN) discovery, a local-only Wi-Fi hotspot, or a QR code connection — without routing contact data through any server. Transfers are end-to-end encrypted between the two devices.</p>
+    <p>The App is free and supported by advertising provided by Google AdMob. This Privacy Policy explains what information the App accesses, how it is used, the role of our advertising partner, and the guarantees we make regarding your data. By using the App, you agree to these terms.</p>
   </section>
 
   <hr class="divider" />
@@ -375,24 +375,31 @@
         </div>
       </div>
       <div class="perm-row">
-        <span class="perm-tag">ACCESS_FINE_LOCATION<br/>ACCESS_COARSE_LOCATION</span>
+        <span class="perm-tag">INTERNET<br/>ACCESS_NETWORK_STATE<br/>ACCESS_WIFI_STATE<br/>CHANGE_WIFI_STATE<br/>CHANGE_NETWORK_STATE<br/>CHANGE_WIFI_MULTICAST_STATE</span>
         <div class="perm-desc">
-          <strong>Wi-Fi Direct peer discovery</strong>
-          Android requires location permission to scan for nearby Wi-Fi Direct peers (WifiP2pManager). The App does not log, store, or process your GPS position.
+          <strong>Local network connection</strong>
+          Used to discover the other device on your local Wi-Fi, create or join a local-only hotspot, and open a direct connection between the two phones. No contact data is sent over the internet to any server.
         </div>
       </div>
       <div class="perm-row">
         <span class="perm-tag">NEARBY_WIFI_DEVICES</span>
         <div class="perm-desc">
-          <strong>Android 13+ peer discovery</strong>
-          Required on Android 13 and above as a companion to Location for Wi-Fi Direct peer scanning.
+          <strong>Local hotspot (Android 13+)</strong>
+          Required on Android 13 and above to start or join the local-only Wi-Fi hotspot used for the transfer. Declared with the "never for location" flag — the App does not derive your location from it.
+        </div>
+      </div>
+      <div class="perm-row">
+        <span class="perm-tag">ACCESS_FINE_LOCATION<br/>ACCESS_COARSE_LOCATION<br/>(Android 12 and below only)</span>
+        <div class="perm-desc">
+          <strong>Local hotspot on older Android</strong>
+          On Android 8–12, the system requires location permission to start a local-only Wi-Fi hotspot. Requested only if you choose hotspot mode, and not requested at all on Android 13+. The App does not log, store, or process your GPS position.
         </div>
       </div>
       <div class="perm-row">
         <span class="perm-tag">POST_NOTIFICATIONS</span>
         <div class="perm-desc">
           <strong>Incoming contact alerts</strong>
-          Used on Android 13+ to show a local notification when contacts are received in the background.
+          Used on Android 13+ to show a local notification when contacts are received.
         </div>
       </div>
     </div>
@@ -409,23 +416,23 @@
     <div class="flow">
       <div class="flow-step">
         <div class="step-num">1</div>
-        <div class="step-text"><strong>Device discovery</strong> — Nearby devices are found via Wi-Fi Direct peer scanning or LAN broadcast. No contact data is shared at this stage.</div>
+        <div class="step-text"><strong>Device discovery</strong> — The other device is found via local Wi-Fi (LAN) discovery, a local-only hotspot, or by scanning a QR code. No contact data is shared at this stage.</div>
       </div>
       <div class="flow-step">
         <div class="step-num">2</div>
-        <div class="step-text"><strong>Connection handshake</strong> — A direct TCP socket is opened on port 8888 between the two devices over Wi-Fi Direct. No internet connection is used.</div>
+        <div class="step-text"><strong>Encrypted handshake</strong> — A direct connection is opened between the two devices on the local network. Both sides exchange keys and derive an end-to-end encryption key (ECDH → AES-GCM); each phone shows a short matching verification code.</div>
       </div>
       <div class="flow-step">
         <div class="step-num">3</div>
-        <div class="step-text"><strong>Approval prompt</strong> — The receiver sees the sender's name and contact count and must explicitly tap <strong>Accept</strong> before any contact data is sent.</div>
+        <div class="step-text"><strong>Approval prompt</strong> — The receiver sees the sender's name and contact count and must explicitly accept before any contact data is sent.</div>
       </div>
       <div class="flow-step">
         <div class="step-num">4</div>
-        <div class="step-text"><strong>Transfer</strong> — Contact data (name, phone numbers, emails, organisation, notes) is serialised as JSON and sent directly to the receiver over the local socket.</div>
+        <div class="step-text"><strong>Transfer</strong> — Contact data (name, phone numbers, emails, organisation, job title, addresses, websites, events, notes and photo) is sent directly to the receiver over the encrypted local connection.</div>
       </div>
       <div class="flow-step">
         <div class="step-num">5</div>
-        <div class="step-text"><strong>Save & disconnect</strong> — The receiver saves the contacts to their address book. The socket is closed. No copy of the data is retained by the App.</div>
+        <div class="step-text"><strong>Save & disconnect</strong> — The receiver saves the contacts to their address book and the connection is closed. The contact data is never sent to us or any server.</div>
       </div>
     </div>
   </section>
@@ -436,9 +443,9 @@
   <section>
     <div class="section-number">04</div>
     <h2>Data We Do Not Collect</h2>
-    <p>The App does <strong>not</strong> collect, transmit, or store any of the following:</p>
-    <p>Contact data on any remote server · Your device's GPS location · Advertising identifiers · Analytics or crash telemetry · Usage statistics · Device fingerprints · Account credentials of any kind</p>
-    <p>The App contains no advertising SDKs, analytics libraries, or third-party tracking frameworks.</p>
+    <p>We (Zavi Studio) do <strong>not</strong> collect, transmit, or store any of the following on our own servers:</p>
+    <p>Your contacts or contact data · Your device's GPS location · Account credentials of any kind · A copy of your transfer history</p>
+    <p>Your contacts move only between the two phones you choose and are never uploaded to us. The only data leaving your device is handled by our advertising partner, described below.</p>
   </section>
 
   <hr class="divider" />
@@ -447,7 +454,7 @@
   <section>
     <div class="section-number">05</div>
     <h2>Local Transfer History</h2>
-    <p>The App maintains a local transfer history stored in a Room database on your device. This log records the date, direction (sent/received), device name, and number of contacts for each completed transfer.</p>
+    <p>The App maintains a local transfer history stored in a Room database on your device. This log records the date, direction (sent/received), the other device's name, the number of contacts, and the names of transferred contacts for each completed transfer.</p>
     <p>This data never leaves your device. You can clear it at any time via the History screen. Uninstalling the App removes this database entirely.</p>
   </section>
 
@@ -456,26 +463,37 @@
   <!-- 6 -->
   <section>
     <div class="section-number">06</div>
-    <h2>Third-Party Services</h2>
-    <p>The App uses the following open-source libraries. None of these libraries are configured to collect user data or phone home in this integration:</p>
-    <p><strong>ZXing</strong> — QR code generation and scanning (local processing only) · <strong>Gson</strong> — JSON serialisation (local processing only) · <strong>Hilt / Dagger</strong> — Dependency injection (compile-time, no runtime data) · <strong>Room</strong> — Local SQLite database</p>
-    <p>No data is shared with any of these third parties.</p>
+    <h2>Advertising</h2>
+    <p>The App is free and supported by ads provided by <strong>Google AdMob</strong> (Google LLC). To serve ads, the Google Mobile Ads SDK may collect and process your device's <strong>advertising identifier</strong> along with ad-interaction and diagnostic information. This is used by Google to serve and measure ads and, where applicable, to show personalised advertising.</p>
+    <p>Google's handling of this data is governed by Google's Privacy Policy and its advertising policies:</p>
+    <p><a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a> · <a href="https://support.google.com/admob/answer/6128543">How Google uses data (AdMob)</a></p>
+    <p>You can reset or limit your advertising ID at any time in your Android device settings under <em>Privacy &rarr; Ads</em>.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 6b -->
+  <section>
+    <div class="section-number">07</div>
+    <h2>Other Third-Party Components</h2>
+    <p>Besides Google AdMob, the App uses the following open-source libraries for on-device processing only. None of these are configured to collect user data or send it off the device:</p>
+    <p><strong>ZXing</strong> — QR code generation and scanning · <strong>CameraX</strong> — camera preview for QR scanning · <strong>Gson</strong> — JSON serialisation · <strong>Hilt / Dagger</strong> — dependency injection · <strong>Room</strong> — local SQLite database</p>
   </section>
 
   <hr class="divider" />
 
   <!-- 7 -->
   <section>
-    <div class="section-number">07</div>
+    <div class="section-number">08</div>
     <h2>Children's Privacy</h2>
-    <p>The App does not knowingly collect information from children under the age of 13. Because no personal data is collected or transmitted to us under any circumstances, the App poses no special privacy risk to minors.</p>
+    <p>The App is not directed to children under the age of 13 and we do not knowingly collect personal information from them. We never receive your contacts. The App does serve ads through Google AdMob, which may process an advertising identifier as described above.</p>
   </section>
 
   <hr class="divider" />
 
   <!-- 8 -->
   <section>
-    <div class="section-number">08</div>
+    <div class="section-number">09</div>
     <h2>Changes to This Policy</h2>
     <p>If this Privacy Policy is updated, the revised version will be published at this URL with an updated effective date. Continued use of the App after changes constitutes acceptance of the revised policy.</p>
   </section>
@@ -484,7 +502,7 @@
 
   <!-- 9 -->
   <section>
-    <div class="section-number">09</div>
+    <div class="section-number">10</div>
     <h2>Contact Us</h2>
     <div class="contact-box">
       <p>If you have any questions or concerns about this Privacy Policy, please reach out:</p>
