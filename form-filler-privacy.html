@@ -385,7 +385,7 @@
       </div>
       <span class="app-name">Form Filler – Smart Autofill</span>
     </a>
-    <span class="last-updated">Effective: April 24, 2025</span>
+    <span class="last-updated">Effective: November 24, 2026</span>
   </div>
 </header>
 
@@ -447,9 +447,10 @@
       <p class="section-num">01</p>
       <h2>Overview</h2>
       <p>This Privacy Policy explains how Form Filler – Smart Autofill ("Form Filler", "we", "our", or "the app") handles your information when you use our Android application.</p>
-      <p>The short version: <strong>we do not collect, transmit, or store any of your personal data on our servers.</strong> Everything you enter into the app remains on your device, encrypted, under your control.</p>
+      <p>The short version: <strong>the personal details you save in Form Filler — your profiles, scanned documents and form data — never leave your device.</strong> They are stored encrypted, under your control, and are never sent to our servers or any third party.</p>
+      <p>Form Filler is free and supported by ads. To show ads we use Google AdMob, and before any personalised ads are shown we ask for your consent through Google's User Messaging Platform. The advertising SDK collects advertising identifiers as described below. This is the only data collection in the app, and it never includes the profile or document data you enter.</p>
       <div class="callout">
-        <p>Form Filler operates entirely offline. No personal data is ever sent to the internet — not when you create a profile, not when a form is filled, and not when you use the document scanner.</p>
+        <p>Your saved profiles, the fields you autofill, and anything you scan with the camera are processed <strong>entirely on your device</strong> and are never transmitted. The only network activity is serving ads and loading the consent form.</p>
       </div>
     </div>
 
@@ -457,7 +458,7 @@
     <div class="section" id="data-collected">
       <p class="section-num">02</p>
       <h2>Data we collect</h2>
-      <p>We collect no personal data whatsoever. The table below documents every data category and our position on each.</p>
+      <p>We collect no personal profile data whatsoever. The only data collected is advertising data gathered by the Google AdMob SDK, subject to your consent. The table below documents every data category and our position on each.</p>
       <table class="data-table">
         <thead>
           <tr>
@@ -481,19 +482,25 @@
             <td><span class="tag none">Never</span></td>
           </tr>
           <tr>
-            <td>Device identifiers</td>
-            <td><span class="tag none">Never</span></td>
-            <td><span class="tag none">Never</span></td>
-            <td><span class="tag none">Never</span></td>
+            <td>Advertising ID / device identifiers (AdMob)</td>
+            <td><span class="tag">By AdMob, with consent</span></td>
+            <td><span class="tag">With Google AdMob</span></td>
+            <td><span class="tag none">Not by us</span></td>
           </tr>
           <tr>
-            <td>Location data</td>
-            <td><span class="tag none">Never</span></td>
-            <td><span class="tag none">Never</span></td>
-            <td><span class="tag none">Never</span></td>
+            <td>Approximate location (derived from IP by AdMob)</td>
+            <td><span class="tag">By AdMob, with consent</span></td>
+            <td><span class="tag">With Google AdMob</span></td>
+            <td><span class="tag none">Not by us</span></td>
           </tr>
           <tr>
-            <td>Usage / analytics data</td>
+            <td>Ad interaction / diagnostics data (AdMob)</td>
+            <td><span class="tag">By AdMob, with consent</span></td>
+            <td><span class="tag">With Google AdMob</span></td>
+            <td><span class="tag none">Not by us</span></td>
+          </tr>
+          <tr>
+            <td>App usage / analytics data (our own)</td>
             <td><span class="tag none">Never</span></td>
             <td><span class="tag none">Never</span></td>
             <td><span class="tag none">Never</span></td>
@@ -571,14 +578,27 @@
     <div class="section" id="third-parties">
       <p class="section-num">06</p>
       <h2>Third-party services</h2>
-      <p>Form Filler does not integrate with any third-party analytics, advertising, or data-sharing SDK. We do not use:</p>
+      <p>Form Filler is free and supported by ads. We use the following Google services:</p>
       <ul class="check-list">
-        <li>Google Analytics, Firebase Analytics, or any usage tracking</li>
-        <li>Advertising networks or ad mediation platforms</li>
-        <li>Crash reporting services that transmit device data</li>
-        <li>Social login or account linking services</li>
+        <li><strong>Google AdMob</strong> — displays banner and interstitial ads. AdMob may collect your device's advertising ID, approximate location (derived from your IP address), and ad-interaction and diagnostic data to serve and measure ads. See Google's <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543">How Google uses data</a>.</li>
+        <li><strong>Google User Messaging Platform (UMP)</strong> — shows the consent form that governs whether personalised ads and the related data collection apply to you. You can change your choice at any time via the privacy options in the app.</li>
+        <li><strong>Google ML Kit</strong> — on-device OCR text recognition for document scanning. ML Kit runs entirely on your device and does not send document images or extracted text to Google's servers in the configuration used by this app.</li>
       </ul>
-      <p>The only third-party component used is Google's ML Kit for on-device OCR text recognition. ML Kit runs entirely on your device and does not send document images or extracted text to Google's servers in the configuration used by this app.</p>
+      <p>We do <strong>not</strong> use any other analytics, usage-tracking, crash-reporting, or social-login SDK. Your saved profile and document data is never shared with AdMob or any other third party.</p>
+    </div>
+
+    <!-- 6b. Advertising & consent -->
+    <div class="section" id="advertising">
+      <p class="section-num">06b</p>
+      <h2>Advertising &amp; your consent</h2>
+      <p>Before any personalised ads are shown, Form Filler presents a consent request using Google's User Messaging Platform. Depending on your region and your choice:</p>
+      <ul class="check-list">
+        <li>No ads are requested and the AdMob SDK is not initialised until consent allows it</li>
+        <li>You can accept or decline personalised advertising</li>
+        <li>You can reopen the privacy options form at any time to change your choice</li>
+        <li>You can reset your advertising ID or opt out of ad personalisation in your device settings</li>
+      </ul>
+      <p>The INTERNET permission the app requests is used solely to load ads and the consent form. It is never used to transmit your profiles, scanned documents, or any field you autofill.</p>
     </div>
 
     <!-- 7. Security -->
@@ -603,8 +623,8 @@
             <td>Fingerprint / face unlock before profile access (optional)</td>
           </tr>
           <tr>
-            <td>No network transmission</td>
-            <td>App requires no internet permission for core functionality</td>
+            <td>No profile data on the network</td>
+            <td>Profiles and scanned data never use the internet; the INTERNET permission serves ads and the consent form only</td>
           </tr>
           <tr>
             <td>Data isolation</td>
@@ -619,7 +639,7 @@
     <div class="section" id="children">
       <p class="section-num">08</p>
       <h2>Children's privacy</h2>
-      <p>Form Filler is not directed at children under the age of 13 (or the applicable age of digital consent in your country). We do not knowingly collect personal information from children. Since we collect no personal data from any user, this policy applies equally to all age groups.</p>
+      <p>Form Filler is not directed at children under the age of 13 (or the applicable age of digital consent in your country). We do not knowingly collect personal information from children, and the personal details you save in the app never leave your device. Ads are served by Google AdMob subject to the consent described above; please supervise children's use of ad-supported apps.</p>
       <p>If you are a parent or guardian and believe your child has provided personal information through the app, please contact us so we can assist with deletion of that data from their device.</p>
     </div>
 
@@ -676,8 +696,8 @@
     </div>
     <p class="footer-copy">
       <strong>Form Filler – Smart Autofill</strong><br>
-      &copy; 2025 ScriptUp Solutions. All rights reserved.<br>
-      Privacy Policy &nbsp;·&nbsp; Effective April 24, 2025
+      &copy; 2026 ScriptUp Solutions. All rights reserved.<br>
+      Privacy Policy &nbsp;·&nbsp; Effective November 24, 2026
     </p>
   </div>
 </footer>
