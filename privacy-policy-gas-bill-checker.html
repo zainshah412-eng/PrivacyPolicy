@@ -263,7 +263,7 @@
 <header>
   <div class="badge">Privacy Policy</div>
   <h1>Gas Bill <span>Checker</span></h1>
-  <p>By Zavi Studio &nbsp;·&nbsp; Effective June 17, 2025</p>
+  <p>By Zavi Studio &nbsp;·&nbsp; Effective June 17, 2025 &nbsp;·&nbsp; Updated November 24, 2026</p>
 </header>
 
 <!-- ── Main Content ─────────────────────────────────────────────────────── -->
@@ -274,8 +274,8 @@
     <h2><span class="icon">📋</span> Overview</h2>
     <p>
       Gas Bill Checker ("the App") is developed and maintained by <strong style="color:#e2e8f0">Zavi Studio</strong>.
-      This Privacy Policy explains how the App handles information when you use it to check utility bills
-      from SNGPL, SSGC, PTCL, Nayatel, and StormFiber.
+      This Privacy Policy explains how the App handles information when you use it to check your
+      Sui Northern (SNGPL) gas bill.
     </p>
     <p>
       We built this App as a convenience tool. We do not collect, store, or sell your personal information.
@@ -310,12 +310,11 @@
     <h2><span class="icon">⚙️</span> How the App Works</h2>
     <p>
       When you enter a consumer number, the App makes a direct network request from your device
-      to the relevant utility company's public website (e.g. <code style="color:var(--accent);font-size:13px">sngpl.com.pk</code>,
-      <code style="color:var(--accent);font-size:13px">viewbill.ssgc.com.pk</code>) using the same
-      URL you would open in a browser. The App acts as a browser wrapper.
+      to SNGPL's public bill website (<code style="color:var(--accent);font-size:13px">sngpl.com.pk</code>)
+      using the same URL you would open in a browser. The App acts as a browser wrapper.
     </p>
     <ul>
-      <li>Bill data is fetched directly from the utility company's servers — not routed through Zavi Studio systems</li>
+      <li>Bill data is fetched directly from SNGPL's servers — not routed through Zavi Studio systems</li>
       <li>Downloaded bill PDFs are saved temporarily to your device's internal cache only and are not uploaded anywhere</li>
       <li>Cached PDFs are stored in your device's app cache folder and can be cleared at any time via Android Settings → Apps → Gas Bill Checker → Clear Cache</li>
       <li>Bill history labels you create are stored locally on your device using Android's local database (Room) and never leave your device</li>
@@ -347,40 +346,9 @@
         <div class="tp-name">SNGPL</div>
         <div class="tp-desc">
           Sui Northern Gas Pipelines Limited. The App queries their public bill portal.
-          Your consumer number is sent to their server when you perform a lookup.
+          Your consumer number is sent to their server when you perform a lookup so your bill
+          can be returned. Gas Bill Checker is an independent tool and is not affiliated with SNGPL.
           <a href="https://www.sngpl.com.pk/" target="_blank" rel="noopener">sngpl.com.pk ↗</a>
-        </div>
-      </div>
-
-      <div class="tp-row">
-        <div class="tp-name">SSGC</div>
-        <div class="tp-desc">
-          Sui Southern Gas Company. Your consumer number is sent to their public bill portal.
-          <a href="https://www.ssgc.com.pk/" target="_blank" rel="noopener">ssgc.com.pk ↗</a>
-        </div>
-      </div>
-
-      <div class="tp-row">
-        <div class="tp-name">PTCL</div>
-        <div class="tp-desc">
-          Pakistan Telecommunication Company Ltd. Your account number is sent to their eBill portal.
-          <a href="https://ebill.ptcl.com.pk/" target="_blank" rel="noopener">ebill.ptcl.com.pk ↗</a>
-        </div>
-      </div>
-
-      <div class="tp-row">
-        <div class="tp-name">Nayatel</div>
-        <div class="tp-desc">
-          Your account ID is sent to the Nayatel customer portal.
-          <a href="https://customer.nayatel.com/" target="_blank" rel="noopener">customer.nayatel.com ↗</a>
-        </div>
-      </div>
-
-      <div class="tp-row">
-        <div class="tp-name">StormFiber</div>
-        <div class="tp-desc">
-          Your account number is sent to the StormFiber (Jazz) bill inquiry portal.
-          <a href="https://myjazz.jazz.com.pk/" target="_blank" rel="noopener">jazz.com.pk ↗</a>
         </div>
       </div>
 
@@ -396,11 +364,16 @@
       These are used solely to:
     </p>
     <ul>
-      <li>Fetch bill information from utility company websites</li>
+      <li>Fetch bill information from SNGPL's website</li>
       <li>Download bill PDFs to your device cache</li>
       <li>Load and display advertisements via Google AdMob</li>
     </ul>
-    <p style="margin-top:12px">No other network communication is made by the App itself.</p>
+    <p style="margin-top:12px">
+      On Android 9 (API 28) and below the App also declares
+      <code style="color:var(--accent);font-size:13px">WRITE_EXTERNAL_STORAGE</code>, used only on
+      those older versions to save a bill file. It is not requested on Android 10 and above.
+      No other network communication is made by the App itself.
+    </p>
   </section>
 
   <!-- 6. Advertising & Your Choices -->
@@ -458,7 +431,7 @@
       </div>
       <div class="date-item">
         <strong>Last Modified</strong>
-        June 17, 2025
+        November 24, 2026
       </div>
     </div>
   </section>
@@ -472,7 +445,7 @@
     </p>
     <div class="contact-card">
       <p><strong>Zavi Studio</strong></p>
-      <p>Email: <a href="mailto:zavistudio.dev@gmail.com">zavistudio.dev@gmail.com</a></p>
+      <p>Email: <a href="mailto:zainshah412.za@gmail.com">zainshah412.za@gmail.com</a></p>
     </div>
   </section>
 
